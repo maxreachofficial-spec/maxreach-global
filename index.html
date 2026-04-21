@@ -960,18 +960,34 @@ document.addEventListener("DOMContentLoaded", () => {
                     <img src="homeimages/aloftz-strategic-partner-maxreach.png" alt="Aloftz Strategic Partner" loading="lazy">
                     <span>Aloftz</span>
                 </div>
+
+                <div class="partner-card">
+                    <img src="homeimages/adsmarketing-logo.jpeg" alt="AdsMarketing Strategic Partner" loading="lazy">
+                    <span>AdsMarketing</span>
+                </div>
+
                 <div class="partner-card">
                     <img src="homeimages/matchless-digital-hub-partner.jpeg" alt="Matchless Digital Hub Partner" loading="lazy">
                     <span>Matchless Digital Hub</span>
                 </div>
+
                 <div class="partner-card">
                     <img src="homeimages/kreative-captains-gurgaon-partner.jpg" alt="Kreative Captains Partner" loading="lazy">
                     <span>Kreative Captains</span>
                 </div>
-                
+
+                <div class="partner-card">
+                    <img src="homeimages/precision growth marketing-logo.jpeg" alt="Precision Growth Marketing Partner" loading="lazy">
+                    <span>Precision Growth</span>
+                </div>
+
                 <div class="partner-card" aria-hidden="true">
                     <img src="homeimages/aloftz-strategic-partner-maxreach.png" alt="">
                     <span>Aloftz</span>
+                </div>
+                <div class="partner-card" aria-hidden="true">
+                    <img src="homeimages/adsmarketing-logo.jpeg" alt="">
+                    <span>AdsMarketing</span>
                 </div>
                 <div class="partner-card" aria-hidden="true">
                     <img src="homeimages/matchless-digital-hub-partner.jpeg" alt="">
@@ -981,6 +997,10 @@ document.addEventListener("DOMContentLoaded", () => {
                     <img src="homeimages/kreative-captains-gurgaon-partner.jpg" alt="">
                     <span>Kreative Captains</span>
                 </div>
+                <div class="partner-card" aria-hidden="true">
+                    <img src="homeimages/precision growth marketing-logo.jpeg" alt="">
+                    <span>Precision Growth</span>
+                </div>
 
             </div>
         </div>
@@ -989,16 +1009,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
 <style>
         /* CSS Wahi hai, bas mobile padding 60px ensures clean separation */
-        .partners-section {
+      .partners-section {
             --pt-bg: #f0f9ff;
             --pt-txt: #001a33;
             --pt-brd: rgba(0, 176, 255, 0.15);
             --pt-accent: #00B0FF;
-            padding: 45px 0;
+            /* TOP padding 45px rakha hai, 
+               BOTTOM padding 75px kar diya hai extra gap ke liye 
+            */
+            padding: 45px 0 75px 0 !important; 
             background-color: var(--pt-bg);
             transition: all 0.4s ease;
             overflow: hidden;
             border-bottom: 1px solid var(--pt-brd);
+            /* --- YE WALI LINE ADD KARO --- */
+            margin-bottom: 37px !important; /* Isse niche wala section dur ho jayega */
         }
 
         body.night-mode .partners-section {
@@ -1083,9 +1108,10 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         @media (max-width: 768px) {
-            .partners-section { 
+        .partners-section { 
                 padding: 50px 0; 
                 margin-top: 10px; 
+                margin-bottom: 30px !important; /* Mobile par thoda kam margin */
             }
             .section-title { font-size: 1.1rem; margin-bottom: 25px; }
             .marquee-content { gap: 30px; }
@@ -1349,7 +1375,7 @@ body.night-mode .mrd-card-title { color: #fff; }
     .tr-track-record-section {
         position: relative;
         z-index: 10;
-        padding: 90px 6% !important;
+        padding: 60px 6% !important;
         background: #ffffff !important;
         text-align: center;
         width: 100%;
@@ -1440,16 +1466,12 @@ body.night-mode .mrd-card-title { color: #fff; }
         align-items: center;
     }
 
-    .tr-slider-wrapper {
-        position: relative;
-        width: 100%;
-        min-height: 280px; 
-        margin-bottom: 25px;
-        transition: height 0.4s ease;
-        /* 🚀 Prevents content jumping (Fixes CLS score) */
-        display: flex;
-        align-items: center;
-    }
+ .tr-slider-wrapper {
+    min-height: auto !important; /* Static height hatayi */
+    margin-bottom: 15px; /* Gap kam kiya dots se pehle */
+    display: flex;
+    align-items: center;
+}
 
     .tr-testimonial-card {
         position: absolute;
@@ -1631,21 +1653,24 @@ body.night-mode .tr-dot.active {
         color: #030712;
     }
 
-    @media (max-width: 768px) {
-        .tr-track-record-section {
-            padding: 60px 6% !important;
-        }
-        .tr-testimonial-card {
-            padding: 35px 20px;
-            border-radius: 24px;
-        }
-        .tr-slider-wrapper {
-            min-height: 320px !important; /* Mobile stability */
-        }
-        .tr-control-center {
-            gap: 40px;
-        }
+ /* 3. Mobile Specific adjustments (Sabse niche wala media query) */
+@media (max-width: 768px) {
+    .tr-track-record-section {
+        padding: 40px 5% !important; /* Mobile par upar niche se space kam */
     }
+    .tr-section-headers {
+        margin-bottom: 30px; /* Header aur card ke beech ka gap kam kiya */
+    }
+    .tr-testimonial-card {
+        padding: 25px 15px; /* Card ke andar ka space tight kiya */
+    }
+    .tr-slider-wrapper {
+        min-height: 250px !important; /* Mobile par height fit rakhi */
+    }
+    .tr-control-center {
+        gap: 30px; /* Buttons ka gap kam kiya */
+    }
+}
 </style>
 
 <script>
@@ -3845,7 +3870,7 @@ function openContactPopup(event) {
     
     // Basic Validation with professional alert
     if (nameInput.value.trim() === "" || mobileInput.value.trim() === "") { 
-        alert("Bhai, Name aur Number zaroori hai inquiry ke liye!"); 
+        alert("Name and contact number are required for inquiry.!"); 
         return; 
     }
 
