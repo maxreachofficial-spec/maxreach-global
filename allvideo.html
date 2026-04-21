@@ -670,7 +670,7 @@ video::-webkit-media-controls-remote-playback-button {
                 <a href="https://www.facebook.com/maxreachglobalofficial" target="_blank" rel="noopener noreferrer" title="Follow MaxReach Global on Facebook" aria-label="Facebook">
                     <i class="fab fa-facebook-f" aria-hidden="true"></i>
                 </a>
-                <a href="https://www.linkedin.com/company/maxreachglobalofficial" target="_blank" rel="noopener noreferrer" title="Connect with MaxReach Global on LinkedIn" aria-label="LinkedIn">
+                <a href="https://www.linkedin.com/in/maxreachglobalofficial" target="_blank" rel="noopener noreferrer" title="Connect with MaxReach Global on LinkedIn" aria-label="LinkedIn">
                     <i class="fab fa-linkedin-in" aria-hidden="true"></i>
                 </a>
                 <a href="https://t.me/maxreachglobal_official" target="_blank" rel="noopener noreferrer" title="Join MaxReach Global on Telegram" aria-label="Telegram">
@@ -747,7 +747,7 @@ video::-webkit-media-controls-remote-playback-button {
            <div class="mxr-fnl-z-socials">
                 <a href="https://www.instagram.com/maxreachglobal.official/" class="mxr-fnl-z-icon" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                 <a href="https://www.facebook.com/maxreachglobalofficial" class="mxr-fnl-z-icon" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://www.linkedin.com/company/maxreachglobalofficial" class="mxr-fnl-z-icon" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.linkedin.com/in/maxreachglobalofficial" class="mxr-fnl-z-icon" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                 <a href="https://t.me/maxreachglobal_official" class="mxr-fnl-z-icon" target="_blank" rel="noopener" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
             </div>
         </div>
@@ -1041,7 +1041,10 @@ function toggleFullscreen(btn) {
         }
     }
 
-   function openCreator(name) {
+    function openCreator(name) {
+    // 1. Current scroll position ko yaad rakho
+    const scrollPos = window.scrollY;
+
     const modal = document.getElementById('creatorModal');
     const content = modal.querySelector('.c-content');
     const f = allCreators.find(c => c.Name && c.Name.trim().toLowerCase() === name.trim().toLowerCase());
@@ -1060,29 +1063,43 @@ function toggleFullscreen(btn) {
         <div style="font-size:3rem; margin-bottom:15px;">🔍</div>
         <h3 style="color:white; margin-bottom:10px;">Creator Info Missing</h3>
         <p style="color:#ccc; font-size:0.85rem; line-height:1.5; margin-bottom:20px;">
-            Currently freelancer or our partners data not available. If you want to know more about this, please connect us directly. We will definitely provide what you want.
+            Currently freelancer or our partners data not available.
         </p>
-        
         <button onclick="shareToWA('Inquiry', 'Missing Creator Info', '${name}')" 
-                style="background:var(--blue); color:white; border:none; padding:12px; border-radius:12px; width:100%; font-weight:800; cursor:pointer; margin-bottom:10px; font-family: 'Plus Jakarta Sans', sans-serif;">
+                style="background:var(--blue); color:white; border:none; padding:12px; border-radius:12px; width:100%; font-weight:800; cursor:pointer; margin-bottom:10px;">
             Connect Directly
         </button>
-
         <a href="freelancers.html" class="view-more-btn" style="display:block; width:100%; text-align:center; text-decoration:none;">
             View More Elites
         </a>
-
         <p onclick="closeCreator()" style="margin-top:20px; opacity:0.5; font-size:0.7rem; cursor:pointer; text-decoration:underline;">Close</p>
     `;
-    
+
+    // 2. Modal dikhao
     modal.style.display = 'flex';
-    document.body.classList.add('no-scroll');
+    
+    // 3. Sabse Important: Jump ko roko
+    // Hum body par 'no-scroll' ki jagah fixed position style lagayenge
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${scrollPos}px`;
+    document.body.style.width = '100%';
 }
 
-    function closeCreator() {
-        document.getElementById('creatorModal').style.display = 'none';
-        document.body.classList.remove('no-scroll');
-    }
+function closeCreator() {
+    // 1. Position nikaalo
+    const scrollPos = document.body.style.top;
+    
+    // 2. Style reset karo
+    document.body.style.position = '';
+    document.body.style.top = '';
+    document.body.style.width = '';
+    
+    // 3. Wapas wahin scroll karo jahan user tha
+    window.scrollTo(0, parseInt(scrollPos || '0') * -1);
+    
+    document.getElementById('creatorModal').style.display = 'none';
+}
+
 
     function shareToWA(id, title) {
         const msg = `Hi MaxReach Studios, I'm interested in project ${title} (ID: ${id}).`;
