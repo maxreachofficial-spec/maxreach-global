@@ -154,10 +154,9 @@
 </head>
 <body>
 <script>
-    // Page load hone se pehle hi mode apply kar dega
-    if (localStorage.getItem('nightMode') === 'true') {
-        document.body.classList.add('night-mode');
-    }
+  if (localStorage.getItem('nightMode') === 'true') {
+    document.documentElement.classList.add('night-mode');
+  }
 </script>
 
 <nav class="navbar" role="navigation" aria-label="Main Navigation" itemscope itemtype="https://schema.org/SiteNavigationElement">
@@ -1353,7 +1352,7 @@
             <a href="allweb.html" class="pop-link-item" title="Explore Web Design Portfolio">Hospitality Web Design <span>→</span></a>
             <a href="seodata.html" class="pop-link-item" title="View SEO Case Studies">Search Engine Results (SEO) <span>→</span></a>
             <a href="graphics.html" class="pop-link-item" title="Browse Visual Design Projects">Brand Visual Design <span>→</span></a>
-            <a href="allvideos.html" class="pop-link-item" title="Watch Viral Video Projects">Viral Studio & Video <span>→</span></a>
+            <a href="allvideo.html" class="pop-link-item" title="Watch Viral Video Projects">Viral Studio & Video <span>→</span></a>
         </div>
     </div>
 </div>
@@ -1816,24 +1815,24 @@
 
 <section class="plans-section" itemscope itemtype="https://schema.org/Service">
     <meta itemprop="serviceType" content="Restaurant & Hospitality Marketing Plans">
-    <meta itemprop="provider" content="MaxReach Global">
+    <meta itemprop="provider" content="MaxReachGlobal">
 
     <header class="plans-header">
         <h2>Hospitality <span>Growth Plans</span></h2>
         <p>Fill your Tables. Scale your Taste with <strong>Data-Driven Restaurant Marketing</strong>.</p>
     </header>
 
-    <div class="plans-grid">
+<div class="plans-grid">
         <article class="plan-card" itemprop="hasOfferCatalog" itemscope itemtype="https://schema.org/OfferCatalog">
             <h3 itemprop="name">THE BISTRO</h3>
-            <p class="for-whom">Ideal for <strong>Cafes & Cloud Kitchens</strong></p>
+            <p class="for-whom">Ideal for Cafes & Cloud Kitchens</p>
             
             <ul class="features-list">
-                <li>Smart <strong>Digital QR Menu</strong> Systems</li>
-                <li><strong>Google Maps SEO</strong> & Local Domination</li>
+                <li>Smart Digital QR Menu Systems</li>
+                <li>Google Maps SEO & Local Domination</li>
                 <li>Restaurant Reputation Management</li>
-                <li>8 Creative Posts + 2 <strong>Cinematic Reels</strong></li>
-                <li>Local <strong>Meta Ads</strong> (Instagram/FB) Setup</li>
+                <li>8 Creative Posts + 2 Cinematic Reels</li>
+                <li>Local Meta Ads (Instagram/FB) Setup</li>
             </ul>
 
             <a href="https://wa.me/919810591327?text=Hospitality%20-%20I%20am%20interested%20in%20The%20BISTRO%20Plan" 
@@ -1849,14 +1848,14 @@
 
         <article class="plan-card" style="border: 2px solid var(--plans-accent);" itemprop="hasOfferCatalog" itemscope itemtype="https://schema.org/OfferCatalog">
             <h3 itemprop="name" style="color: var(--plans-accent);">GOURMET EMPIRE</h3>
-            <p class="for-whom">Elite for <strong>Fine-Dine & Luxury Bars</strong></p>
+            <p class="for-whom">Elite for Fine-Dine & Luxury Bars</p>
             
             <ul class="features-list">
-                <li>Elite Web-Portal + <strong>Automated Booking</strong></li>
-                <li><strong>WhatsApp Loyalty</strong> & CRM Automation</li>
-                <li>14+ Social Posts + 4 <strong>Professional Reels</strong></li>
+                <li>Elite Web-Portal + Automated Booking</li>
+                <li>WhatsApp Loyalty & CRM Automation</li>
+                <li>14+ Social Posts + 4 Professional Reels</li>
                 <li>VIP Marketing Strategy & Consultant</li>
-                <li>Aggressive <strong>Retargeting Ad Campaigns</strong></li>
+                <li>Aggressive Retargeting Ad Campaigns</li>
             </ul>
 
             <a href="https://wa.me/919810591327?text=Hospitality%20-%20I%20am%20interested%20in%20The%20GOURMET%20EMPIRE%20Plan" 
@@ -1872,15 +1871,15 @@
     </div>
 
     <div class="mxr-custom-scale-container">
-        <a href="plans.html#mr-hero" class="mxr-group-link" title="Build a custom marketing strategy">
-            <span class="mxr-subtext-label">Not what you're looking for?</span>
-            <div class="mxr-solid-btn">
-                <span class="mxr-cta-text">
-                    Build Your Custom Growth Scale →
-                </span>
-            </div>
-        </a>
-    </div>
+    <a href="plans.html#mr-hero" class="mxr-group-link" title="Build a custom marketing strategy">
+        <span class="mxr-subtext-label">Looking for something else?</span>
+        <div class="mxr-solid-btn">
+            <span class="mxr-cta-text">
+                Build Custom Plan
+            </span>
+        </div>
+    </a>
+</div>
 </section>
 
 

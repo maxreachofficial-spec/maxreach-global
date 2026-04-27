@@ -1125,15 +1125,18 @@ function closeCreator() {
         }
     }
 
-   function manageMemory(newVid) {
+ function manageMemory(newVid) {
     activeQueue.push(newVid);
-    if (activeQueue.length > 3) { // 5 se kam karke 3 kar diya for speed
+    
+    // 3 se kam karke 2 kar diya taaki mobile par memory pressure minimum rahe
+    if (activeQueue.length > 2) { 
         const oldVid = activeQueue.shift();
         if(oldVid) {
             oldVid.pause(); 
-            oldVid.removeAttribute('src'); // Better memory cleanup
-            oldVid.load();
+            oldVid.removeAttribute('src'); // RAM ko turant free karne ke liye
+            oldVid.load(); // Browser buffer ko reset karne ke liye
             oldVid.style.display = 'none';
+            
             const parentCard = oldVid.closest('.v-card');
             if(parentCard) parentCard.classList.remove('is-playing');
         }
@@ -1273,16 +1276,15 @@ window.onblur = function() {
 
 
 <style>
-
-        /* ☝️ 2. Scroll To Top Button (Fixed Right Bottom) */
+    /* ☝️ Updated Scroll To Top Button */
         #mxSmartScrollToTop {
             position: fixed;
             bottom: 30px;
             right: 30px;
-            z-index: 9999; 
+            z-index: 9998; 
             background: #00B0FF; 
             color: #fff;
-            border: none;
+            border: 2px solid #00B0FF; /* Default border same as background */
             width: 45px;
             height: 45px;
             border-radius: 50%;
@@ -1304,17 +1306,19 @@ window.onblur = function() {
             transform: translateY(0);
         }
 
+        /* ✨ Hover State Fix: Border Blue rahega aur background white */
         #mxSmartScrollToTop:hover {
             background: #fff;
-            color: #030712;
+            color: #00B0FF; /* Icon color ko blue kar diya taaki matching lage */
+            border: 2px solid #00B0FF; /* Border visible rahega white bg par */
             transform: scale(1.1);
-            box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3);
+            box-shadow: 0 10px 25px rgba(0, 176, 255, 0.2);
         }
 
         @media (max-width: 768px) {
             #mxSmartScrollToTop { bottom: 20px; right: 20px; width: 40px; height: 40px; }
         }
-    </style>
+</style>
  <script>
 
         // ☝️ Smart Scroll To Top Logic

@@ -314,6 +314,20 @@
 
 
     </style>
+
+<script>
+        (function() {
+            const isNightGlobal = localStorage.getItem('nightMode') === 'true';
+            // REVERSE LOGIC: Agar Global Night hai, toh Plans White rahega (No class)
+            // Agar Global Day hai, toh Plans Dark rahega (Add class)
+            if (isNightGlobal === false) {
+                document.body.classList.add('night-mode');
+            } else {
+                document.body.classList.remove('night-mode');
+            }
+        })();
+    </script>
+
 </head>
 <body>
 <script>

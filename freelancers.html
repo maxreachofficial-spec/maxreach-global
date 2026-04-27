@@ -382,56 +382,56 @@
         --squad-btn-text: #000;
     }
 
-    /* --- FLOATING SQUAD BAR (Original Restored) --- */
-    #squad-bar { 
-        position: fixed; 
-        bottom: -120px; /* Thoda aur niche for safer hide */
-        left: 50%; 
-        transform: translateX(-50%); 
-        width: calc(100% - 40px); 
-        max-width: 500px; 
-        background: var(--squad-bg); 
-        padding: 15px 25px; 
-        border-radius: 20px; 
-        display: flex; 
-        justify-content: space-between; 
-        align-items: center; 
-        box-shadow: 0 15px 40px rgba(0, 176, 255, 0.4); 
-        z-index: 1000; 
-        transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Smoother pop-up */
-        cursor: pointer; 
-    }
+    /* --- FLOATING SQUAD BAR (Updated) --- */
+#squad-bar { 
+    position: fixed; 
+    bottom: -120px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    width: calc(100% - 40px); 
+    max-width: 500px; 
+    background: var(--squad-bg); 
+    padding: 15px 25px; 
+    border-radius: 20px; 
+    display: flex; 
+    
+    /* Order HTML se control ho raha hai, toh row default rahegi */
+    flex-direction: row; 
+    
+    justify-content: space-between; 
+    align-items: center; 
+    box-shadow: 0 15px 40px rgba(0, 176, 255, 0.4); 
+    z-index: 1000; 
+    transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+    cursor: pointer; 
+}
 
-    #squad-bar.active { bottom: 30px; }
+#squad-bar.active { bottom: 30px; }
 
-    .squad-info h4 { 
-        color: var(--squad-text); 
-        font-weight: 900; 
-        font-size: 1rem;
-    }
+/* Text ko right align karne ke liye */
+.squad-info {
+    text-align: right;
+}
 
-    /* Continue Button - Theme Sensitive */
-    .btn-squad-go { 
-        background: var(--squad-btn-bg); 
-        color: var(--squad-btn-text); 
-        border: none; 
-        padding: 12px 22px; 
-        border-radius: 12px; 
-        font-weight: 900; 
-        font-size: 0.8rem;
-        text-transform: uppercase;
-        transition: 0.3s ease;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    }
+.squad-info h4 { 
+    color: var(--squad-text); 
+    font-weight: 900; 
+    font-size: 1rem;
+    margin: 0;
+}
 
-    /* Desktop Hover Effect */
-    @media (min-width: 1024px) {
-        .btn-squad-go:hover {
-            transform: scale(1.05);
-            opacity: 0.9;
-        }
-    }
-     
+.btn-squad-go { 
+    background: var(--squad-btn-bg); 
+    color: var(--squad-btn-text); 
+    border: none; 
+    padding: 12px 22px; 
+    border-radius: 12px; 
+    font-weight: 900; 
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    transition: 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+} 
 
     /* --- THEME VARIABLES (SEO & MODE SYNC) --- */
     :root { 
@@ -826,16 +826,17 @@
     </div>
 </section>
 
-  <div id="squad-bar" onclick="openInquiryModal()" role="button" aria-live="polite" aria-label="Selected experts summary">
-    <div class="squad-info">
+<div id="squad-bar" onclick="openInquiryModal()" role="button" aria-live="polite">
+    <button class="btn-squad-go" aria-label="Proceed to contact experts">
+        Continue →
+    </button>
+
+    <div class="squad-info" style="text-align: right;">
         <h4 id="squad-count">0 Experts Selected</h4>
         <p style="color:rgba(0,0,0,0.5); font-size:0.7rem; font-weight:800; text-transform:uppercase; letter-spacing:0.5px;">
             Finalize Your Execution Squad
         </p>
     </div>
-    <button class="btn-squad-go" aria-label="Proceed to contact experts">
-        Continue →
-    </button>
 </div>
 
 <div id="workModal" class="modal" onclick="if(event.target == this) closePopup()" role="dialog" aria-modal="true">
@@ -1180,7 +1181,7 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    z-index: 99999; /* Sabse upar */
+    z-index: 9998; /* Sabse upar */
     opacity: 0;
     visibility: hidden;
     transform: translateY(30px);
@@ -1744,28 +1745,26 @@ function executeSearch() {
             </div>`;
     }
 
-    // 5. Action Buttons (SEO & Conversion Optimized)
-    const isSelected = selectedSquad.some(s => s.ID === p.ID);
-    action.innerHTML = `
-        <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
-            <button class="btn-add" 
-                    style="padding:15px; cursor:pointer;" 
-                    onclick="toggleSquad(null, ${index}); closePopup();"
-                    aria-label="${isSelected ? 'Remove from squad' : 'Add to squad'}">
-                ${isSelected ? 'Remove Squad' : 'Add to Squad'}
-            </button>
+// 5. Action Buttons (JS Dynamic Link Logic)
+const isSelected = selectedSquad.some(s => s.ID === p.ID);
 
-            ${p.Link_2 && p.Link_2 !== "#" ? 
-                `<a href="${p.Link_2.split(',')[0]}" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    class="btn-work" 
-                    title="Visit live work of ${p.Name}"
-                    style="text-align:center; padding:15px; text-decoration:none; display:flex; align-items:center; justify-content:center;">
-                    Live Link
-                </a>` 
-            : ''}
-        </div>`;
+// Hum ID se '#' hata denge taaki URL saaf rahe
+const cleanID = p.ID.replace('#', ''); 
+
+action.innerHTML = `
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+        <button class="btn-add" 
+                style="padding:15px; cursor:pointer;" 
+                onclick="toggleSquad(null, ${index}); closePopup();">
+            ${isSelected ? 'Remove Squad' : 'Add to Squad'}
+        </button>
+
+        <button class="btn-work" 
+                onclick="window.location.href='portfolio-freelancers.html?id=${cleanID}'"
+                style="text-align:center; padding:15px; cursor:pointer; border:none; display:flex; align-items:center; justify-content:center; background:var(--mx-blue); color:white; border-radius:8px;">
+                View Portfolio
+        </button>
+    </div>`;
 
     // 6. Show Modal
     document.getElementById('workModal').style.display = 'flex';
@@ -1890,5 +1889,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
     </script>
+    
 </body>
 </html>

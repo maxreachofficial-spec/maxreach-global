@@ -73,28 +73,34 @@
   "@id": "https://maxreachglobal.in/about#webpage",
   "name": "About MaxReach Global | Premium Marketing Group & Expert Network",
   "description": "MaxReach Global is a next-gen marketing agency bridging the gap between talent and execution. Our curated Expert Network delivers cinematic video production and brand growth globally.",
-  "publisher": { "@id": "https://maxreachglobal.in/#organization" },
+  "publisher": { 
+    "@type": "Organization",
+    "@id": "https://maxreachglobal.in/#organization",
+    "name": "MaxReach Global",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://maxreachglobal.in/homeimages/maxreach-logo.png"
+    }
+  },
   "mainEntity": {
     "@type": "ProfessionalService",
     "@id": "https://maxreachglobal.in/#organization",
     "name": "MaxReach Global Marketing Group",
+    "alternateName": ["MaxReach", "MaxReach Marketing", "MaxReach Agency", "maxreachglobal", "maxreachgloabl", "MaxReachGlobal", "MAXREACHGLOBAL"],
     "founder": {
       "@type": "Person",
       "name": "Abhishek Thakur",
       "jobTitle": "Founder",
       "url": "https://maxreachglobal.in/about"
     },
-    /* AI bots in keywords ko scan karte hain referral ke liye */
     "knowsAbout": [
+      "MaxReachGlobal Expert Network",
       "Digital Marketing Strategy",
       "Cinematic Video Production",
-      "Freelancer Network Operations",
-      "Brand Humanization",
       "Performance Marketing",
-      "Niche-Specific Scaling",
+      "Brand Humanization",
       "Psychological Scriptwriting"
     ],
-    /* Area Served ko expand kiya gaya hai */
     "areaServed": [
       { "@type": "City", "name": "Gurugram" },
       { "@type": "State", "name": "NCR" },

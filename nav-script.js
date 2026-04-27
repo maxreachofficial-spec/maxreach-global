@@ -1,40 +1,42 @@
 /* ==========================================
-   🚀 MAXREACH MASTER THEME ENGINE
-   ========================================== */
-
-
-   /* ==========================================
    🚀 MAXREACH MASTER THEME ENGINE (FIXED)
    ========================================== */
 
-// 1. Page load hote hi Storage se mode check karke apply karo
-document.addEventListener('DOMContentLoaded', () => {
+// 1. Ek common function banate hain jo theme apply karega
+function applyTheme() {
     const isNight = localStorage.getItem('nightMode') === 'true';
     const themeIcon = document.getElementById('themeIcon');
     
     if (isNight) {
         document.body.classList.add('night-mode');
-        if (themeIcon) themeIcon.innerText = 'light_mode'; // Icon change
+        if (themeIcon) themeIcon.innerText = 'light_mode'; 
     } else {
         document.body.classList.remove('night-mode');
-        if (themeIcon) themeIcon.innerText = 'dark_mode'; // Icon change
+        if (themeIcon) themeIcon.innerText = 'dark_mode';
     }
+}
+
+// 2. Jab page load ho tab apply karo
+document.addEventListener('DOMContentLoaded', applyTheme);
+
+// 3. 🚀 BACK BUTTON FIX: Jab page back/forward se load ho tab bhi apply karo
+window.addEventListener('pageshow', (event) => {
+    applyTheme();
 });
 
-// 2. Toggle function (Jo button click par kaam karega)
+// 4. Toggle function (Jo click par kaam karega)
 function toggleTheme() {
     document.body.classList.toggle('night-mode');
     const isNightNow = document.body.classList.contains('night-mode');
     
-    // Memory mein save karo
     localStorage.setItem('nightMode', isNightNow);
     
-    // Icon update karo
     const themeIcon = document.getElementById('themeIcon');
     if (themeIcon) {
         themeIcon.innerText = isNightNow ? 'light_mode' : 'dark_mode';
     }
 }
+
 
 /* --- Baaki ka Mobile Menu Logic niche continue rahega --- */
    

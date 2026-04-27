@@ -976,15 +976,23 @@
             box-shadow: 0 10px 25px rgba(0, 176, 255, 0.3);
         }
 
-        /* ☝️ 2. Scroll To Top Button - Unique ID */
-        #mxUniqueScrollToTop {
+        
+
+        @media (max-width: 768px) {
+            .mx-global-back-btn { top: 15px; left: 15px; padding: 10px 15px; }
+        }
+    </style>
+
+<style>
+    /* ☝️ Updated Scroll To Top Button */
+        #mxSmartScrollToTop {
             position: fixed;
             bottom: 30px;
             right: 30px;
-            z-index: 9999; 
+            z-index: 9998; 
             background: #00B0FF; 
             color: #fff;
-            border: none;
+            border: 2px solid #00B0FF; /* Default border same as background */
             width: 45px;
             height: 45px;
             border-radius: 50%;
@@ -1000,54 +1008,84 @@
             box-shadow: 0 4px 20px rgba(0, 176, 255, 0.4);
         }
 
-        #mxUniqueScrollToTop.mx-show-btn {
+        #mxSmartScrollToTop.mx-show-scroll-btn {
             opacity: 1;
             visibility: visible;
             transform: translateY(0);
         }
 
-        #mxUniqueScrollToTop:hover {
+        /* ✨ Hover State Fix: Border Blue rahega aur background white */
+        #mxSmartScrollToTop:hover {
             background: #fff;
-            color: #030712;
+            color: #00B0FF; /* Icon color ko blue kar diya taaki matching lage */
+            border: 2px solid #00B0FF; /* Border visible rahega white bg par */
             transform: scale(1.1);
-            box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3);
+            box-shadow: 0 10px 25px rgba(0, 176, 255, 0.2);
         }
 
         @media (max-width: 768px) {
-            .mx-global-back-btn { top: 15px; left: 15px; padding: 10px 15px; }
-            #mxUniqueScrollToTop { bottom: 20px; right: 20px; width: 40px; height: 40px; }
+            #mxSmartScrollToTop { bottom: 20px; right: 20px; width: 40px; height: 40px; }
         }
-    </style>
-    <script>
-        // ☝️ Unique Scroll To Top Logic
-        document.addEventListener("DOMContentLoaded", () => {
-            const upBtn = document.getElementById("mxUniqueScrollToTop");
+</style>
+<script>
+    /* 🚀 High-Performance Scroll Logic 
+       Optimization: Passive Listeners & Execution Throttling
+    */
+    document.addEventListener("DOMContentLoaded", () => {
+        const upBtn = document.getElementById("mxSmartScrollToTop");
+        let isScrolling;
 
-            if(upBtn) {
-                window.addEventListener("scroll", function () {
+        if (upBtn) {
+            // "passive: true" Google ko batata hai ki ye scroll ko block nahi karega
+            // Isse "Lighthouse" score badhta hai
+            window.addEventListener("scroll", () => {
+                // Throttling: Har millisecond check karne ki jagah thoda gap dega
+                // Isse CPU par load kam padta hai (Better for Mobile SEO)
+                window.clearTimeout(isScrolling);
+
+                isScrolling = setTimeout(() => {
                     if (window.scrollY > 300) {
-                        upBtn.classList.add("mx-show-btn");
+                        if (!upBtn.classList.contains("mx-show-scroll-btn")) {
+                            upBtn.classList.add("mx-show-scroll-btn");
+                        }
                     } else {
-                        upBtn.classList.remove("mx-show-btn");
+                        if (upBtn.classList.contains("mx-show-scroll-btn")) {
+                            upBtn.classList.remove("mx-show-scroll-btn");
+                        }
                     }
-                });
-            }
-        });
+                }, 50); // 50ms ka micro-gap performance ke liye
+            }, { passive: true });
+        }
+    });
 
-        function mxCustomScrollToTop() {
+    /**
+     * Smooth Scroll Execution
+     * SEO Benefit: Improving User Experience Metrics
+     */
+    function mxSmartScrollToTop() {
+        // Modern approach with fallback
+        try {
             window.scrollTo({
                 top: 0,
                 behavior: "smooth"
             });
+        } catch (e) {
+            // Fallback for older browsers
+            window.scrollTo(0, 0);
         }
-    </script>
-    <button 
-    id="mxUniqueScrollToTop" 
-    onclick="mxCustomScrollToTop()" 
-    type="button" 
-    aria-label="Scroll back to top of the page" 
-    title="Back to Top">
-    <i class="fas fa-arrow-up" aria-hidden="true"></i>
+    }
+</script>
+
+<button 
+    id="mxSmartScrollToTop" 
+    onclick="mxSmartScrollToTop()" 
+    aria-label="Scroll back to top" 
+    title="Go to Top"
+    type="button">
+    
+    <i class="fas fa-chevron-up" aria-hidden="true"></i>
+    
 </button>
+
 </body>
 </html>

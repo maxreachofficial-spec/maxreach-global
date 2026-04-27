@@ -238,14 +238,19 @@
             .hero-container { height: 75vh; }
         }
     </style>
+
+  <script>
+  // Sirf check karne ke liye, koi function clash nahi hoga
+  (function() {
+    if (localStorage.getItem('nightMode') === 'true') {
+      document.documentElement.classList.add('night-mode');
+    }
+  })();
+</script>
+
 </head>
 <body>
-<script>
-    // Page load hone se pehle hi mode apply kar dega
-    if (localStorage.getItem('nightMode') === 'true') {
-        document.body.classList.add('night-mode');
-    }
-</script>
+
 
 <nav class="navbar" role="navigation" aria-label="Main Navigation" itemscope itemtype="https://schema.org/SiteNavigationElement">
     
@@ -1850,7 +1855,7 @@
             <a href="allweb.html" class="ws-modal-link" title="Premium UI/UX and Web Design Portfolio">Web Design</a>
             <a href="seodata.html" class="ws-modal-link" title="Real Estate SEO & Google Ranking Case Studies">SEO Expertise</a>
             <a href="graphics.html" class="ws-modal-link" title="Brand Visual Design & Social Media Graphics">Visual Design</a>
-            <a href="allvideos.html" class="ws-modal-link" title="Cinematic Video Production & Viral Studio Projects">Viral Studio</a>
+            <a href="allvideo.html" class="ws-modal-link" title="Cinematic Video Production & Viral Studio Projects">Viral Studio</a>
         </div>
     </div>
 </div>

@@ -423,6 +423,9 @@
             }
         }
     </style>
+
+
+
 </head>
 <body>
 
@@ -1703,82 +1706,48 @@
 </style>
 
 <style>
-    /* ☝️ 2. Optimized Scroll To Top Button 
-       Focus: Core Web Vitals (LCP/CLS) & Accessibility 
-    */
-    #mxSmartScrollToTop {
-        /* Layout & Position */
-        position: fixed;
-        bottom: 30px;
-        right: 30px;
-        z-index: 9999; 
-        
-        /* Appearance */
-        background: #00B0FF; 
-        color: #ffffff;
-        border: none;
-        width: 45px;
-        height: 45px;
-        border-radius: 50%;
-        font-size: 1.1rem;
-        cursor: pointer;
-        
-        /* Center Content */
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        
-        /* Performance Optimization: Hardware Acceleration */
-        opacity: 0; 
-        visibility: hidden;
-        transform: translateY(20px) translateZ(0); /* translateZ for GPU boost */
-        will-change: transform, opacity; /* Tells browser to prepare for animation */
-        
-        /* Smooth Motion: Standard Bezier */
-        transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        
-        /* Visual Depth */
-        box-shadow: 0 4px 20px rgba(0, 176, 255, 0.4);
-        
-        /* Accessibility: Prevents text selection on rapid clicks */
-        user-select: none;
-        -webkit-tap-highlight-color: transparent;
-    }
-
-    /* Active State */
-    #mxSmartScrollToTop.mx-show-scroll-btn {
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0) translateZ(0);
-    }
-
-    /* Hover State: SEO Friendly (No Layout Shift) */
-    @media (hover: hover) {
-        #mxSmartScrollToTop:hover {
-            background: #ffffff;
-            color: #030712;
-            transform: scale(1.1) translateZ(0);
-            box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3);
-        }
-    }
-
-    /* Mobile Optimization: Better Touch Targets (UX/SEO) */
-    @media (max-width: 768px) {
-        #mxSmartScrollToTop { 
-            bottom: 20px; 
-            right: 20px; 
-            width: 44px; /* Minimum 44px for Google Mobile-Friendly test */
-            height: 44px; 
-            font-size: 1rem;
-        }
-    }
-
-    /* Reduced Motion: Support for users who prefer no animations (Accessibility) */
-    @media (prefers-reduced-motion: reduce) {
+    /* ☝️ Updated Scroll To Top Button */
         #mxSmartScrollToTop {
-            transition: none;
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 9998; 
+            background: #00B0FF; 
+            color: #fff;
+            border: 2px solid #00B0FF; /* Default border same as background */
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            font-size: 1.1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0; 
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 4px 20px rgba(0, 176, 255, 0.4);
         }
-    }
+
+        #mxSmartScrollToTop.mx-show-scroll-btn {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        /* ✨ Hover State Fix: Border Blue rahega aur background white */
+        #mxSmartScrollToTop:hover {
+            background: #fff;
+            color: #00B0FF; /* Icon color ko blue kar diya taaki matching lage */
+            border: 2px solid #00B0FF; /* Border visible rahega white bg par */
+            transform: scale(1.1);
+            box-shadow: 0 10px 25px rgba(0, 176, 255, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            #mxSmartScrollToTop { bottom: 20px; right: 20px; width: 40px; height: 40px; }
+        }
 </style>
 <script>
     /* 🚀 High-Performance Scroll Logic 

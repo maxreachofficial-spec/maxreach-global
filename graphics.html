@@ -2079,19 +2079,27 @@ body.v-modal-open {
     .v-modal-header { display: flex; justify-content: space-between; align-items: center; }
     .v-modal-header h2 { font-size: 1.5rem; font-weight: 800; color: #0f172a; }
 
-    .v-close-modal {
-        background: #f1f5f9 !important;
-        border: 1.5px solid rgba(0,0,0,0.1) !important;
-        width: 42px !important;
-        height: 42px !important;
-        border-radius: 50% !important;
-        cursor: pointer !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        color: #0f172a !important;
-        font-weight: 900 !important;
-    }
+/* ❌ Modal Close Button: Background aur Circle hatane ke liye fix */
+.v-close-modal {
+    background: transparent !important; /* White background hata diya */
+    border: none !important;            /* Border bhi hata di */
+    width: 40px !important;
+    height: 40px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    color: #0f172a !important;          /* Dark close icon */
+    font-size: 2rem !important;         /* Icon size thoda bada rakha hai */
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    box-shadow: none !important;        /* Kisi bhi tarah ki shadow remove kar di */
+}
+
+/* Hover par thoda reaction taaki user ko pata chale click ho raha hai */
+.v-close-modal:hover {
+    transform: scale(1.2) rotate(90deg); /* Modern rotate effect */
+    color: #00d2ff !important;           /* Hover par MaxReach blue color */
+}
 
     .v-freelancer-capsule {
         display: flex;
@@ -3091,16 +3099,15 @@ mgViewport.addEventListener('touchend', (e) => {
 </style>
 
 <style>
-
-        /* ☝️ 2. Scroll To Top Button (Fixed Right Bottom) */
+    /* ☝️ Updated Scroll To Top Button */
         #mxSmartScrollToTop {
             position: fixed;
             bottom: 30px;
             right: 30px;
-            z-index: 9999; 
+            z-index: 9998; 
             background: #00B0FF; 
             color: #fff;
-            border: none;
+            border: 2px solid #00B0FF; /* Default border same as background */
             width: 45px;
             height: 45px;
             border-radius: 50%;
@@ -3122,17 +3129,19 @@ mgViewport.addEventListener('touchend', (e) => {
             transform: translateY(0);
         }
 
+        /* ✨ Hover State Fix: Border Blue rahega aur background white */
         #mxSmartScrollToTop:hover {
             background: #fff;
-            color: #030712;
+            color: #00B0FF; /* Icon color ko blue kar diya taaki matching lage */
+            border: 2px solid #00B0FF; /* Border visible rahega white bg par */
             transform: scale(1.1);
-            box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3);
+            box-shadow: 0 10px 25px rgba(0, 176, 255, 0.2);
         }
 
         @media (max-width: 768px) {
             #mxSmartScrollToTop { bottom: 20px; right: 20px; width: 40px; height: 40px; }
         }
-    </style>
+</style>
 
     <script>
 
