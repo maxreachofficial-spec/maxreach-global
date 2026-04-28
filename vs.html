@@ -2,20 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YKVTEENFC0"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0"><script defer src="https://www.googletagmanager.com/gtag/js?id=G-YKVTEENFC0"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-YKVTEENFC0');
+  gtag('config', 'G-YKVTEENFC0', { 'page_path': location.pathname });
 </script>
 
 <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
         c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        t=l.createElement(r);
+        t.defer=1; // Yahan async ki jagah defer use karein
+        t.src="https://www.clarity.ms/tag/"+i;
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "w80a8768fj");
 </script>
@@ -50,10 +50,9 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;900&display=swap" rel="stylesheet">
-   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
- <link rel="stylesheet" href="nav-style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" 
+      media="print" onload="this.media='all'">   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" 
+      media="print" onload="this.media='all'"> <link rel="stylesheet" href="nav-style.css">
 
 
  
@@ -882,8 +881,7 @@ body.night-mode .sidebar-glass-home .material-symbols-outlined {
         </div>
     </div>
 </nav>
-<div id="navOverlay" onclick="toggleMenu()" aria-hidden="true"></div>
-
+<div id="navOverlay" onclick="toggleMenu()" aria-hidden="true" aria-label="Close Menu"></div>
 
    <section id="mx-vs-hero" aria-label="Viral Studio Video Production Hero">
   <video autoplay muted loop playsinline class="mx-hero-vid" 
@@ -1245,13 +1243,13 @@ function initCardsFanAnimation() {
                 <div class="mx-f-logo" aria-label="MaxReach Global Logo">MAX<span>REACH</span></div>
                 <p itemprop="description">"Humanizing brands, scaling businesses."</p>
                 
-        <div class="mx-social-links">
+      <div class="mx-social-links">
     <a href="https://www.linkedin.com/in/maxreachglobalofficial" 
        target="_blank" 
        rel="noopener" 
        itemprop="sameAs" 
-       title="MaxReach Global on LinkedIn" 
-       aria-label="LinkedIn">
+       title="Connect with MaxReach Global on LinkedIn" 
+       aria-label="Connect with MaxReach Global on LinkedIn">
        <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
     </a>
 
@@ -1259,8 +1257,8 @@ function initCardsFanAnimation() {
        target="_blank" 
        rel="noopener" 
        itemprop="sameAs" 
-       title="MaxReach Global on Instagram" 
-       aria-label="Instagram">
+       title="Follow MaxReach Global on Instagram" 
+       aria-label="Follow MaxReach Global on Instagram for Marketing Tips">
        <i class="fa-brands fa-instagram" aria-hidden="true"></i>
     </a>
 
@@ -1268,8 +1266,8 @@ function initCardsFanAnimation() {
        target="_blank" 
        rel="noopener" 
        itemprop="sameAs" 
-       title="MaxReach Global on Facebook" 
-       aria-label="Facebook">
+       title="MaxReach Global Official Facebook Page" 
+       aria-label="Visit MaxReach Global on Facebook">
        <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
     </a>
 
@@ -1277,8 +1275,8 @@ function initCardsFanAnimation() {
        target="_blank" 
        rel="noopener" 
        itemprop="sameAs" 
-       title="Join us on Telegram" 
-       aria-label="Telegram">
+       title="Join MaxReach Global Telegram Community" 
+       aria-label="Join our Telegram channel for Business Updates">
        <i class="fa-brands fa-telegram" aria-hidden="true"></i>
     </a>
 </div>
@@ -1287,8 +1285,7 @@ function initCardsFanAnimation() {
     </div> 
 
     <div class="mx-copyright-bar">
-        <p>© 2026 <span itemprop="name">MaxReach Global</span>. All Rights Reserved.</p>
-    </div>
+        <p>© 2026 <span itemprop="name">MaxReachGlobal</span>. All Rights Reserved.</p>    </div>
 </footer>
 
 <style>
@@ -1393,15 +1390,26 @@ function initCardsFanAnimation() {
     text-shadow: 0 0 15px rgba(0, 176, 255, 0.6); 
 }
 
-/* Copyright Bar */
+/* Copyright Bar - SEO & Accessibility Optimized */
 .mx-copyright-bar {
     text-align: center;
     padding: 25px;
     background: #050505;
     border-top: 1px solid #111;
     font-size: 0.85rem;
-    color: #555;
+    
+    /* 1. Color ko #555 se badal kar #94a3b8 kiya for high contrast */
+    color: #94a3b8; 
+    
     letter-spacing: 0.5px;
+}
+
+/* 2. Agar koi link ya brand name hai copyright mein toh wo aur bright dikhe */
+.mx-copyright-bar span, 
+.mx-copyright-bar a {
+    color: #f8fafc; 
+    font-weight: 600;
+    text-decoration: none;
 }
 
 /* --- 📱 MOBILE OPTIMIZATION (SEO Friendly) --- */

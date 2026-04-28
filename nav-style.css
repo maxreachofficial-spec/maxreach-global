@@ -109,8 +109,6 @@ body.scroll-lock { overflow: hidden !important; height: 100vh !important; }
 .desktop-submenu { position: absolute; top: var(--nav-height); left: 0; background: #030712; border: 1px solid rgba(0, 176, 255, 0.2); list-style: none; width: 210px; padding: 10px 0; border-radius: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.6); opacity: 0; visibility: hidden; transform: translateY(5px); transition: all 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94); z-index: 10000; }
 .nav-links li:hover .desktop-submenu { opacity: 1; visibility: visible; transform: translateY(0); }
 .nav-links li:hover .desktop-drop-icon { transform: rotate(180deg); }
-.desktop-submenu li a { display: block; padding: 12px 20px; color: #94a3b8; text-decoration: none; font-size: 0.85rem; font-weight: 600; transition: 0.2s ease-in-out; }
-.desktop-submenu li a:hover { color: var(--mx-blue) !important; background: rgba(0, 210, 255, 0.08); padding-left: 25px; }
 
 .right-nav-pack { display: flex; align-items: center; gap: 20px; }
 
@@ -126,25 +124,93 @@ body.scroll-lock { overflow: hidden !important; height: 100vh !important; }
 .menu-btn { display: none; flex-direction: column; gap: 6px; cursor: pointer; z-index: 10001; }
 .menu-btn span { width: 26px; height: 3px; background: var(--mx-blue); border-radius: 4px; }
 
+
+/* 1. Desktop Submenu - Contrast & Hover Fix */
+.desktop-submenu li a { 
+    display: block; 
+    padding: 12px 20px; 
+    /* Google Fix: #94a3b8 se badal kar #cbd5e1 kiya (Thoda bright slate) */
+    color: #cbd5e1; 
+    text-decoration: none; 
+    font-size: 0.85rem; 
+    font-weight: 600; 
+    transition: 0.2s ease-in-out; 
+}
+
+.desktop-submenu li a:hover { 
+    color: var(--mx-blue) !important; 
+    background: rgba(0, 210, 255, 0.08); 
+    padding-left: 25px; 
+}
+
+/* 2. Mobile Submenu - Accessibility & Contrast Fix */
+.mobile-submenu {
+    display: none;
+    list-style: none;
+    padding: 0;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 8px;
+    margin-bottom: 10px;
+    width: 100%;
+    /* Google Fix: Band menu keyboard focus mein na aaye */
+    visibility: hidden; 
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.mobile-submenu.active { 
+    display: flex !important; 
+    flex-direction: column; 
+    /* Khulne par visible karo */
+    visibility: visible;
+    opacity: 1;
+}
+
+.mobile-submenu li a { 
+    display: block; 
+    padding: 12px 15px 12px 45px; 
+    /* Google Fix: #cbd5e1 for perfect contrast on dark bg */
+    color: #cbd5e1 !important; 
+    text-decoration: none !important; 
+    font-size: 0.85rem; 
+    font-weight: 600; 
+}
+
+/* Mobile hover/active state for better UX */
+.mobile-submenu li a:active {
+    color: var(--mx-blue) !important;
+    background: rgba(0, 176, 255, 0.05);
+}
+
 /* 📱 🚀 Mobile Navbar Drawer Fixes */
 #mobileNav {
     position: fixed; 
     top: var(--nav-height); 
     right: -100%; 
     width: 75%; 
-    
-    /* 1. VH Fix: dvh (Dynamic Viewport Height) browser bar ke hisab se height adjust karta hai */
     height: calc(100dvh - var(--nav-height));
-    
     background: #030712 !important; 
     z-index: 99999;
     transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1); 
     border-left: 1.5px solid var(--mx-blue); 
-    
-    /* 2. Container Logic: Isko flex hi rehne do */
     display: flex; 
     flex-direction: column; 
-    overflow: hidden; /* Main container scroll nahi hoga */
+    
+    /* --- GOOGLE LIGHTHOUSE FIXES --- */
+    
+    /* 1. Visibility: Jab menu band ho toh Google ko dikhe hi nahi (Focus error fix) */
+    visibility: hidden; 
+    
+    /* 2. Scrolling: Agar menu bada ho jaye toh user scroll kar sake */
+    overflow-y: auto; 
+    -webkit-overflow-scrolling: touch; /* iOS smooth scroll */
+}
+
+/* Jab menu khule */
+#mobileNav.open { 
+    right: 0; 
+    /* 3. Khulne par visibility wapas on */
+    visibility: visible; 
 }
 
 .mobile-links { 
@@ -187,14 +253,11 @@ body.scroll-lock { overflow: hidden !important; height: 100vh !important; }
     padding-bottom: env(safe-area-inset-bottom); 
 }
 
-#mobileNav.open { right: 0; }
 
 
 .drop-icon-mobile { margin-left: auto; font-size: 0.75rem; color: var(--mx-blue) !important; transition: 0.3s; }
 
 .mobile-submenu { display: none; list-style: none; padding: 0; background: rgba(0, 0, 0, 0.4); border-radius: 8px; margin-bottom: 10px; width: 100%; }
-.mobile-submenu.active { display: flex !important; flex-direction: column; }
-.mobile-submenu li a { display: block; padding: 12px 15px 12px 45px; color: #94a3b8 !important; text-decoration: none !important; font-size: 0.85rem; font-weight: 600; }
 
 /* ✅ FIXED MOBILE DRAWER FOOTER (Bottom Lock) */
 .mobile-drawer-footer {
