@@ -56,9 +56,12 @@
 <link rel="shortcut icon" href="homeimages/maxreach-favicon-32.png" type="image/x-icon">
 
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" 
-      media="print" onload="this.media='all'">    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" 
+      media="print" onload="this.media='all'">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" 
+      media="print" onload="this.media='all'">
 <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
    
 
@@ -230,27 +233,27 @@
             line-height: 1.6;
         }
 
-        .cta-btn {
-            background: #fff;
-            color: #000;
-            padding: 16px 35px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 900;
-            font-size: 0.9rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            transition: 0.4s;
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
-        }
+     .cta-btn {
+    background: #fff;
+    color: #000;
+    padding: 16px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 900;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.4s;
+    box-shadow: none !important; /* 🔥 Default state se glow poori tarah hata diya */
+}
 
-        .cta-btn:hover {
-            background: var(--max-blue);
-            color: #fff;
-            transform: scale(1.05);
-            box-shadow: 0 0 40px var(--max-blue);
-        }
+     .cta-btn:hover {
+    background: var(--max-blue);
+    color: #fff;
+    transform: scale(1.05);
+    box-shadow: none !important; /* 🔥 Hover ka heavy glow bhi completely khatam */
+}
 
 /* --- MOBILE OPTIMIZED VIBRANT GLOW --- */
 @media (max-width: 768px) {
@@ -313,20 +316,6 @@
 
 
     </style>
-
-<script>
-        (function() {
-            const isNightGlobal = localStorage.getItem('nightMode') === 'true';
-            // REVERSE LOGIC: Agar Global Night hai, toh Plans White rahega (No class)
-            // Agar Global Day hai, toh Plans Dark rahega (Add class)
-            if (isNightGlobal === false) {
-                document.body.classList.add('night-mode');
-            } else {
-                document.body.classList.remove('night-mode');
-            }
-        })();
-    </script>
-
 </head>
 <body>
 <script>
@@ -626,7 +615,6 @@ body.night-mode {
     padding: 60px 25px; 
     color: var(--era-text);
     overflow: hidden;
-    border-bottom: 1px solid var(--era-border);
     transition: all 0.4s ease;
 }
 
@@ -659,10 +647,19 @@ body.night-mode {
     color: var(--era-text);
 }
 
-/* Color Accents (Stays same for branding) */
-.c-high { color: #00B0FF; text-shadow: 0 0 15px rgba(0, 176, 255, 0.3); }
-.c-octane { color: #2BFF88; text-shadow: 0 0 15px rgba(43, 255, 136, 0.3); }
-.c-growth { color: #BC13FE; text-shadow: 0 0 15px rgba(188, 19, 254, 0.3); }
+/* Color Accents (Glow completely removed for premium flat look) */
+.c-high { 
+    color: #00B0FF; 
+    text-shadow: none !important; /* 🔥 Cyan glow hata diya */
+}
+.c-octane { 
+    color: #2BFF88; 
+    text-shadow: none !important; /* 🔥 Green glow hata diya */
+}
+.c-growth { 
+    color: #BC13FE; 
+    text-shadow: none !important; /* 🔥 Purple glow hata diya */
+}
 
 /* Features List */
 .era-features-list {
@@ -687,7 +684,7 @@ body.night-mode {
     align-items: center;
     justify-content: center;
     font-size: 1.2rem;
-    color: #00FBFF; /* Neon Cyan */
+    color: #00B0FF; /* Neon Cyan */
     flex-shrink: 0;
 }
 
@@ -705,7 +702,7 @@ body.night-mode {
 }
 
 .inline-customize-link {
-    color: #00FBFF;
+    color: #00B0FF;
     text-decoration: none;
     font-weight: 700;
     border-bottom: 1px solid rgba(0, 251, 255, 0.3);
@@ -1535,16 +1532,16 @@ body.night-mode .scanner-btn:hover {
             margin-bottom: 8px;
         }
 
-/* Pillar/Sub-head Titles */
+/* --- [FIX 1] Pillar/Sub-head Titles (No Shadow in Dark/Light Mode) --- */
 .sub-item h3 {
     font-family: 'Syncopate', sans-serif;
     font-size: 11px;
-    color: #2BFF88; /* Aapka favorite Shiny Green */
+    color: #2BFF88; /* Shiny Green */
     margin: 0;
     display: flex;
     align-items: center;
     gap: 8px;
-    text-shadow: 0 0 12px rgba(43, 255, 136, 0.4); /* Soft Green Glow */
+    text-shadow: none !important; /* 🔥 Dark Mode se text-shadow poori tarah hata diya */
 }
 
         .mr-data { color: #fff; font-size: 13px; line-height: 1.5; padding-left: 20px; }
@@ -1552,11 +1549,12 @@ body.night-mode .scanner-btn:hover {
         .mr-data li { margin-bottom: 6px; position: relative; padding-left: 15px; }
 
    /* Bullet Points/Arrows inside data */
+/* Bullet Points/Arrows inside data - Dark Mode Default (Ab White rahega) */
 .mr-data li::before { 
     content: '→'; 
     position: absolute; 
     left: 0; 
-    color: #2BFF88; /* Matching Shiny Green Arrows */
+    color: #ffffff !important; /* 🔥 Green se badalkar pure white kar diya */
 }
 
 /* Checkbox Color match */
@@ -1709,6 +1707,27 @@ body.night-mode .close-success:hover {
 .mr-close-modal:hover {
     background: #ff3131; /* Hover pe red ho jayega */
 }
+
+/* 🌙 DARK MODE DEFAULT (Clean Font & Layout) */
+#comment-label {
+    font-family: 'Inter', sans-serif !important; /* Syncopate se hata kar clean font */
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    color: var(--neon-blue) !important; /* Dark mode mein default neon blue */
+    letter-spacing: 1.5px !important;
+    text-transform: uppercase;
+    margin-bottom: 12px !important;
+}
+
+/* ☀️ WHITE MODE FIXES (Comment Title Color & Sub-item Clean Look) */
+body.night-mode #comment-label {
+    color: #0066FF !important; /* White mode mein readable sharp blue */
+}
+
+body.night-mode .sub-item h3 {
+    color: #000000 !important;
+    text-shadow: none !important; /* Light mode mein completely clean, no shadow */
+}
   
 /* ☀️ TARGETED WHITE MODE FIX - Replace only this part */
 body.night-mode #maxreach-builder-section {
@@ -1742,11 +1761,7 @@ body.night-mode .mr-part-head h2 {
     text-shadow: none !important;
 }
 
-/* 4. Inside Content (Category & List) */
-body.night-mode .sub-item h3 {
-    color: #000000 !important;
-    text-shadow: none !important;
-}
+
 
 body.night-mode .mr-data, 
 body.night-mode .mr-data li {
@@ -1853,8 +1868,9 @@ body.night-mode .mr-input::placeholder {
         
     <div id="mr-render-area"></div>
 
+  <!-- Comment area section with clean font matching -->
     <div style="padding: 20px 0; text-align: left;">
-        <h4 id="comment-label" style="font-family:'Syncopate'; font-size:10px; color:var(--neon-blue); margin-bottom:10px;">
+        <h4 id="comment-label">
             ADDITIONAL VISION DETAILS
         </h4>
         <label for="global-comment" style="display:none;">Custom Requirements</label>
@@ -2355,9 +2371,10 @@ body.night-mode #mr-ref-sys-compact {
     line-height: 1.3;
 }
 
+/* --- Together Word Glow Fix --- */
 .mrx-neon { 
     color: var(--mrx-cyan); 
-    text-shadow: 0 0 15px rgba(0, 176, 255, 0.3); 
+    text-shadow: none !important; /* 🔥 Glow ko poori tarah se hata diya, ab sirf clean solid color dikhega */
 }
 
 .mrx-p-sub { 
@@ -3175,7 +3192,8 @@ body.night-mode #mr-faq-section {
     </div> 
 
     <div class="mx-copyright-bar">
-        <p>© 2026 <span itemprop="name">MaxReachGlobal</span>. All Rights Reserved.</p>    </div>
+        <p>© 2026 <span itemprop="name">MaxReach Global</span>. All Rights Reserved.</p>
+    </div>
 </footer>
 
 <style>
@@ -3301,7 +3319,6 @@ body.night-mode #mr-faq-section {
     font-weight: 600;
     text-decoration: none;
 }
-
 /* --- 📱 MOBILE OPTIMIZATION (SEO Friendly) --- */
 @media (max-width: 992px) {
     .mx-footer-grid {
