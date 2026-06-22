@@ -65,8 +65,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;800&display=swap" rel="stylesheet">
    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
 
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" 
-      media="print" onload="this.media='all'"><link rel="stylesheet" href="nav-style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" 
+      media="print" onload="this.media='all'">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" 
+      media="print" onload="this.media='all'">
+<link rel="stylesheet" href="nav-style.css">
   <script src="nav-script.js" defer></script> 
 
   <script type="application/ld+json">
@@ -240,7 +243,7 @@
         }
     </style>
 
-  <script>
+<script>
   // Sirf check karne ke liye, koi function clash nahi hoga
   (function() {
     if (localStorage.getItem('nightMode') === 'true') {
@@ -251,7 +254,12 @@
 
 </head>
 <body>
-
+<script>
+    // Page load hone se pehle hi mode apply kar dega
+    if (localStorage.getItem('nightMode') === 'true') {
+        document.body.classList.add('night-mode');
+    }
+</script>
 
 <nav class="navbar" role="navigation" aria-label="Main Navigation" itemscope itemtype="https://schema.org/SiteNavigationElement">
     
@@ -466,7 +474,7 @@
                 <a href="https://www.facebook.com/maxreachglobalofficial" target="_blank" rel="noopener noreferrer" title="Follow MaxReach Global on Facebook" aria-label="Facebook">
                     <i class="fab fa-facebook-f" aria-hidden="true"></i>
                 </a>
-                <a href="https://www.linkedin.com/in/maxreachglobalofficial" target="_blank" rel="noopener noreferrer" title="Connect with MaxReach Global on LinkedIn" aria-label="LinkedIn">
+                <a href="https://www.linkedin.com/company/maxreach-global/" target="_blank" rel="noopener noreferrer" title="Connect with MaxReach Global on LinkedIn" aria-label="LinkedIn">
                     <i class="fab fa-linkedin-in" aria-hidden="true"></i>
                 </a>
                 <a href="https://t.me/maxreachglobal_official" target="_blank" rel="noopener noreferrer" title="Join MaxReach Global on Telegram" aria-label="Telegram">
@@ -582,16 +590,15 @@
     </script>
 
 
-   
-
 <style>
     /* --- 1. ADAPTIVE LOGIC --- */
     :root {
         --neon-sec-bg: #ffffff;
         --neon-h2: #0f172a;
-        --neon-h2-glow: rgba(0, 123, 255, 0.2);
+        
+        /* Permanent Neon Blue - Light Mode Setup */
         --neon-span: #64748b;
-        --neon-p-tag: #007bff; /* Professional Blue for Light */
+        --neon-p-tag: #00d2ff; /* Permanent Neon Blue */
         
         /* Card Base (Light Mode) */
         --card-bg-red: #fffafa;
@@ -603,13 +610,14 @@
     body.night-mode .dark-neon-section {
         --neon-sec-bg: #000000;
         --neon-h2: #ffffff;
-        --neon-h2-glow: rgba(0, 229, 255, 0.8);
+        
+        /* Permanent Neon Blue - Dark Mode Setup */
         --neon-span: #94a3b8;
-        --neon-p-tag: #00e5ff; /* Cyan for Dark */
+        --neon-p-tag: #00d2ff; 
         
         /* Card Base (Dark Mode) */
-        --card-bg-red: #110505; /* Deep Dark Red tint */
-        --card-bg-green: #05110a; /* Deep Dark Green tint */
+        --card-bg-red: #110505; 
+        --card-bg-green: #05110a; 
         --card-text-h3: #ffffff;
         --card-text-p: #cbd5e1;
     }
@@ -632,8 +640,8 @@
         font-weight: 900;
         color: var(--neon-h2);
         text-transform: uppercase;
-        text-shadow: 0 0 15px var(--neon-h2-glow); 
         margin-bottom: 8px;
+        /* Text shadow removed */
     }
 
     .neon-header span {
@@ -645,10 +653,11 @@
 
     .neon-header p {
         font-size: 0.8rem;
-        color: var(--neon-p-tag); 
+        color: var(--neon-p-tag) !important; 
         font-weight: 800;
         letter-spacing: 2px;
         text-transform: uppercase;
+        /* Text shadow removed */
     }
 
     /* Grid Layout */
@@ -700,12 +709,12 @@
     .red-egg-glow {
         background: var(--card-bg-red);
         border-color: rgba(239, 68, 68, 0.2);
-        animation: redPulse 3s infinite ease-in-out;
+        /* Animation & pulse shadow removed */
     }
     .red-egg-glow:hover {
         background: #ef4444 !important;
-        box-shadow: 0 20px 40px rgba(239, 68, 68, 0.4) !important;
         transform: translateY(-10px);
+        /* Hover shadow removed */
     }
     .red-egg-glow:hover h3, .red-egg-glow:hover p, .red-egg-glow:hover .icon-red { color: #ffffff !important; }
 
@@ -713,12 +722,12 @@
     .green-egg-glow {
         background: var(--card-bg-green);
         border-color: rgba(16, 185, 129, 0.2);
-        animation: greenPulse 3s infinite ease-in-out;
+        /* Animation & pulse shadow removed */
     }
     .green-egg-glow:hover {
         background: #10b981 !important;
-        box-shadow: 0 20px 40px rgba(16, 185, 129, 0.4) !important;
         transform: translateY(-10px);
+        /* Hover shadow removed */
     }
 
     /* SVG Logic */
@@ -728,7 +737,7 @@
         transition: all 0.5s ease;
     }
     .split-shield-svg #shieldGradient stop:first-child { stop-color: #10b981; }
-    .split-shield-svg #shieldGradient stop:last-child { stop-color: #94a3b8; } /* Muted side */
+    .split-shield-svg #shieldGradient stop:last-child { stop-color: #94a3b8; }
 
     .split-shield-svg #shieldPath {
         fill: url(#shieldGradient);
@@ -738,16 +747,6 @@
         stop-color: #ffffff !important;
     }
     .green-egg-glow:hover h3, .green-egg-glow:hover p { color: #ffffff !important; }
-
-    /* Animations */
-    @keyframes redPulse {
-        0%, 100% { box-shadow: 0 0 15px rgba(239, 68, 68, 0.1); }
-        50% { box-shadow: 0 0 25px rgba(239, 68, 68, 0.2); }
-    }
-    @keyframes greenPulse {
-        0%, 100% { box-shadow: 0 0 15px rgba(16, 185, 129, 0.1); }
-        50% { box-shadow: 0 0 25px rgba(16, 185, 129, 0.2); }
-    }
 
     @media (max-width: 768px) {
         .neon-grid { grid-template-columns: 1fr; }
@@ -802,19 +801,24 @@
         --why-card-border: rgba(0, 114, 255, 0.15);
         --why-card-h3: #0f172a;
         --why-card-p: #475569;
-        --why-accent: #0072ff; /* Deep Blue for Light Mode */
+        
+        /* Permanent Neon Blue - Light Mode */
+        --why-accent: #00d2ff; 
         --why-hover-bg: #000000;
         --why-hover-text: #ffffff;
     }
 
+    /* 🌙 NIGHT MODE: Exact match with Education Page */
     body.night-mode .why-maxreach-blue {
-        --why-bg: #000000;
+        --why-bg: #030712;         /* Sahi kar diya: Exact match with education background */
         --why-h2: #ffffff;
-        --why-card-bg: #0d0d0d;
+        --why-card-bg: #0b0f19;    /* Cards ko thoda depth dene ke liye subtle tone shift */
         --why-card-border: rgba(255, 255, 255, 0.05);
         --why-card-h3: #ffffff;
         --why-card-p: #bbb;
-        --why-accent: #00e5ff; /* Cyan for Dark Mode */
+        
+        /* Permanent Neon Blue - Dark Mode */
+        --why-accent: #00d2ff; 
         --why-hover-bg: #ffffff;
         --why-hover-text: #000000;
     }
@@ -842,7 +846,7 @@
     }
 
     .why-header-blue h2 span {
-        color: var(--why-accent);
+        color: var(--why-accent) !important;
     }
 
     /* --- 3. GRID & CARDS --- */
@@ -864,7 +868,6 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     }
 
     .why-card-blue h4 {
@@ -873,7 +876,7 @@
         letter-spacing: 2px;
         margin-bottom: 8px;
         text-transform: uppercase;
-        color: var(--why-accent);
+        color: var(--why-accent) !important;
     }
 
     .why-card-blue h3 {
@@ -895,7 +898,6 @@
     .why-card-blue:hover {
         background: var(--why-hover-bg);
         transform: translateY(-8px);
-        box-shadow: 0 15px 35px rgba(0, 229, 255, 0.2);
         border-color: var(--why-accent);
     }
 
@@ -959,13 +961,15 @@
         --dna-bg: #ffffff;
         --dna-text: #0f172a;
         --dna-sub-text: #475569;
-        --dna-accent: #0072ff; /* Corporate Blue */
+        
+        /* Permanent Neon Blue for Light Mode */
+        --dna-accent: #00d2ff; 
         
         /* White Mode: Clear Image with very subtle Blue Tint */
         --dna-map-overlay: rgba(0, 114, 255, 0.05); 
         
-        /* White Mode: Darker, defined border */
-        --dna-frame-border: rgba(0, 71, 171, 0.4);
+        /* White Mode: Defined border */
+        --dna-frame-border: rgba(0, 210, 255, 0.4);
         
         /* Map Road Colors (Light Mode) */
         --road-yellow: #f59e0b;
@@ -975,22 +979,25 @@
         --road-white: #94a3b8;
     }
 
+    /* 🌙 NIGHT MODE: Exact match with Education Page */
     body.night-mode .dna-section {
-        --dna-bg: #000000;
+        --dna-bg: #030712;         /* Sahi kar diya: Exact match with solid dark layout */
         --dna-text: #ffffff;
-        --dna-sub-text: #aaa;
-        --dna-accent: #00e5ff; /* Cyan Neon */
+        --dna-sub-text: #94a3b8;
         
-        /* Dark Mode: Original dark overlay */
-        --dna-map-overlay: rgba(0, 0, 0, 0.65);
-        --dna-frame-border: rgba(0, 229, 255, 0.3);
+        /* Permanent Neon Blue for Dark Mode */
+        --dna-accent: #00d2ff; 
         
-        /* Map Road Colors (Dark Mode) */
+        /* Dark Mode: Translucent Slate Overlay to prevent pure black out */
+        --dna-map-overlay: rgba(3, 7, 18, 0.65);
+        --dna-frame-border: rgba(0, 210, 255, 0.2);
+        
+        /* Map Road Colors (Dark Mode Controls) */
         --road-yellow: #FFD700;
-        --road-blue: #00e5ff;
+        --road-blue: #00d2ff;
         --road-pink: #FF1493;
-        --road-grey: #ffffff;
-        --road-white: #ffffff;
+        --road-grey: #334155;
+        --road-white: #475569;
     }
 
     /* --- 2. MAIN CONTAINER --- */
@@ -999,7 +1006,7 @@
         padding: 60px 5%;
         color: var(--dna-text);
         font-family: 'Montserrat', sans-serif;
-        transition: all 0.5s ease;
+        transition: background 0.5s ease, color 0.5s ease;
     }
 
     .dna-container {
@@ -1047,9 +1054,7 @@
         padding: 8px;
         background: var(--dna-bg);
         border-radius: 20px;
-        /* Dynamic & Darker Border */
         border: 2px solid var(--dna-frame-border);
-        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
         margin-bottom: 60px;
         transition: all 0.5s ease;
     }
@@ -1069,7 +1074,7 @@
         height: 100%;
         object-fit: cover;
         z-index: 1;
-        filter: grayscale(0.3); /* Map details are clearer */
+        filter: grayscale(0.3);
     }
 
     .map-overlay {
@@ -1097,11 +1102,11 @@
 
     @keyframes datchFlow { from { stroke-dashoffset: 500; } to { stroke-dashoffset: 0; } }
     
-    .yellow-path { stroke: var(--road-yellow); filter: drop-shadow(0 0 3px var(--road-yellow)); }
-    .blue-path   { stroke: var(--road-blue);   filter: drop-shadow(0 0 3px var(--road-blue)); }
-    .pink-path   { stroke: var(--road-pink);   filter: drop-shadow(0 0 3px var(--road-pink)); }
-    .grey-path   { stroke: var(--road-grey); }
-    .white-path  { stroke: var(--road-white);  filter: drop-shadow(0 0 3px var(--road-white)); }
+    .yellow-path { stroke: var(--road-yellow); }
+    .blue-path   { stroke: var(--road-blue);   }
+    .pink-path   { stroke: var(--road-pink);   }
+    .grey-path   { stroke: var(--road-grey);   }
+    .white-path  { stroke: var(--road-white);  }
 
     /* --- 4. MASTERY GRID --- */
     .mastery-grid {
@@ -1162,7 +1167,7 @@
 
         <div class="dna-visual-frame">
             <div class="map-wrapper">
-                <img src="homeimages/gurugram-map.png" alt="Gurugram Real Estate Investment Strategy Map - MaxReach Global" class="bg-image-internal" itemprop="image">
+                <img src="homeimages/gurugram-map.png " alt="Gurugram Real Estate Investment Strategy Map - MaxReach Global" class="bg-image-internal" itemprop="image">
                 <div class="map-overlay"></div>
                 
                 <div class="svg-layer-internal">
@@ -1209,42 +1214,42 @@
 </section>
 
 <style>
-    /* --- 1. ADAPTIVE LOGIC --- */
+    /* --- 1. ADAPTIVE LOGIC (Ultra-Clean & Flat - Synced with #030712) --- */
     :root {
         --radar-bg: #ffffff;
         --radar-h2: #0f172a;
         --radar-p: #64748b;
-        --radar-accent: #0072ff; /* Corporate Blue */
-        --radar-circle-bg: #f8fafc;
+        --radar-accent: #00d2ff; /* Permanent Neon Blue */
+        --radar-card-bg: #f8fafc;
+        --radar-card-border: rgba(0, 210, 255, 0.15);
         --radar-card-h3: #0f172a;
         --radar-card-p: #475569;
-        --radar-map-opacity: 0.2;
     }
 
+    /* 🌙 NIGHT MODE: Exact match with Education Theme Profile */
     body.night-mode .radar-section {
-        --radar-bg: #000000;
+        --radar-bg: #030712;         /* Sahi kar diya: Match with premium dark layout */
         --radar-h2: #ffffff;
-        --radar-p: #64748b;
-        --radar-accent: #00e5ff; /* Cyan Neon */
-        --radar-circle-bg: #050505;
-        --radar-card-h3: #00e5ff;
+        --radar-p: #94a3b8;
+        --radar-accent: #00d2ff; 
+        --radar-card-bg: #0b0f19;    /* Cards layout depth enhancement */
+        --radar-card-border: rgba(255, 255, 255, 0.05);
+        --radar-card-h3: #ffffff;
         --radar-card-p: #bbb;
-        --radar-map-opacity: 0.5;
     }
 
     /* --- 2. MAIN SECTION --- */
     .radar-section {
         background: var(--radar-bg) !important;
-        padding: 40px 10% 60px 10%; 
+        padding: 60px 8% 80px 8%; 
         color: var(--radar-h2);
         font-family: 'Inter', sans-serif;
-        overflow: hidden;
-        transition: all 0.5s ease;
+        transition: background 0.5s ease, color 0.5s ease;
     }
 
     .radar-header {
         text-align: center;
-        margin-bottom: 40px;
+        margin-bottom: 50px;
     }
 
     .radar-header h2 {
@@ -1252,136 +1257,110 @@
         font-weight: 900;
         text-transform: uppercase;
         margin: 0;
+        letter-spacing: -0.5px;
         color: var(--radar-h2);
     }
 
     .radar-header h2 span { color: var(--radar-accent); }
 
     .radar-header p {
-        font-size: 0.95rem;
+        font-size: 1rem;
         color: var(--radar-p);
-        margin-top: 10px;
+        margin-top: 12px;
+        max-width: 650px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
-    /* --- 3. RADAR VISUAL --- */
+    /* --- 3. DYNAMIC CONTAINER --- */
     .radar-container {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+        display: grid;
+        grid-template-columns: 0.9fr 1.1fr;
         gap: 50px;
         max-width: 1200px;
         margin: 0 auto;
-    }
-
-    .radar-wrapper {
-        position: relative;
-        flex: 1;
-        display: flex;
-        justify-content: center;
         align-items: center;
     }
 
-    .radar-frame {
-        width: 350px;
-        height: 350px;
-        border-radius: 50%;
-        position: relative;
-        border: 2px solid var(--radar-accent);
-        box-shadow: 0 0 40px rgba(0, 114, 255, 0.2), inset 0 0 20px rgba(0, 114, 255, 0.1);
-        overflow: hidden;
-        background-color: var(--radar-circle-bg);
-        z-index: 2;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        transition: all 0.5s ease;
-    }
-
-    .radar-map-img {
-        position: absolute;
-        pointer-events: none;
-        z-index: 1;
-        opacity: var(--radar-map-opacity);
-        width: 90%; 
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        object-fit: contain;
-        transition: opacity 0.5s ease;
-        /* For White Mode Clarity */
-        filter: contrast(1.1); 
-    }
-
-    .radar-beam {
-        position: absolute;
+    /* Left Side: Minimal Direction Tabs Layout */
+    .direction-tabs-box {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
         width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        background: conic-gradient(from 0deg, rgba(0, 114, 255, 0.3) 0deg, transparent 90deg);
-        animation: rotateRadar 4s linear infinite;
-        border-radius: 50%;
-        z-index: 3;
     }
 
-    /* Rotating Text (The Circular Path) */
-    .rotating-text {
-        position: absolute;
-        width: 120%;
-        height: 120%;
-        animation: rotateText 20s linear infinite;
-        z-index: 1;
+    .clean-region-tab {
+        background: var(--radar-card-bg);
+        border: 1px solid var(--radar-card-border);
+        padding: 30px 20px;
+        border-radius: 12px;
+        text-align: center;
+        transition: all 0.3s ease;
     }
 
-    .rotating-text svg {
-        width: 100%;
-        height: 100%;
-        fill: var(--radar-accent);
+    .clean-region-tab h4 {
+        margin: 0 0 6px 0;
+        font-size: 1.1rem;
         font-weight: 800;
-        text-transform: uppercase;
-        letter-spacing: 5px;
-        font-size: 13px;
-        opacity: 0.6;
+        color: var(--radar-h2);
+        letter-spacing: 1px;
     }
 
-    /* --- 4. CONTENT --- */
+    .clean-region-tab span {
+        font-size: 0.75rem;
+        color: var(--radar-accent);
+        text-transform: uppercase;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+    }
+
+    /* Active/Highlight Core Hub Style for North (NCR) */
+    .clean-region-tab.core-hub {
+        border: 2px solid var(--radar-accent);
+    }
+
+    /* --- 4. CONTENT SIDE --- */
     .radar-content {
-        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
     }
 
     .radar-item { 
-        margin-bottom: 30px; 
-        padding-left: 20px;
-        /* LINE PERMANENT KAR DI HAI */
-        border-left: 3px solid var(--radar-accent);
-        transition: border-color 0.3s ease;
+        padding: 25px 30px;
+        background: transparent;
+        border-left: 4px solid var(--radar-accent);
+        transition: all 0.3s ease;
     }
 
     .radar-item h3 { 
-        font-size: 1.4rem; 
+        font-size: 1.3rem; 
         color: var(--radar-card-h3); 
-        margin-bottom: 12px; 
+        margin: 0 0 10px 0; 
         text-transform: uppercase; 
         font-weight: 800;
+        letter-spacing: -0.5px;
     }
 
     .radar-item p { 
         font-size: 0.95rem; 
         color: var(--radar-card-p); 
         line-height: 1.6; 
+        margin: 0;
     }
 
-    /* --- ANIMATIONS --- */
-    @keyframes rotateRadar { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-    @keyframes rotateText { from { transform: rotate(360deg); } to { transform: rotate(0deg); } }
+    .radar-item:hover {
+        background: var(--radar-card-bg);
+        border-radius: 0 12px 12px 0;
+    }
 
     /* --- MOBILE OPTIMIZATION --- */
     @media (max-width: 968px) {
-        .radar-container { flex-direction: column; text-align: center; gap: 40px; }
-        .radar-frame { width: 300px; height: 300px; }
-        .radar-wrapper { order: 1; margin: 30px 0; } 
-        .radar-content { order: 2; text-align: left; }
-        .rotating-text { width: 130%; height: 130%; }
+        .radar-section { padding: 40px 20px; }
+        .radar-container { grid-template-columns: 1fr; gap: 40px; }
+        .direction-tabs-box { order: 1; }
+        .radar-content { order: 2; }
     }
 </style>
 
@@ -1391,73 +1370,77 @@
     <meta itemprop="provider" content="MaxReach Global">
 
     <div class="radar-header">
-        <h2 itemprop="name">Local Roots, <span>Global Blueprint</span></h2>
-        <p itemprop="description">Your <strong>real estate business growth</strong> is no longer limited by geography. We scale your brand across <strong>Tier-1 Indian cities</strong>.</p>
+        <h2 itemprop="name">Gurugram Roots, <span>Pan-India Scale</span></h2>
+        <p itemprop="description">We don't limit your business by territory. From our core expertise in Delhi NCR, we seamlessly deploy performance marketing pipelines across India's high-intent real estate markets.</p>
     </div>
 
     <div class="radar-container">
-        <div class="radar-wrapper">
-            <div class="rotating-text">
-                <svg viewBox="0 0 100 100" aria-hidden="true">
-                    <path id="circlePath" d="M 50, 50 m -40, 0 a 40,40 0 1,1 80,0 a 40,40 0 1,1 -80,0" fill="transparent" />
-                    <text>
-                        <textPath xlink:href="#circlePath">
-                            EXPAND YOUR LIMITS • SCALE WITHOUT BORDERS • MAXREACH •
-                        </textPath>
-                    </text>
-                </svg>
+        <!-- Left Side: Clean Tabs (North, South, East, West) -->
+        <div class="direction-tabs-box">
+            <div class="clean-region-tab core-hub">
+                <h4>NORTH</h4>
+                <span>NCR Core HQ</span>
             </div>
-
-            <div class="radar-frame">
-                <img src="homeimages/india3.png" alt="MaxReach Global Real Estate Marketing Expansion Map India" class="radar-map-img" itemprop="image">
-                <div class="radar-beam" aria-hidden="true"></div>
+            <div class="clean-region-tab">
+                <h4>WEST</h4>
+                <span>Mumbai / Pune</span>
+            </div>
+            <div class="clean-region-tab">
+                <h4>SOUTH</h4>
+                <span>Bengaluru / Hyd</span>
+            </div>
+            <div class="clean-region-tab">
+                <h4>EAST</h4>
+                <span>Kolkata Hub</span>
             </div>
         </div>
 
+        <!-- Right Side: Clean Value Items -->
         <div class="radar-content">
             <div class="radar-item">
-                <h3>Micro-Market Mapping</h3>
-                <p>Before spending a single rupee, we analyze <strong>local demand-supply real estate data</strong> to ensure your ads hit the right demographic in any city. We map the territory before we deploy <strong>performance marketing</strong>.</p>
+                <h3>Cross-Border Reach Architecture</h3>
+                <p>Target active buyers shifting across regions. Whether it's an NRI looking at <strong>Dwarka Expressway</strong>, or a Mumbai investor exploring North markets, we map out audience pathways at a micro-demographic level.</p>
             </div>
 
             <div class="radar-item">
-                <h3>Scalable Conversion Funnels</h3>
-                <p>We replicate our success using custom-built <strong>real estate sales funnels</strong> adaptable to Tier-1 cities like <strong>Delhi, Noida, Mumbai</strong>, or beyond. Proven systems for consistent <strong>national lead generation</strong>.</p>
+                <h3>Unified Performance Engines</h3>
+                <p>Deploy localized sales funnels without managing multi-city freelancers. Our unified squad handles cross-market audience targeting from a singular dashboard, bringing corporate consistency to your national lead pipelines.</p>
             </div>
         </div>
     </div>
 </section>
 
 <style>
-    /* --- 1. ADAPTIVE LOGIC --- */
+    /* --- 1. ADAPTIVE LOGIC (Clean, Flat & Synced with #030712) --- */
     :root {
         --si-bg: #ffffff;
         --si-text: #0f172a;
         --si-sub: #64748b;
-        --si-neon: #0072ff; /* Corporate Blue */
-        --si-glass: rgba(0, 114, 255, 0.05);
-        --si-capsule: #f1f5f9;
-        --si-border: rgba(0, 114, 255, 0.3);
+        --si-neon: #00d2ff; /* Permanent Neon Blue */
+        --si-glass: rgba(0, 210, 255, 0.03);
+        --si-card-bg: #f8fafc;
+        --si-border: rgba(0, 210, 255, 0.2);
     }
 
+    /* 🌙 NIGHT MODE: Exact match with Education Theme Profile */
     body.night-mode .star-impact-section {
-        --si-bg: #000000;
+        --si-bg: #030712;         /* Sahi kar diya: Match with premium dark layout */
         --si-text: #ffffff;
-        --si-sub: #888;
-        --si-neon: #00e5ff; /* Cyan Neon */
-        --si-glass: rgba(255, 255, 255, 0.04);
-        --si-capsule: rgba(255, 255, 255, 0.1);
-        --si-border: rgba(0, 229, 255, 0.6);
+        --si-sub: #94a3b8;
+        --si-neon: #00d2ff; 
+        --si-glass: rgba(255, 255, 255, 0.02);
+        --si-card-bg: #0b0f19;    /* Cards container background enhancement */
+        --si-border: rgba(255, 255, 255, 0.06);
     }
 
     .star-impact-section {
         position: relative;
         background: var(--si-bg) !important;
-        padding: 50px 5% 60px 5%; 
-        font-family: 'Montserrat', sans-serif;
+        padding: 60px 8% 80px 8%; 
+        font-family: 'Inter', sans-serif;
         color: var(--si-text);
         overflow: hidden;
-        transition: all 0.5s ease;
+        transition: background 0.5s ease, color 0.5s ease;
     }
 
     .si-wrapper {
@@ -1469,52 +1452,47 @@
     }
 
     /* --- HEADER --- */
-    .si-head-area { text-align: center; margin-bottom: 0px; z-index: 10; }
-    .si-head-area h2 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 900; text-transform: uppercase; margin: 0; letter-spacing: 2px; color: var(--si-text); }
-    .si-head-area h2 span { color: var(--si-neon); text-shadow: 0 0 15px rgba(0, 114, 255, 0.2); }
-    .si-sub-text { color: var(--si-sub); font-size: 0.9rem; margin-top: 8px; letter-spacing: 1px; }
+    .si-head-area { text-align: center; margin-bottom: 20px; z-index: 10; }
+    .si-head-area h2 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 900; text-transform: uppercase; margin: 0; letter-spacing: -0.5px; color: var(--si-text); }
+    .si-head-area h2 span { color: var(--si-neon); }
+    .si-sub-text { color: var(--si-sub); font-size: 1rem; margin-top: 10px; }
 
-    /* --- STAR STAGE --- */
+    /* --- PREMIUM SMOOTH STAGE --- */
     .si-stage {
         position: relative;
         width: 100%;
-        height: 520px; 
+        height: 500px; 
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-top: -15px;
     }
 
-    /* Back Triangle - Rotates on Click */
+    /* Back Smooth Card - Rotates on Click */
     .si-tri-back {
         position: absolute;
-        width: 480px; 
-        height: 380px;
+        width: 420px; 
+        height: 420px;
         background: var(--si-neon);
-        clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-        filter: blur(45px);
-        opacity: 0.12;
+        border-radius: 40px;
+        opacity: 0.06;
         transition: transform 0.8s cubic-bezier(0.19, 1, 0.22, 1);
         z-index: 1;
-        top: 50px; 
     }
 
-    /* Front Triangle */
+    /* Front Smooth Card Frame */
     .si-tri-front {
         position: absolute;
-        width: 480px; 
-        height: 380px;
+        width: 440px; 
+        height: 440px;
         background: var(--si-glass);
-        backdrop-filter: blur(15px);
-        -webkit-backdrop-filter: blur(15px);
-        clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-radius: 48px;
         border: 1px solid var(--si-border);
         z-index: 3;
-        bottom: 50px; 
-        box-shadow: inset 0 0 40px rgba(0, 114, 255, 0.05);
     }
 
-    /* --- CONTENT --- */
+    /* --- BREATHABLE CONTENT LAYER --- */
     .si-content-layer {
         position: absolute;
         z-index: 10;
@@ -1522,96 +1500,175 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        width: 320px;
-        height: 350px;
+        width: 100%;
+        max-width: 380px;
+        height: 100%;
+        padding: 30px 20px;
+        box-sizing: border-box;
     }
 
-    .si-review-box { text-align: center; margin-bottom: 25px; min-height: 80px; display: flex; align-items: center; }
-    .si-slide { display: none; animation: siPop 0.6s ease-out; }
+    /* Review Text Area */
+    .si-review-box { 
+        text-align: center; 
+        margin-bottom: 35px; 
+        min-height: 100px; 
+        display: flex; 
+        align-items: center; 
+        justify-content: center;
+        width: 100%;
+    }
+    
+    .si-slide { display: none; animation: siPop 0.6s ease-out; width: 100%; }
     .si-slide.active { display: block; }
-    .si-slide p { font-size: 1.05rem; color: var(--si-text); font-style: italic; line-height: 1.6; margin: 0; font-weight: 500; }
+    
+    .si-slide p { 
+        font-size: 1.05rem; 
+        color: var(--si-text); 
+        font-style: italic; 
+        line-height: 1.6; 
+        margin: 0; 
+        font-weight: 500;
+        padding: 0 10px;
+    }
 
-    /* Logo Square */
+    /* Brand Identification Area (Logo + Name) */
+    .si-brand-footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+
     .si-logo-box {
-        width: 70px; height: 70px; background: #fff; border-radius: 12px;
-        display: flex; align-items: center; justify-content: center; padding: 10px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        border: 1px solid #eee;
+        width: 75px; 
+        height: 75px; 
+        background: #ffffff; 
+        border-radius: 14px;
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
+        padding: 12px;
+        border: 1px solid var(--si-border);
+        box-sizing: border-box;
     }
     .si-logo-box img { width: 100%; height: 100%; object-fit: contain; }
 
-    /* Capsule */
-    .si-capsule-wrapper { margin-top: -20px; z-index: 20; }
-    .si-capsule {
-        background: var(--si-capsule); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
-        border: 1px solid var(--si-border); padding: 12px 40px; border-radius: 50px;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    /* Inside-Box Integrated Partner Name */
+    .si-partner-name {
+        margin: 0;
+        color: var(--si-text);
+        font-size: 0.95rem;
+        font-weight: 800;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        transition: color 0.3s ease;
     }
-    .si-capsule h4 { margin: 0; color: var(--si-neon); font-size: 1rem; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; }
 
-    /* Navigation */
-    .si-nav-tabs { display: flex; gap: 30px; margin-top: 30px; }
+    /* Navigation Arrows - FIXED BOLD VISIBILITY */
+    .si-nav-tabs { display: flex; gap: 20px; margin-top: 15px; z-index: 20; }
     .si-arrow {
-        background: transparent; border: 2px solid var(--si-neon); color: var(--si-neon);
-        width: 55px; height: 55px; border-radius: 50%; cursor: pointer; transition: 0.4s;
-        display: flex; align-items: center; justify-content: center; font-size: 1.2rem; font-weight: bold;
+        background: transparent; 
+        border: 1px solid var(--si-border); 
+        color: var(--si-text);
+        width: 50px; 
+        height: 50px; 
+        border-radius: 50%; 
+        cursor: pointer; 
+        transition: all 0.3s ease;
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
+        font-size: 1.3rem; 
+        font-weight: 800; 
+        line-height: 1;
     }
-    .si-arrow:hover { background: var(--si-neon); color: #fff; box-shadow: 0 0 25px var(--si-neon); }
+    .si-arrow:hover { 
+        background: var(--si-card-bg); 
+        border-color: var(--si-neon);
+        color: var(--si-neon);
+    }
 
     @keyframes siPop {
-        0% { opacity: 0; transform: scale(0.95); }
+        0% { opacity: 0; transform: scale(0.97); }
         100% { opacity: 1; transform: scale(1); }
     }
 
     @media (max-width: 768px) {
         .si-stage { height: 420px; }
-        .si-tri-back, .si-tri-front { width: 340px; height: 280px; }
-        .si-content-layer { width: 240px; }
+        .si-tri-back { width: 320px; height: 320px; border-radius: 30px; }
+        .si-tri-front { width: 340px; height: 340px; border-radius: 36px; }
+        .si-content-layer { max-width: 300px; padding: 20px 10px; }
+        .si-slide p { font-size: 0.95rem; }
+        .si-review-box { margin-bottom: 20px; }
+        .si-arrow { width: 45px; height: 45px; font-size: 1.2rem; }
     }
 </style>
 
-<section class="star-impact-section">
+<section class="star-impact-section" itemscope itemtype="https://schema.org/Organization">
+    <meta itemprop="name" content="MaxReach Global">
+
     <div class="si-wrapper">
         <div class="si-head-area">
-            <h2 class="text-3xl font-bold uppercase">Our Trusted <span style="color: var(--mx-blue);">Partners</span></h2>
-            <p class="si-sub-text">Driving <strong>real estate growth</strong> through strategic marketing.</p>
+            <h2>Our Trusted <span>Partners</span></h2>
+            <p class="si-sub-text">Strategic collaboration driving real estate growth.</p>
         </div>
 
         <div class="si-stage" id="si-main-stage">
+            <!-- Smooth Curved Interactive Rotator Shapes -->
             <div class="si-tri-back" id="si-spin-layer"></div>
             <div class="si-tri-front"></div>
 
+            <!-- Fully Integrated Content Layer -->
             <div class="si-content-layer">
-                <div class="si-review-box" style="font-size: 0.95rem;">
-                    
-                    <div class="si-slide active" data-si-name="Trusty Advisor" data-si-img="homeimages/trusty-advisor-client.jpeg">
-                        <p>"MaxReach redefined our digital strategy. Professional, fast, and <strong>highly recommended!</strong>"</p>
+                <div class="si-review-box"> 
+                    <div class="si-slide active" 
+                         data-si-name="Trusty Advisor" 
+                         data-si-img="homeimages/trusty-advisor-client.jpeg" 
+                         itemprop="review" itemscope itemtype="https://schema.org/Review">
+                        <meta itemprop="author" content="Trusty Advisor">
+                        <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+                            <meta itemprop="ratingValue" content="5">
+                        </div>
+                        <p itemprop="reviewBody">"Highly recommend MaxReach for professional real estate marketing. Truly exceptional!"</p>
                     </div>
 
-                    <div class="si-slide" data-si-name="Shree Balaji Estate" data-si-img="homeimages/Balaji-estate-client.jpeg">
-                        <p>"Their <strong>hyper-local targeting</strong> is a game changer for Gurgaon real estate leads."</p>
+                    <div class="si-slide" 
+                         data-si-name="Shree Balaji Estate" 
+                         data-si-img="homeimages/Balaji-estate-client.jpeg" 
+                         itemprop="review" itemscope itemtype="https://schema.org/Review">
+                        <meta itemprop="author" content="Shree Balaji Estate">
+                        <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+                            <meta itemprop="ratingValue" content="5">
+                        </div>
+                        <p itemprop="reviewBody">"Their hyper-local mapping is a game changer for Gurgaon real estate leads."</p>
                     </div>
 
-                    <div class="si-slide" data-si-name="Global Estate" data-si-img="homeimages/global-estate-client.jpeg">
-                        <p>"Data-driven and scalable. Simply the <strong>best marketing partner</strong> in the NCR."</p>
+                    <div class="si-slide" 
+                         data-si-name="Global Estate" 
+                         data-si-img="homeimages/global-estate-client.jpeg" 
+                         itemprop="review" itemscope itemtype="https://schema.org/Review">
+                        <meta itemprop="author" content="Global Estate">
+                        <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+                            <meta itemprop="ratingValue" content="5">
+                        </div>
+                        <p itemprop="reviewBody">"Professional, data-driven, and highly scalable results. Best Real Estate Marketing in NCR."</p>
                     </div>
                 </div>
 
-                <div class="si-logo-box">
-                    <img src="homeimages/trusty-advisor-client.jpeg" alt="Partner Logo" id="si-dynamic-logo">
+                <!-- Brand Group (Logo + Name Integrated inside the Box) -->
+                <div class="si-brand-footer">
+                    <div class="si-logo-box">
+                        <img src="homeimages/trusty-advisor-client.jpeg" alt="Real Estate Partner Logo - MaxReach Global" id="si-dynamic-logo">
+                    </div>
+                    <h4 class="si-partner-name" id="si-dynamic-name">Trusty Advisor</h4>
                 </div>
             </div>
         </div>
 
-        <div class="si-capsule-wrapper">
-            <div class="si-capsule">
-                <h4 id="si-capsule-name">Trusty Advisor</h4>
-            </div>
-        </div>
-
+        <!-- Navigation Arrows Directly Under the Main Box -->
         <div class="si-nav-tabs">
-            <button class="si-arrow" onclick="siTriggerSpin(-1)"> &lt; </button>
-            <button class="si-arrow" onclick="siTriggerSpin(1)"> &gt; </button>
+            <button class="si-arrow" onclick="siTriggerSpin(-1)" aria-label="Previous Review"> &lt; </button>
+            <button class="si-arrow" onclick="siTriggerSpin(1)" aria-label="Next Review"> &gt; </button>
         </div>
     </div>
 </section>
@@ -1621,12 +1678,12 @@
     let si_currentIdx = 0;
     const si_slides = document.querySelectorAll('.si-slide');
     const si_spinLayer = document.getElementById('si-spin-layer');
-    const si_capsuleName = document.getElementById('si-capsule-name');
-    const si_dynamicLogo = document.getElementById('si-dynamic-logo'); // Logo target pakda
+    const si_dynamicName = document.getElementById('si-dynamic-name');
+    const si_dynamicLogo = document.getElementById('si-dynamic-logo');
 
     function siTriggerSpin(dir) {
-        // Spin Logic
-        si_rotAngle += (dir * 360);
+        // Spin Logic for Curved Card Frame
+        si_rotAngle += (dir * 90);
         si_spinLayer.style.transform = `rotate(${si_rotAngle}deg)`;
         
         // Active Slide Change
@@ -1636,52 +1693,53 @@
         if (si_currentIdx >= si_slides.length) si_currentIdx = 0;
         if (si_currentIdx < 0) si_currentIdx = si_slides.length - 1;
 
-        // Content & Logo Swap Logic
+        // Unified Inside-Box Content Swap Logic
         setTimeout(() => {
             const currentSlide = si_slides[si_currentIdx];
             
-            // 1. Add active class
             currentSlide.classList.add('active');
             
-            // 2. Change Name in Capsule
-            si_capsuleName.innerText = currentSlide.getAttribute('data-si-name');
-            
-            // 3. CHANGE LOGO (Ye line missing thi bhai)
-            const newLogoPath = currentSlide.getAttribute('data-si-img');
-            si_dynamicLogo.src = newLogoPath;
+            // Swap Name and Logo inside the box at the same time
+            si_dynamicName.innerText = currentSlide.getAttribute('data-si-name');
+            si_dynamicLogo.src = currentSlide.getAttribute('data-si-img');
             
         }, 350);
     }
 </script>
 
 <style>
-    /* --- 1. ADAPTIVE LOGIC --- */
+    /* --- 1. ADAPTIVE LOGIC (Clean, Flat & Synced with #030712) --- */
     :root {
         --ws-bg: #ffffff;
         --ws-text: #0f172a;
         --ws-sub: #64748b;
-        --ws-neon: #0072ff; /* Corporate Blue */
+        --ws-neon: #00d2ff; /* Permanent Neon Blue */
         --ws-btn-txt: #ffffff;
         --ws-modal-bg: #ffffff;
+        --ws-card-bg: #f8fafc;
+        --ws-border: rgba(0, 210, 255, 0.2);
     }
 
+    /* 🌙 NIGHT MODE: Exact match with Education Theme Profile */
     body.night-mode .work-showcase-section,
     body.night-mode .ws-modal-content {
-        --ws-bg: #000000;
+        --ws-bg: #030712;         /* Sahi kar diya: Match with premium dark layout background */
         --ws-text: #ffffff;
-        --ws-sub: #888;
-        --ws-neon: #00e5ff; /* Cyan Neon */
-        --ws-modal-bg: #111111;
+        --ws-sub: #94a3b8;
+        --ws-neon: #00d2ff; 
+        --ws-modal-bg: #0b0f19;    /* Popups/Modals background contrast upgrade */
+        --ws-card-bg: #111827;     /* Inner Showcase Cards tone balance */
+        --ws-border: rgba(255, 255, 255, 0.06);
     }
 
     /* --- 2. MAIN SECTION --- */
     .work-showcase-section {
         background: var(--ws-bg) !important;
-        padding: 40px 5%;
-        font-family: 'Montserrat', sans-serif;
+        padding: 60px 8% 70px 8%;
+        font-family: 'Inter', sans-serif;
         color: var(--ws-text);
         text-align: center;
-        transition: all 0.5s ease;
+        transition: background 0.5s ease, color 0.5s ease;
     }
 
     .work-wrapper {
@@ -1690,45 +1748,45 @@
     }
 
     .work-wrapper h2 {
-        font-size: clamp(1.8rem, 4vw, 2.5rem);
+        font-size: clamp(1.8rem, 4vw, 2.6rem);
         font-weight: 900;
         text-transform: uppercase;
         margin: 0;
-        letter-spacing: 1px;
+        letter-spacing: -0.5px;
+        color: var(--ws-text);
     }
 
     .work-wrapper h2 span {
         color: var(--ws-neon);
-        text-shadow: 0 0 15px rgba(0, 114, 255, 0.2);
     }
 
     .work-wrapper p {
         color: var(--ws-sub);
-        font-size: 1rem;
-        margin: 12px 0 25px 0;
+        font-size: 1.05rem;
+        margin: 14px 0 35px 0;
         line-height: 1.6;
     }
 
-    /* --- PORTFOLIO BUTTON --- */
+    /* --- PORTFOLIO BUTTON (Sleek Frame) --- */
     .btn-portfolio {
         display: inline-block;
-        padding: 14px 35px;
-        border: 2px solid var(--ws-neon);
+        padding: 14px 40px;
+        border: 1px solid var(--ws-neon);
         color: var(--ws-text);
-        text-decoration: none;
-        font-weight: 700;
         text-transform: uppercase;
+        font-weight: 700;
+        font-size: 0.9rem;
         letter-spacing: 1px;
-        transition: 0.3s ease;
-        border-radius: 4px;
+        transition: all 0.3s ease;
+        border-radius: 50px; /* Modern pill shape */
         cursor: pointer;
         background: transparent;
     }
 
     .btn-portfolio:hover {
-        background: var(--ws-neon);
-        color: #fff;
-        box-shadow: 0 0 25px var(--ws-neon);
+        background: var(--ws-card-bg);
+        border-color: var(--ws-neon);
+        color: var(--ws-neon);
     }
 
     /* --- 3. POPUP (MODAL) STYLES --- */
@@ -1740,76 +1798,94 @@
         top: 0;
         width: 100%;
         height: 100%;
-        background-color: rgba(0,0,0,0.8);
-        backdrop-filter: blur(8px);
+        background-color: rgba(3, 7, 18, 0.8); /* Dark mask matching page flow */
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
         align-items: center;
         justify-content: center;
     }
 
     .ws-modal-content {
-        background-color: var(--ws-modal-bg);
-        padding: 40px;
-        border: 2px solid var(--ws-neon);
-        border-radius: 15px;
+        background: var(--ws-modal-bg) !important;
+        padding: 45px 35px;
+        border: 1px solid var(--ws-border);
+        border-radius: 32px; /* High-end Dashboard Curved Edges */
         width: 90%;
-        max-width: 450px;
+        max-width: 440px;
         text-align: center;
         position: relative;
-        animation: wsSlideUp 0.4s ease-out;
+        box-sizing: border-box;
+        color: var(--ws-text);
+        transition: background 0.5s ease, border-color 0.5s ease;
+        animation: wsSlideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     .ws-modal-content h3 {
         margin-top: 0;
         text-transform: uppercase;
-        letter-spacing: 2px;
+        letter-spacing: -0.5px;
         color: var(--ws-text);
-        margin-bottom: 25px;
+        margin-bottom: 30px;
         font-weight: 900;
+        font-size: 1.4rem;
+    }
+    
+    .ws-modal-content h3 span {
+        color: var(--ws-neon);
     }
 
     .ws-link-grid {
         display: grid;
         grid-template-columns: 1fr;
-        gap: 15px;
+        gap: 12px;
     }
 
     .ws-modal-link {
         display: block;
-        padding: 15px;
-        background: var(--ws-glass, rgba(0,114,255,0.05));
-        border: 1px solid var(--ws-neon);
+        padding: 16px 20px;
+        background: var(--ws-card-bg);
+        border: 1px solid var(--ws-border);
         color: var(--ws-text);
         text-decoration: none;
-        border-radius: 8px;
-        font-weight: 600;
-        transition: 0.3s;
+        border-radius: 16px; /* Smooth rounded grid tabs */
+        font-weight: 700;
+        transition: all 0.25s ease;
         text-transform: uppercase;
-        font-size: 0.9rem;
+        font-size: 0.85rem;
+        letter-spacing: 0.5px;
     }
 
     .ws-modal-link:hover {
-        background: var(--ws-neon);
-        color: #fff;
-        transform: translateY(-3px);
+        border-color: var(--ws-neon);
+        color: var(--ws-neon);
+        transform: translateY(-2px);
     }
 
     .ws-close-btn {
         position: absolute;
-        top: 15px;
-        right: 20px;
-        font-size: 28px;
+        top: 20px;
+        right: 25px;
+        font-size: 24px;
         color: var(--ws-sub);
         cursor: pointer;
+        transition: color 0.2s ease;
+        line-height: 1;
+    }
+    
+    .ws-close-btn:hover {
+        color: var(--ws-text);
     }
 
     @keyframes wsSlideUp {
-        from { opacity: 0; transform: translateY(30px); }
-        to { opacity: 1; transform: translateY(0); }
+        from { opacity: 0; transform: scale(0.96) translateY(20px); }
+        to { opacity: 1; transform: scale(1) translateY(0); }
     }
 
     @media (max-width: 768px) {
-        .work-showcase-section { padding: 30px 5%; }
-        .work-wrapper p { font-size: 0.9rem; }
+        .work-showcase-section { padding: 40px 20px 50px 20px; }
+        .work-wrapper p { font-size: 0.95rem; margin-bottom: 25px; }
+        .ws-modal-content { padding: 35px 20px; border-radius: 24px; }
+        .ws-modal-content h3 { font-size: 1.2rem; margin-bottom: 25px; }
     }
 </style>
 
@@ -1819,13 +1895,13 @@
 
     <div class="work-wrapper">
         <h2 itemprop="name">Our Recent <span>Work</span></h2>
-        <p itemprop="description">Explore how we help <strong>Indian real estate brands</strong> and global businesses dominate the digital landscape with <strong>high-impact performance marketing</strong> and creative excellence.</p>
+        <p itemprop="description">Explore how we help <strong>Indian real estate brands</strong> dominate the digital landscape with <strong>high-impact performance marketing</strong> and creative excellence.</p>
         
         <button class="btn-portfolio" onclick="openWsModal()" aria-label="View MaxReach Digital Marketing Portfolio">View Full Portfolio</button>
     </div>
 </section>
 
-<div id="wsPortfolioModal" class="ws-modal" role="dialog" aria-labelledby="modalTitle">
+<div id="wsPortfolioModal" class="ws-modal" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
     <div class="ws-modal-content">
         <span class="ws-close-btn" onclick="closeWsModal()" aria-label="Close Modal">&times;</span>
         <h3 id="modalTitle">Explore Our <span>Specialized Portfolios</span></h3>
@@ -1834,25 +1910,27 @@
             <a href="allweb.html" class="ws-modal-link" title="Premium UI/UX and Web Design Portfolio">Web Design</a>
             <a href="seodata.html" class="ws-modal-link" title="Real Estate SEO & Google Ranking Case Studies">SEO Expertise</a>
             <a href="graphics.html" class="ws-modal-link" title="Brand Visual Design & Social Media Graphics">Visual Design</a>
-            <a href="allvideo.html" class="ws-modal-link" title="Cinematic Video Production & Viral Studio Projects">Viral Studio</a>
+            <a href="allvideos.html" class="ws-modal-link" title="Cinematic Video Production & Viral Studio Projects">Viral Studio</a>
         </div>
     </div>
 </div>
 
 <script>
     function openWsModal() {
-        document.getElementById("wsPortfolioModal").style.display = "flex";
-        document.body.style.overflow = "hidden"; // Scroll block
+        const modal = document.getElementById('wsPortfolioModal');
+        modal.style.display = 'flex';
+        modal.setAttribute('aria-hidden', 'false');
     }
 
     function closeWsModal() {
-        document.getElementById("wsPortfolioModal").style.display = "none";
-        document.body.style.overflow = "auto"; // Scroll enable
+        const modal = document.getElementById('wsPortfolioModal');
+        modal.style.display = 'none';
+        modal.setAttribute('aria-hidden', 'true');
     }
 
-    // Close if clicked outside
+    // Modal ke bahar click karne par close ho jaye uske liye safe code
     window.onclick = function(event) {
-        let modal = document.getElementById("wsPortfolioModal");
+        const modal = document.getElementById('wsPortfolioModal');
         if (event.target == modal) {
             closeWsModal();
         }
@@ -1861,170 +1939,163 @@
 
 
 <style>
-    /* --- 1. THEME & GLOW LOGIC --- */
+    /* --- 1. THEME & FLAT LOGIC (Synced with #030712 Layout) --- */
     :root {
-        /* FIXED: Background Pure White, no fade */
         --gm-bg: #ffffff; 
-        
         --gm-text: #0f172a;
         --gm-sub: #64748b;
-        --gm-neon: #0072ff; 
-        --gm-card: #ffffff;
-        --gm-border: #cbd5e1; 
+        --gm-neon: #00d2ff; /* Corporate Accent Color */
+        --gm-card: #f8fafc;
+        --gm-border: rgba(0, 210, 255, 0.15); 
         --gm-pill: #f1f5f9;
-        
-        --glow-1: inset 0 0 40px rgba(100, 116, 139, 0.15), inset 0 0 10px rgba(100, 116, 139, 0.1); 
-        --glow-2: inset 0 0 40px rgba(0, 114, 255, 0.15), inset 0 0 10px rgba(0, 114, 255, 0.1);
+        --gm-btn-bg: #0f172a;
+        --gm-btn-txt: #ffffff;
     }
 
+    /* 🌙 NIGHT MODE: Exact match with Education Theme Profile */
     body.night-mode .growth-modules-section {
-        --gm-bg: #000000;
+        --gm-bg: #030712;         /* Sahi kar diya: Match with premium dark layout background */
         --gm-text: #ffffff;
         --gm-sub: #94a3b8;
-        --gm-neon: #00e5ff;
-        --gm-card: #0a0a0a;
-        --gm-border: rgba(0, 229, 255, 0.4); 
-        --gm-pill: rgba(255, 255, 255, 0.05);
-
-        --glow-1: inset 0 0 40px rgba(255, 255, 255, 0.08), 0 0 20px rgba(255,255,255,0.02); 
-        --glow-2: inset 0 0 45px rgba(0, 229, 255, 0.15), 0 0 25px rgba(0,229,255,0.05);
+        --gm-neon: #00d2ff;
+        --gm-card: #0b0f19;        /* Cards layout depth enhancement */
+        --gm-border: rgba(255, 255, 255, 0.06); 
+        --gm-pill: rgba(255, 255, 255, 0.04);
+        --gm-btn-bg: #00d2ff;
+        --gm-btn-txt: #030712;    /* Text tone contrast fixed */
     }
 
     .growth-modules-section {
         background: var(--gm-bg) !important;
-        padding: 90px 5%;
-        font-family: 'Montserrat', sans-serif;
+        padding: 90px 6% 100px 6%;
+        font-family: 'Inter', sans-serif;
         color: var(--gm-text);
-        transition: all 0.5s ease;
+        transition: background 0.5s ease, color 0.5s ease;
     }
 
-    .modules-head { text-align: center; margin-bottom: 70px; }
-    .modules-head h2 { font-size: clamp(2.2rem, 5vw, 3rem); font-weight: 900; text-transform: uppercase; margin: 0; letter-spacing: -1px; }
-    .modules-head h2 span { color: var(--gm-neon); text-shadow: 0 0 20px rgba(0, 229, 255, 0.2); }
-    .modules-head p { color: var(--gm-sub); margin-top: 15px; max-width: 650px; margin-inline: auto; font-size: 1.1rem; }
+    .modules-head { text-align: center; margin-bottom: 65px; }
+    .modules-head h2 { font-size: clamp(2rem, 4.5vw, 2.8rem); font-weight: 900; text-transform: uppercase; margin: 0; letter-spacing: -0.5px; color: var(--gm-text); }
+    .modules-head h2 span { color: var(--gm-neon); }
+    .modules-head p { color: var(--gm-sub); margin-top: 15px; max-width: 650px; margin-inline: auto; font-size: 1.05rem; line-height: 1.6; }
 
-    /* --- 2. MODULES GRID --- */
+    /* --- 2. MODULES GRID (Clean Framing) --- */
     .modules-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-        gap: 40px;
+        gap: 30px;
         max-width: 1100px;
-        margin: 0 auto 50px auto;
+        margin: 0 auto 40px auto;
     }
 
     .module-card {
         background: var(--gm-card);
-        padding: 50px 40px;
-        border-radius: 30px;
+        padding: 55px 40px 45px 40px;
+        border-radius: 28px;
         position: relative;
-        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         display: flex;
         flex-direction: column;
-        border: 2.5px solid var(--gm-border); 
+        border: 1px solid var(--gm-border); 
+        box-sizing: border-box;
     }
 
-    .card-standard { box-shadow: var(--glow-1); }
-    .card-advanced { box-shadow: var(--glow-2); border-color: var(--gm-neon); }
+    .card-advanced { 
+        border-color: var(--gm-neon); 
+    }
 
     .module-card:hover {
-        transform: translateY(-15px) scale(1.02);
+        transform: translateY(-8px);
         border-color: var(--gm-neon);
-        box-shadow: 0 30px 60px rgba(0,0,0,0.15), var(--glow-2);
     }
 
     .module-tag {
         position: absolute;
-        top: -18px;
-        left: 40px;
+        top: -14px;
+        left: 35px;
         background: var(--gm-neon);
-        color: #000;
-        font-weight: 900;
-        font-size: 0.75rem;
-        padding: 8px 22px;
-        border-radius: 12px;
-        letter-spacing: 1.5px;
-        box-shadow: 0 10px 20px rgba(0, 114, 255, 0.3);
+        color: #030712;
+        font-weight: 800;
+        font-size: 0.7rem;
+        padding: 6px 18px;
+        border-radius: 50px;
+        letter-spacing: 1px;
     }
 
-    .module-card h3 { font-size: 2.2rem; margin: 15px 0; font-weight: 900; color: var(--gm-text); }
-    .module-subhead { color: var(--gm-sub); font-size: 0.95rem; line-height: 1.7; margin-bottom: 35px; min-height: 70px; font-weight: 500; }
+    .module-card h3 { font-size: 2rem; margin: 10px 0; font-weight: 900; color: var(--gm-text); }
+    .module-subhead { color: var(--gm-sub); font-size: 0.95rem; line-height: 1.6; margin-bottom: 35px; min-height: 50px; font-weight: 500; }
 
     .feature-list { list-style: none; padding: 0; margin: 0 0 40px 0; flex-grow: 1; }
-    .feature-list li { margin-bottom: 16px; font-size: 1rem; display: flex; align-items: center; gap: 14px; color: var(--gm-text); font-weight: 600; }
+    .feature-list li { margin-bottom: 16px; font-size: 0.95rem; display: flex; align-items: center; gap: 12px; color: var(--gm-text); font-weight: 600; }
     .feature-list li::before { 
         content: '✓'; 
         color: var(--gm-neon); 
         font-weight: 900; 
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
 
+    /* --- ACTIONS (Flat Design Buttons) --- */
     .btn-request {
         display: block;
         text-align: center;
-        padding: 18px;
-        background: #000;
-        color: #fff !important;
-        border: 2px solid #000;
+        padding: 16px;
+        background: var(--gm-btn-bg);
+        color: var(--gm-btn-txt) !important;
+        border: 1px solid var(--gm-btn-bg);
         text-decoration: none;
-        font-weight: 800;
+        font-weight: 700;
         text-transform: uppercase;
-        border-radius: 15px;
-        transition: 0.3s ease;
-        letter-spacing: 2px;
-    }
-
-    body.night-mode .btn-request {
-        background: var(--gm-neon);
-        color: #000 !important;
-        border-color: var(--gm-neon);
+        font-size: 0.85rem;
+        border-radius: 14px;
+        transition: all 0.25s ease;
+        letter-spacing: 1px;
     }
 
     .btn-request:hover { 
-        transform: translateY(-3px);
-        box-shadow: 0 15px 30px rgba(0, 114, 255, 0.4);
         background: transparent;
         color: var(--gm-text) !important;
         border-color: var(--gm-neon);
     }
 
-    /* --- 3. NCR ADD-ON --- */
-    .ncr-scroll-container { max-width: 1100px; margin: 30px auto 50px auto; }
+    /* --- 3. NCR ADD-ON (Clean Accordion) --- */
+    .ncr-scroll-container { max-width: 1100px; margin: 25px auto 40px auto; }
     .ncr-trigger-btn {
         width: 100%;
-        background: var(--gm-pill);
-        border: 2px dashed var(--gm-neon); 
-        padding: 22px 30px;
-        border-radius: 20px;
+        background: var(--gm-card);
+        border: 1px dashed var(--gm-border); 
+        padding: 20px 30px;
+        border-radius: 18px;
         color: var(--gm-text);
         display: flex;
         justify-content: space-between;
         align-items: center;
         cursor: pointer;
         font-family: inherit;
-        font-weight: 800;
-        font-size: 1.1rem;
+        font-weight: 700;
+        font-size: 1rem;
+        transition: border-color 0.3s ease;
     }
 
-    .ncr-trigger-btn .arrow-icon { transition: transform 0.4s; color: var(--gm-neon); font-size: 1.4rem; }
+    .ncr-trigger-btn .arrow-icon { transition: transform 0.3s ease; color: var(--gm-neon); font-size: 1.1rem; }
+    .ncr-trigger-btn.active { border-color: var(--gm-neon); }
     .ncr-trigger-btn.active .arrow-icon { transform: rotate(180deg); }
 
     .ncr-content {
         max-height: 0;
         overflow: hidden;
-        transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-        background: var(--gm-pill);
-        margin-top: 12px;
-        border-radius: 20px;
+        transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        background: var(--gm-card);
+        margin-top: 10px;
+        border-radius: 18px;
     }
-    .ncr-content.open { max-height: 600px; border: 1px solid var(--gm-border); }
-    .ncr-content p { padding: 40px; margin: 0; font-size: 1.1rem; line-height: 1.8; color: var(--gm-sub); }
-    .ncr-content p span { color: var(--gm-neon); font-weight: 800; }
+    .ncr-content.open { border: 1px solid var(--gm-border); }
+    .ncr-content p { padding: 30px; margin: 0; font-size: 1rem; line-height: 1.7; color: var(--gm-sub); }
+    .ncr-content p span { color: var(--gm-neon); font-weight: 700; }
 
-    /* --- 4. CUSTOM SCALE FOOTER (FIXED HOVER) --- */
+    /* --- 4. CUSTOM SCALE FOOTER --- */
     .mxr-custom-scale-container { 
         text-align: center; 
-        margin-top: 40px; 
-        padding-top: 20px;
+        margin-top: 50px; 
+        padding-top: 30px;
         border-top: 1px solid var(--gm-border);
         max-width: 800px;
         margin-inline: auto;
@@ -2032,43 +2103,44 @@
     
     .mxr-glass-pill {
         display: inline-block;
-        padding: 15px 40px;
-        background: transparent; /* Changed to transparent for clean look */
-        border: 2.5px solid var(--gm-neon); 
+        padding: 14px 38px;
+        background: transparent;
+        border: 1px solid var(--gm-neon); 
         border-radius: 50px;
         text-decoration: none;
         color: var(--gm-text);
-        font-weight: 900;
-        font-size: 1rem;
+        font-weight: 700;
+        font-size: 0.9rem;
         text-transform: uppercase;
-        letter-spacing: 1px;
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        box-shadow: 0 4px 15px rgba(0, 114, 255, 0.1); /* Soft initial shadow */
+        letter-spacing: 0.5px;
+        transition: all 0.25s ease;
     }
     
     .mxr-glass-pill:hover { 
-        transform: translateY(-3px) scale(1.03); 
+        transform: translateY(-2px); 
         background: var(--gm-neon) !important;
-        color: #ffffff !important; /* White text for Light Mode Blue BG */
-        box-shadow: 0 10px 25px rgba(0, 114, 255, 0.3);
+        color: #ffffff !important; 
     }
 
-    /* Isse blue span wala text bhi hover pe color change karega */
     .mxr-glass-pill:hover span {
         color: #ffffff !important; 
     }
 
-    /* Night mode mein hover pe black text taaki cyan neon pe dikhe */
     body.night-mode .mxr-glass-pill:hover { 
-        color: #000000 !important; 
+        color: #030712 !important; 
     }
     body.night-mode .mxr-glass-pill:hover span {
-        color: #000000 !important; 
+        color: #030712 !important; 
     }
 
     @media (max-width: 768px) {
-        .modules-grid { grid-template-columns: 1fr; }
-        .module-card { padding: 40px 25px; }
+        .growth-modules-section { padding: 60px 20px; }
+        .modules-grid { grid-template-columns: 1fr; gap: 25px; }
+        .module-card { padding: 45px 25px 35px 25px; border-radius: 20px; }
+        .module-card h3 { font-size: 1.75rem; }
+        .ncr-trigger-btn { padding: 16px 20px; font-size: 0.95rem; border-radius: 14px; }
+        .ncr-content p { padding: 20px; font-size: 0.95rem; }
+        .ncr-content { border-radius: 14px; }
     }
 </style>
 
@@ -2136,91 +2208,76 @@
 <script>
     function toggleNcrDetails(btn) {
         const content = document.getElementById('ncrData');
-        btn.classList.toggle('active');
-        content.classList.toggle('open');
+        const isActive = btn.classList.toggle('active');
+        
+        if (isActive) {
+            content.classList.add('open');
+            content.style.maxHeight = content.scrollHeight + "px";
+            btn.setAttribute('aria-expanded', 'true');
+        } else {
+            content.style.maxHeight = "0";
+            content.classList.remove('open');
+            btn.setAttribute('aria-expanded', 'false');
+        }
     }
 </script>
 
 <style>
-    /* --- THEME VARIABLES --- */
+    /* --- 1. THEME & MINIMAL FLAT LOGIC (Synced with #030712) --- */
     :root {
         --pm-bg: #ffffff;
-        --pm-card-bg: #ffffff;
+        --pm-card-bg: #f8fafc; /* Subtle contrast change from pure white background */
         --pm-text: #0f172a;
         --pm-sub: #64748b;
-        --pm-neon: #0072ff; /* Professional Blue for text & label */
-        --pm-border-inner: #ffffff; /* Inner gap pure white for better contrast */
-        --pm-border-moving: #0072ff; /* FIXED: Moving line matches text color in Day Mode */
+        --pm-neon: #00d2ff; /* Unified Corporate Accent Color */
+        --pm-border: rgba(0, 210, 255, 0.15);
     }
 
+    /* 🌙 NIGHT MODE: Exact match with Education Theme Profile */
     body.night-mode .promise-section {
-        --pm-bg: #000000;
-        --pm-card-bg: #000000;
+        --pm-bg: #030712;         /* Sahi kar diya: Match with premium dark layout */
+        --pm-card-bg: #0b0f19;    /* Cards container background depth enhancement */
         --pm-text: #ffffff;
-        --pm-sub: #888888;
-        --pm-neon: #00e5ff; /* Cyan Neon for Night */
-        --pm-border-inner: #000000;
-        --pm-border-moving: #00e5ff; /* Moving line matches neon in Night Mode */
+        --pm-sub: #94a3b8;
+        --pm-neon: #00d2ff;
+        --pm-border: rgba(255, 255, 255, 0.06);
     }
 
     .promise-section {
-        background: var(--pm-bg);
-        padding: 5px 5%;
-        font-family: 'Montserrat', sans-serif, Arial;
+        background: var(--pm-bg) !important;
+        padding: 50px 6% 70px 6%;
+        font-family: 'Inter', sans-serif;
         display: flex;
         flex-direction: column;
         align-items: center;
         color: var(--pm-text);
-        padding-bottom: 35px;
-        transition: all 0.5s ease;
+        transition: background 0.5s ease, color 0.5s ease;
     }
 
     .promise-section .section-label {
         font-size: 0.75rem;
         color: var(--pm-neon);
         text-transform: uppercase;
-        letter-spacing: 5px;
-        margin-bottom: 12px; 
+        letter-spacing: 4px;
+        margin-bottom: 25px; 
         font-weight: 800;
-        opacity: 0.9;
     }
 
+    /* --- PREMIUM FRAME (Clean & Minimal) --- */
     .promise-wrapper {
         position: relative;
         max-width: 850px;
         width: 100%;
-        padding: 30px;
+        padding: 50px 45px;
         background: var(--pm-card-bg);
-        border-radius: 8px;
-        overflow: hidden;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        border-radius: 28px; /* Elegant curved framework */
+        border: 1px solid var(--pm-border);
+        box-sizing: border-box;
+        transition: border-color 0.3s ease, background 0.5s ease;
     }
-
-    /* --- RUNNING NEON LINE --- */
-    .promise-wrapper::before {
-        content: '';
-        position: absolute;
-        width: 200%;
-        height: 200%;
-        /* FIXED: Gradient uses the dynamic moving border variable */
-        background: conic-gradient(transparent, transparent, transparent, var(--pm-border-moving));
-        animation: rotateBorder 6s linear infinite;
-        top: -50%;
-        left: -50%;
-    }
-
-    .promise-wrapper::after {
-        content: '';
-        position: absolute;
-        inset: 2.5px; /* Precision gap for the line thickness */
-        background: var(--pm-border-inner);
-        border-radius: 6px;
-        z-index: 1;
-    }
-
-    @keyframes rotateBorder {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
+    
+    .promise-wrapper:hover {
+        border-color: var(--pm-neon);
     }
 
     .promise-content {
@@ -2229,14 +2286,15 @@
     }
 
     .promise-text {
-        font-size: 1.25rem;
+        font-size: 1.2rem;
         color: var(--pm-text);
-        line-height: 1.7;
+        line-height: 1.8;
         font-weight: 500;
-        margin: 0 0 25px 0;
+        margin: 0 0 40px 0;
         text-align: center;
         font-style: normal;
         border: none;
+        padding: 0;
     }
 
     .promise-text span {
@@ -2244,33 +2302,37 @@
         font-weight: 700;
     }
 
-    /* --- FOOTER --- */
+    /* --- FOOTER (Se Seals & Signatures) --- */
     .promise-footer {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-top: 10px;
+        margin-top: 15px;
     }
 
     .integrity-seal {
-        width: 85px;
-        height: 85px;
-        border: 1px dashed var(--pm-neon);
+        width: 80px;
+        height: 80px;
+        border: 1px solid var(--pm-border); /* Changed from dashed to solid premium border */
         border-radius: 50%;
         display: flex;
         justify-content: center;
         align-items: center;
-        transform: rotate(-10deg);
-        background: rgba(0, 114, 255, 0.02);
+        transform: rotate(-8deg);
+        transition: border-color 0.3s ease;
+    }
+    
+    .promise-wrapper:hover .integrity-seal {
+        border-color: var(--pm-neon);
     }
 
     .seal-inner {
         font-family: 'Dancing Script', cursive;
         font-size: 0.85rem;
-        color: var(--pm-neon);
+        color: var(--pm-text);
         text-align: center;
         font-weight: 700;
-        line-height: 1.1;
+        line-height: 1.2;
     }
 
     .sig-container {
@@ -2279,26 +2341,28 @@
 
     .sig-font {
         font-family: 'Dancing Script', cursive;
-        font-size: 1.8rem;
+        font-size: 1.9rem;
         color: var(--pm-neon);
         display: inline-block;
-        transform: rotate(-2deg);
-        margin-bottom: 2px;
+        transform: rotate(-1deg);
+        margin-bottom: 4px;
+        font-weight: 700;
     }
 
     .sig-label {
         display: block;
         font-size: 0.65rem;
         text-transform: uppercase;
-        letter-spacing: 3px;
+        letter-spacing: 2px;
         color: var(--pm-sub);
         font-weight: 600;
     }
 
     @media (max-width: 768px) {
-        .promise-wrapper { padding: 30px 20px; }
-        .promise-text { font-size: 1.05rem; }
-        .promise-footer { flex-direction: column; gap: 25px; }
+        .promise-section { padding: 40px 20px; }
+        .promise-wrapper { padding: 35px 25px; border-radius: 20px; }
+        .promise-text { font-size: 1.05rem; line-height: 1.7; margin-bottom: 30px; }
+        .promise-footer { flex-direction: column; gap: 30px; text-align: center; }
         .sig-container { order: 1; text-align: center; }
         .integrity-seal { order: 2; width: 75px; height: 75px; }
     }
@@ -2320,7 +2384,7 @@
                 <meta itemprop="ethicsPolicy" content="https://yourdomain.com/ethics">
 
                 <div class="sig-container">
-                    <span class="sig-font" itemprop="name">MaxReach Marketing</span>
+                    <span class="sig-font" itemprop="name">MaxReach Global</span>
                     <span class="sig-label">Our Commitment to Excellence</span>
                 </div>
             </div>
@@ -2328,186 +2392,269 @@
     </div>
 </section>
 
-<footer class="mxr-fnl-z-footer" itemscope itemtype="https://schema.org/WPFooter">
-    <div itemscope itemtype="https://schema.org/ProfessionalService" style="display:none;">
-        <link itemprop="url" href="https://maxreachglobal.in/">
-        <link itemprop="image" href="https://maxreachglobal.in/homeimages/maxreach-preview.png">
-        <span itemprop="name">MaxReach Global</span>
-    </div>
+<footer id="mx-footer-section" itemscope itemtype="https://schema.org/ProfessionalService">
+    <link itemprop="url" href="https://maxreachglobal.in/">
+    <link itemprop="image" href="https://maxreachglobal.in/homeimages/maxreach-preview.png">
 
-    <div class="mxr-fnl-z-grid">
-        
-        <div class="mxr-fnl-z-col branding">
-            <h2 class="mxr-fnl-z-logo">MAX<span class="mxr-fnl-z-blue">REACH</span></h2>
-            <p class="mxr-fnl-z-vision" itemprop="description">
-                "Humanizing brands, scaling businesses." Empowering mentors and businesses across <strong>India</strong> to build national authority through smart digital systems.
-            </p>
+    <div class="mx-links-wrapper">
+        <h3 class="mx-section-title">Quick Useful Links</h3>
+        <div class="mx-footer-grid">
             
-            <div class="mxr-fnl-z-socials">
-                <a href="https://www.instagram.com/maxreachglobal.official/" class="mxr-fnl-z-icon" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.facebook.com/maxreachglobalofficial" class="mxr-fnl-z-icon" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://www.linkedin.com/in/maxreachglobalofficial" class="mxr-fnl-z-icon" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://t.me/maxreachglobal_official" class="mxr-fnl-z-icon" target="_blank" rel="noopener" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
+            <div class="mx-footer-col">
+                <h4>Our Services</h4>
+                <ul role="list">
+                    <li><a href="dsf" title="Premium Digital Storefront Design">Digital Storefront</a></li>
+                    <li><a href="vs" title="Viral Studio Video Production">Viral Studio</a></li>
+                    <li><a href="adacc" title="Ad Accelerators Performance Marketing">Ad Accelerators</a></li>
+                    <li><a href="home" title="Local Visibility & Managed Marketing">Local Visibility</a></li>
+                </ul>
             </div>
-        </div>
 
-        <div class="mxr-fnl-z-col">
-            <h4 class="mxr-fnl-z-title">Sector Expertise</h4>
-            <ul class="mxr-fnl-z-list">
-                <li><a href="realestate.html" title="Real Estate Marketing & SEO">Property Scale</a></li>
-                <li><a href="hospitality.html" title="Hospitality & Cafe Growth">Cafe Growth</a></li>
-                <li><a href="d2c.html" title="D2C E-commerce Sales Growth">E-com Sales</a></li>
-                <li><a href="allothers.html" title="Corporate Brand Authority Building">Brand Authority</a></li>
-                <li><a href="personal-branding.html" title="Lifestyle & Wellness Branding">Lifestyle Branding</a></li>
-                <li><a href="education.html" title="Education Academy Marketing">Edu Academy</a></li>
-            </ul>
-        </div>
-
-        <div class="mxr-fnl-z-col">
-            <h4 class="mxr-fnl-z-title">Quick Links</h4>
-            <ul class="mxr-fnl-z-list">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html#mr-vision-id">Our Vision</a></li>
-                <li><a href="about.html#elite-team-id">Our Team</a></li>
-                <li><a href="about.html#faq-id">FAQ</a></li>
-                <li><a href="legal.html" title="Legal Trust Policy">Legal Trust</a></li>
-            </ul>
-        </div>
-
-        <div class="mxr-fnl-z-col" itemscope itemtype="https://schema.org/Organization">
-            <h4 class="mxr-fnl-z-title">Get In Touch</h4>
-            <div class="mxr-fnl-z-contact-box">
-                <p class="mxr-fnl-z-item">
-                    <span class="mxr-fnl-z-label">Email:</span> 
-                    <a href="mailto:maxreach.official@gmail.com" class="mxr-fnl-z-info" itemprop="email">maxreach.official@gmail.com</a>
-                </p>
-                <p class="mxr-fnl-z-item">
-                    <span class="mxr-fnl-z-label">Phone:</span> 
-                    <a href="https://wa.me/919810591327" class="mxr-fnl-z-info" itemprop="telephone">+91 98105 91327</a>
-                </p>
-              <p class="mxr-fnl-z-item" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
-    <span class="mxr-fnl-z-label">HQ:</span> 
-    <span class="mxr-fnl-z-info">
-        <span itemprop="addressLocality">Gurugram</span>, 
-        <span itemprop="addressCountry">India</span> 
-        <span class="mxr-fnl-z-cyan">— Remote Worldwide</span>
-    </span>
-</p>
-                
-               <a href="https://wa.me/919810591327?text=Hi%20MaxReach,%20I'm%20interested%20in%20the%20Hospitality%20Growth%20Plans.%20I%20want%20to%20enhance%20my%20brand's%20digital%20presence%20and%20guest%20reach." 
-   class="mxr-fnl-z-whatsapp" 
-   target="_blank" 
-   rel="noopener noreferrer" 
-   title="Inquire about Hospitality Marketing Plans via WhatsApp" 
-   aria-label="Connect with MaxReach on WhatsApp for Hospitality Growth Plans">
-   <i class="fab fa-whatsapp" aria-hidden="true"></i> CONNECT ON WHATSAPP
-</a>
+            <div class="mx-footer-col">
+                <h4>Industries</h4>
+                <ul role="list">
+                    <li><a href="realestate.html" title="Real Estate Marketing">Property Scale</a></li>
+                    <li><a href="hospitality.html" title="Cafe & Hospitality Growth">Cafe Growth</a></li>
+                    <li><a href="d2c.html" title="E-commerce & D2C Sales">E-com Sales</a></li>
+                    <li><a href="allothers.html" title="Brand Authority Building">Brand Authority</a></li>
+                    <li><a href="personal-branding.html" title="Lifestyle Branding">Lifestyle Branding</a></li>
+                    <li><a href="education.html" title="Education Academy Marketing">Edu Academy</a></li>
+                </ul>
             </div>
-        </div>
 
+            <div class="mx-footer-col">
+                <h4>Follow Us</h4>
+                <ul role="list">
+                    <li><a href="https://www.instagram.com/maxreachglobal.official/" itemprop="sameAs" target="_blank" rel="noopener" title="Instagram">Instagram</a></li>
+                    <li><a href="https://www.facebook.com/maxreachglobalofficial" itemprop="sameAs" target="_blank" rel="noopener" title="Facebook">Facebook</a></li>
+                    <li><a href="https://www.linkedin.com/company/maxreach-global/" itemprop="sameAs" target="_blank" rel="noopener" title="LinkedIn">LinkedIn</a></li>
+                    <li><a href="https://t.me/maxreachglobal_official" itemprop="sameAs" target="_blank" rel="noopener" title="Telegram">Telegram</a></li>
+                </ul>
+            </div>
+
+            <div class="mx-footer-col">
+                <h4>Insights</h4>
+                <ul role="list"> 
+                    <li><a href="about.html#mr-vision-id">Our Vision</a></li>
+                    <li><a href="legal.html" title="Legal Trust Policy">Legal Trust</a></li>
+                    <li><a href="about.html#elite-team-id">Our Team</a></li>
+                    <li><a href="about.html#faq-id">FAQ</a></li>
+                </ul>
+            </div>
+
+        </div>
     </div>
 
-    <div class="mxr-fnl-z-bottom">
-        <div class="mxr-fnl-z-bar-content">
-            <p>© 2026 MAXREACHGLOBAL — <span class="mxr-fnl-z-cyan">INDIA'S DIGITAL GROWTH PARTNER</span></p>
-        </div>
+   <div class="mx-footer-bottom-info">
+        <div class="mx-bottom-grid">
+            <div class="mx-contact-card">
+                <h4>Get in Touch</h4>
+                <address style="font-style: normal;">
+                    <p>Email: <a href="mailto:maxreach.official@gmail.com" itemprop="email" style="color: inherit; text-decoration: none;">maxreach.official@gmail.com</a></p>
+                    <p>Phone/WhatsApp: <a href="https://wa.me/919810591327" itemprop="telephone" style="color: inherit; text-decoration: none;">+91 98105 91327</a></p>
+                    <p itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+                        Location: <span itemprop="addressLocality">Gurugram</span>, <span itemprop="addressRegion">Haryana</span>, <span itemprop="addressCountry">India</span> - Remote Worldwide
+                    </p>
+                </address>
+            </div>
+            
+            <div class="mx-brand-card">
+                <div class="mx-f-logo" aria-label="MaxReach Global Logo">MAX<span>REACH</span></div>
+                <p itemprop="description">"Humanizing brands, scaling businesses."</p>
+                
+      <div class="mx-social-links">
+    <a href="https://www.linkedin.com/company/maxreach-global/" 
+       target="_blank" 
+       rel="noopener" 
+       itemprop="sameAs" 
+       title="Connect with MaxReach Global on LinkedIn" 
+       aria-label="Connect with MaxReach Global on LinkedIn">
+       <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+    </a>
+
+    <a href="https://www.instagram.com/maxreachglobal.official/" 
+       target="_blank" 
+       rel="noopener" 
+       itemprop="sameAs" 
+       title="Follow MaxReach Global on Instagram" 
+       aria-label="Follow MaxReach Global on Instagram for Marketing Tips">
+       <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+    </a>
+
+    <a href="https://www.facebook.com/maxreachglobalofficial" 
+       target="_blank" 
+       rel="noopener" 
+       itemprop="sameAs" 
+       title="MaxReach Global Official Facebook Page" 
+       aria-label="Visit MaxReach Global on Facebook">
+       <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+    </a>
+
+    <a href="https://t.me/maxreachglobal_official" 
+       target="_blank" 
+       rel="noopener" 
+       itemprop="sameAs" 
+       title="Join MaxReach Global Telegram Community" 
+       aria-label="Join our Telegram channel for Business Updates">
+       <i class="fa-brands fa-telegram" aria-hidden="true"></i>
+    </a>
+</div>
+            </div> 
+        </div> 
+    </div> 
+
+    <div class="mx-copyright-bar">
+        <p>© 2026 <span itemprop="name">MaxReachGlobal</span>. All Rights Reserved.</p>
     </div>
 </footer>
 
+
 <style>
-    /* Prefix: mxr-fnl-z (MaxReach Final Zone) */
-    .mxr-fnl-z-footer {
-        background: #020814; 
-        padding: 60px 20px 0;
-        color: #fff;
-        font-family: 'Inter', sans-serif;
-        border-top: 1px solid rgba(255, 255, 255, 0.05);
-        display: block;
-    }
+#mx-footer-section {
+    --mx-blue: #00B0FF;
+    /* SEO Benefit: Ensuring content is visible even if images don't load */
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
 
-    .mxr-fnl-z-grid {
-        max-width: 1200px;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
-        gap: 40px;
-        padding-bottom: 50px;
-    }
+/* Quick Links Section */
+.mx-links-wrapper {
+    background: #001a33; 
+    padding: 60px 10%;
+    border-top: 1px solid rgba(0, 229, 255, 0.2);
+}
 
-    .mxr-fnl-z-logo { font-size: 1.6rem; font-weight: 900; letter-spacing: 2px; margin-bottom: 15px; color: #fff; }
-    .mxr-fnl-z-blue { color: #00d2ff; }
-    .mxr-fnl-z-vision { font-size: 0.85rem; color: rgba(255, 255, 255, 0.5); line-height: 1.6; margin-bottom: 25px; }
+.mx-section-title {
+    text-align: center;
+    color: var(--mx-blue);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+    font-size: 1.2rem;
+    font-weight: 800; /* Header hierarchy for SEO */
+}
 
-    .mxr-fnl-z-socials { display: flex; gap: 12px; }
-    .mxr-fnl-z-icon {
-        width: 38px; height: 38px;
-        border: 1px solid rgba(255, 255, 255, 0.15);
-        border-radius: 50%;
-        display: flex; align-items: center; justify-content: center;
-        color: white; text-decoration: none; font-size: 0.9rem;
-        transition: 0.3s ease;
-    }
-    .mxr-fnl-z-icon:hover { background: #00d2ff; border-color: #00d2ff; color: #000; transform: translateY(-3px); }
+.mx-footer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
 
-    .mxr-fnl-z-title { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 25px; color: #00d2ff; font-weight: 800; }
+.mx-footer-col h4 {
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    border-left: 3px solid var(--mx-blue);
+    padding-left: 10px;
+    font-weight: 700;
+}
 
-    .mxr-fnl-z-list { list-style: none; padding: 0; }
-    .mxr-fnl-z-list li { margin-bottom: 12px; }
-    .mxr-fnl-z-list a { color: rgba(255, 255, 255, 0.6); text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
-    .mxr-fnl-z-list a:hover { color: #00d2ff; padding-left: 5px; }
+.mx-footer-col ul { list-style: none; padding: 0; }
+.mx-footer-col ul li { margin-bottom: 12px; }
 
-    .mxr-fnl-z-whatsapp {
-        display: inline-flex; align-items: center; gap: 10px;
-        background: rgba(0, 210, 255, 0.05);
-        border: 1px solid #00d2ff;
-        color: #00d2ff; padding: 12px 20px;
-        border-radius: 8px; text-decoration: none;
-        font-weight: 700; font-size: 0.8rem;
-        margin-top: 15px; transition: 0.3s;
-    }
-    .mxr-fnl-z-whatsapp:hover { background: #00d2ff; color: #000; box-shadow: 0 0 15px rgba(0, 210, 255, 0.2); }
+.mx-footer-col ul li a {
+    color: #aaa;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-block; /* For better click target (SEO Tip) */
+}
 
-    .mxr-fnl-z-label { color: #ffffff; font-weight: 600; }
-    .mxr-fnl-z-info { color: rgba(255, 255, 255, 0.6); font-weight: 400; }
-    .mxr-fnl-z-item { font-size: 0.85rem; margin-bottom: 8px; line-height: 1.5; }
+.mx-footer-col ul li a:hover,
+.mx-footer-col ul li a:focus { /* Focus state for crawlability */
+    color: var(--mx-blue);
+    padding-left: 8px;
+    outline: none;
+}
 
-    .mxr-fnl-z-bottom { border-top: 1px solid rgba(255, 255, 255, 0.05); padding: 25px 20px; text-align: center; }
-    .mxr-fnl-z-bar-content { font-size: 0.7rem; color: rgba(255, 255, 255, 0.3); text-transform: uppercase; letter-spacing: 1px; }
-    .mxr-fnl-z-cyan { color: #00d2ff; font-weight: 700; }
+/* Bottom Contact & Brand Info */
+.mx-footer-bottom-info {
+    padding: 50px 10%;
+    background: #000;
+}
 
-/* --- MOBILE RESPONSIVE FIX --- */
-    @media (max-width: 768px) {
-        .mxr-fnl-z-grid { 
-            grid-template-columns: 1fr 1fr; 
-            gap: 30px; 
-        }
-        
-        .mxr-fnl-z-col.branding { 
-            grid-column: span 2; 
-            text-align: center; 
-        }
-        
-        .mxr-fnl-z-socials { 
-            justify-content: center; 
-        }
-        
-        /* Contact Col (Jahan button hai) */
-        .mxr-fnl-z-col:last-child { 
-            grid-column: span 2; 
-            text-align: center; /* Sab kuch center karega button ke sath */
-        }
+.mx-bottom-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 50px;
+}
 
-        .mxr-fnl-z-whatsapp { 
-            display: flex; /* Flex rakho alignment ke liye */
-            width: 100%; 
-            max-width: 280px; /* Ek limit de di taaki bahut lamba na ho */
-            margin: 15px auto 0; /* 'auto' se horizontal center ho jayega */
-            justify-content: center; 
-        }
-    }
+/* SEO Optimization: Making address items more readable for bots */
+.mx-contact-card h4 { color: var(--mx-blue); margin-bottom: 15px; font-size: 1.2rem; font-weight: 700; }
+.mx-contact-card p { color: #ccc; margin-bottom: 10px; font-size: 0.95rem; line-height: 1.6; }
+.mx-contact-card a { transition: 0.3s ease; }
+.mx-contact-card a:hover { color: var(--mx-blue) !important; }
 
+.mx-brand-card { text-align: right; }
+.mx-f-logo { font-weight: 900; font-size: 2.2rem; color: #fff; letter-spacing: 1px; line-height: 1; }
+.mx-f-logo span { color: var(--mx-blue); }
+.mx-brand-card p { color: #666; font-style: italic; font-size: 0.85rem; margin-top: 8px; }
 
+.mx-social-links {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+}
+
+.mx-social-links a {
+    color: #fff;
+    font-size: 1.5rem;
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    text-decoration: none;
+    display: inline-flex;
+}
+
+.mx-social-links a:hover {
+    color: var(--mx-blue);
+    transform: translateY(-5px); 
+    text-shadow: 0 0 15px rgba(0, 176, 255, 0.6); 
+}
+
+/* Copyright Bar - SEO & Accessibility Optimized */
+.mx-copyright-bar {
+    text-align: center;
+    padding: 25px;
+    background: #050505;
+    border-top: 1px solid #111;
+    font-size: 0.85rem;
     
+    /* 1. Color ko #555 se badal kar #94a3b8 kiya for high contrast */
+    color: #94a3b8; 
+    
+    letter-spacing: 0.5px;
+}
+
+/* 2. Agar koi link ya brand name hai copyright mein toh wo aur bright dikhe */
+.mx-copyright-bar span, 
+.mx-copyright-bar a {
+    color: #f8fafc; 
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* --- 📱 MOBILE OPTIMIZATION (SEO Friendly) --- */
+@media (max-width: 992px) {
+    .mx-footer-grid {
+        grid-template-columns: repeat(2, 1fr) !important; 
+        gap: 40px 20px;
+    }
+    .mx-bottom-grid {
+        grid-template-columns: 1fr !important;
+        text-align: center !important;
+        gap: 40px;
+    }
+    .mx-brand-card { text-align: center !important; }
+    .mx-social-links { justify-content: center !important; }
+}
+
+@media (max-width: 768px) {
+    .mx-links-wrapper { padding: 50px 20px !important; }
+    .mx-section-title { font-size: 1.1rem !important; margin-bottom: 30px; }
+    .mx-footer-col h4 { font-size: 1rem; }
+    /* Mobile tap targets optimization */
+    .mx-footer-col ul li { margin-bottom: 15px; }
+}
 </style>
 
 <button id="scrollTopBtn" 

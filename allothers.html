@@ -69,8 +69,10 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Bodoni+Moda:ital,wght@1,400&family=Plus+Jakarta+Sans:wght@300;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" 
-      media="print" onload="this.media='all'"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Bodoni+Moda:ital,wght@1,400&family=Plus+Jakarta+Sans:wght@300;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" 
+      media="print" onload="this.media='all'">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
 
@@ -378,7 +380,7 @@
                 <a href="https://www.facebook.com/maxreachglobalofficial" target="_blank" rel="noopener noreferrer" title="Follow MaxReach Global on Facebook" aria-label="Facebook">
                     <i class="fab fa-facebook-f" aria-hidden="true"></i>
                 </a>
-                <a href="https://www.linkedin.com/in/maxreachglobalofficial" target="_blank" rel="noopener noreferrer" title="Connect with MaxReach Global on LinkedIn" aria-label="LinkedIn">
+                <a href="https://www.linkedin.com/company/maxreach-global/" target="_blank" rel="noopener noreferrer" title="Connect with MaxReach Global on LinkedIn" aria-label="LinkedIn">
                     <i class="fab fa-linkedin-in" aria-hidden="true"></i>
                 </a>
                 <a href="https://t.me/maxreachglobal_official" target="_blank" rel="noopener noreferrer" title="Join MaxReach Global on Telegram" aria-label="Telegram">
@@ -391,44 +393,43 @@
 <div id="navOverlay" onclick="toggleMenu()" aria-hidden="true" aria-label="Close Menu"></div>
 
 <style>
-    /* --- COLOR LOGIC (Sirf Variables Add Kiye Hain) --- */
+    /* --- COLOR LOGIC (Index Page Fully Synced) --- */
     :root {
         --bg-main: #ffffff;
         --text-main: #1a1a1a;
-        --text-grey: rgba(71, 71, 71, 0.6); /* White mode pe thoda dark grey */
-        --accent-dynamic: #bf953f; /* JS se change hoga */
+        --text-grey: rgba(71, 71, 71, 0.6); 
+        --accent-dynamic: #bf953f; 
     }
 
     body.night-mode {
         --bg-main: #080808;
         --text-main: #ffffff;
-        --text-grey: rgba(255, 255, 255, 0.4); /* Dark mode pe light grey */
+        --text-grey: rgba(255, 255, 255, 0.4); 
     }
 
     body {
         margin: 0; 
         background-color: var(--bg-main); 
         color: var(--text-main);
-        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
         transition: background 1.2s cubic-bezier(0.4, 0, 0.2, 1), color 0.5s ease;
         overflow-x: hidden;
     }
     
     #hero-wrapper {
-
         position: relative;
         height: 100vh;
         width: 100%;
         overflow: hidden;
     }
 
-    .font-sync { font-family: 'Syncopate', sans-serif; }
+    .font-sync { font-family: 'Syncopate', sans-serif; font-weight: 700; }
     .font-editorial { font-family: 'Bodoni Moda', serif; }
 
     .depth-bg-text {
         position: absolute; top: 45%; left: 50%; transform: translate(-50%, -50%);
         font-size: 22vw; font-weight: 900; 
-        color: var(--text-grey); opacity: 0.1; /* Subtle depth */
+        color: var(--text-grey); opacity: 0.1; 
         pointer-events: none; text-transform: uppercase;
     }
 
@@ -436,7 +437,7 @@
         position: absolute; bottom: -10vh; left: 50%; transform: translateX(-50%);
         width: 55vw; height: 55vw; border-radius: 50%; z-index: 2;
         transition: background 1s ease;
-        box-shadow: 0 0 50px rgba(0,0,0,0.2);
+        box-shadow: 0 0 50px rgba(0,0,0,0.15);
         background: var(--accent-dynamic) !important;
     }
 
@@ -444,7 +445,6 @@
         position: absolute; right: 40px; top: 50%; transform: translateY(-50%);
         z-index: 50; writing-mode: vertical-rl;
     }
-    /* MAX mode ke sath black/white hoga, REACH hamesha circle ke sath */
     .max-out { -webkit-text-stroke: 1.5px var(--text-main); color: transparent; font-size: 3.8rem; letter-spacing: 4px; }
     .reach-in { color: var(--accent-dynamic) !important; font-size: 3.8rem; letter-spacing: 4px; transition: color 1s ease; }
 
@@ -455,19 +455,19 @@
 
     .ui-box { position: absolute; z-index: 40; width: 100%; }
 
-    /* Desktop Alignments (Aapka Original Logic) */
+    /* Desktop Alignments */
     @media (min-width: 1024px) {
         .ui-box { top: auto !important; bottom: 12% !important; left: 60px !important; width: auto !important; text-align: left !important; }
         #main-title { font-size: 7.5rem !important; line-height: 0.85 !important; margin-bottom: 20px !important; color: var(--text-main); }
         .fine-print { top: auto !important; bottom: 5% !important; left: 65px !important; transform: none !important; width: auto !important; text-align: left !important; font-size: 10px !important; letter-spacing: 0.4em !important; z-index: 50 !important; }
     }
 
-    /* Mobile Alignments (Aapka Original Logic) */
+    /* Mobile Alignments */
     @media (max-width: 768px) {
         #hero-wrapper { height: 70vh !important; min-height: 550px; }
-        .ui-box { top: 7% !important; padding: 0 20px; text-align: center; }
-        #main-title { font-size: 3.2rem !important; line-height: 0.95 !important; margin-top: 10px; color: var(--text-main); }
-        .depth-bg-text { display: block !important; position: absolute !important; z-index: 5 !important; font-size: 26vw !important; top: 50% !important; left: 50% !important; transform: translate(-50%, -50%) !important; color: var(--text-grey) !important; opacity: 0.2 !important; width: 100%; text-align: center; }
+        .ui-box { top: 12% !important; padding: 0 20px; text-align: center; }
+        #main-title { font-size: 3.5rem !important; line-height: 0.95 !important; margin-top: 10px; color: var(--text-main); }
+        .depth-bg-text { display: block !important; position: absolute !important; z-index: 5 !important; font-size: 26vw !important; top: 50% !important; left: 50% !important; transform: translate(-50%, -50%) !important; color: var(--text-grey) !important; opacity: 0.15 !important; width: 100%; text-align: center; }
         .solid-circle { width: 97vw !important; height: 100vw !important; bottom: -10vh !important; z-index: 1 !important; }
         .stage { height: 60vh !important; bottom: 0 !important; z-index: 10 !important; display: flex; align-items: flex-end; }
         .hero-img { height: 75% !important; width: auto !important; object-fit: contain; object-position: bottom !important; filter: drop-shadow(0 20px 30px rgba(0,0,0,0.3)); }
@@ -484,6 +484,7 @@
     <meta itemprop="description" content="MaxReach is a premier 360° digital agency in Gurugram, specializing in luxury branding, viral video production, and aggressive SEO growth strategies.">
     <meta itemprop="areaServed" content="Gurugram, Delhi NCR, India">
     
+    <!-- Fix 1: Default HTML aligned with Slide 1 to kill the glitch completely -->
     <div id="depth-txt" class="depth-bg-text font-sync" aria-hidden="true">LUXURY</div>
     <div id="circle-pod" class="solid-circle" aria-hidden="true"></div>
 
@@ -496,9 +497,9 @@
         
         <h1 id="main-title">
             <span class="sr-only">MaxReach Global - Best 360° Digital Marketing & Creative Agency in Gurugram</span>
-            <span class="block text-2xl lg:text-4xl font-bold uppercase tracking-tighter" style="color: var(--text-white);">
-                Dominating the <span class="cm-accent-text">Digital Era.</span>
-            </span>
+            <!-- Fix 2: First Slide text is now hardcoded in HTML so NO FLASH/GLITCH occurs on load -->
+            <span class="font-editorial italic">Bespoke</span> <br> 
+            <span class="font-sync" style="-webkit-text-stroke: 1px var(--text-main); color: transparent;">Visuals</span>
         </h1>
     </div>
 
@@ -509,7 +510,7 @@
         <img id="img-1" src="homeimages/mgirl7.png" alt="Digital Infrastructure and High-End Design by MaxReach" class="hero-img" itemprop="image">
         <img id="img-2" src="homeimages/mgirl6.png" alt="Premium Brand Growth and Performance Marketing 2026" class="hero-img" itemprop="image">
     </div>
-</div>
+</div> 
 
 <script>
     const slides = [
@@ -519,7 +520,10 @@
     ];
 
     let index = 0;
+    // DOM Elements Cached for performance
     const imgs = document.querySelectorAll('.hero-img');
+    const depthTxtEl = document.getElementById('depth-txt');
+    const mainTitleEl = document.getElementById('main-title');
     let isMoving = false;
 
     function runSlide() {
@@ -532,20 +536,18 @@
         tl.to(imgs[index], { opacity: 0, y: 50, scale: 0.9, duration: 0.8, ease: "power3.inOut", onComplete: () => { imgs[index].style.display = "none"; imgs[index].style.visibility = "hidden"; } });
 
         tl.call(() => {
-            // Circle & REACH color sync
             document.documentElement.style.setProperty('--accent-dynamic', slides[nextIndex].circle);
 
-            // Background Switch (Only if Night Mode is ON)
             if(document.body.classList.contains('night-mode')) {
                 document.body.style.backgroundColor = slides[nextIndex].bg;
             } else {
                 document.body.style.backgroundColor = "#ffffff";
             }
 
-            document.getElementById('depth-txt').innerText = slides[nextIndex].depth;
-            document.getElementById('main-title').innerHTML = slides[nextIndex].title;
+            depthTxtEl.innerText = slides[nextIndex].depth;
+            mainTitleEl.innerHTML = slides[nextIndex].title;
             
-            gsap.fromTo("#depth-txt", { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 1 });
+            gsap.fromTo(depthTxtEl, { opacity: 0, scale: 0.8 }, { opacity: 0.1, scale: 1, duration: 1 });
         }, null, "-=0.2");
 
         tl.set(imgs[nextIndex], { display: "block", visibility: "visible" });
@@ -554,142 +556,145 @@
         index = nextIndex;
     }
 
-    window.onload = () => {
+    // DomContentLoaded fast load ke liye perfect hai window.onload se pehle
+    document.addEventListener("DOMContentLoaded", () => {
         imgs.forEach(img => { img.style.display = "none"; img.style.visibility = "hidden"; });
         imgs[0].style.display = "block";
         imgs[0].style.visibility = "visible";
         gsap.set(imgs[0], { opacity: 1, y: 0 });
 
-        // Initial Theme Load
         document.documentElement.style.setProperty('--accent-dynamic', slides[0].circle);
-        document.getElementById('main-title').innerHTML = slides[0].title;
         
-        if(!document.body.classList.contains('night-mode')) {
-            document.body.style.backgroundColor = "#ffffff";
-        } else {
+        if(document.body.classList.contains('night-mode')) {
             document.body.style.backgroundColor = slides[0].bg;
+        } else {
+            document.body.style.backgroundColor = "#ffffff";
         }
 
         setInterval(runSlide, 4000);
-    };
+    });
 </script>
 
    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
 <style>
-    /* --- SECTION THEME LOGIC (Updated for Better Visibility) --- */
+    /* --- SECTION THEME LOGIC (Updated to Premium Blue & Synced with #030712) --- */
     :root {
         --suite-bg: #ffffff;
-        --suite-text: #111111; /* Stronger dark text */
-        /* White mode: Grey text ko dark kiya (0.7 opacity) */
+        --suite-text: #111111; 
         --suite-subtext: rgba(0, 0, 0, 0.7); 
-        --suite-cyan: #0891b2; 
-        --suite-portal-bg: rgba(6, 182, 212, 0.05);
+        --suite-blue: #00d2ff; /* Premium Royal Blue */
+        --suite-portal-bg: rgba(37, 99, 235, 0.03); /* Softer background */
     }
 
+    /* 🌙 NIGHT MODE: Exact match with Education Theme Profile */
     body.night-mode #digital-suite {
-        --suite-bg: #080808;
+        --suite-bg: #030712;             /* Sahi kar diya: Exact match with layout dark base */
         --suite-text: #ffffff;
-        --suite-subtext: rgba(255, 255, 255, 0.45); /* Dark mode subtext */
-        --suite-cyan: #22d3ee; 
-        --suite-portal-bg: rgba(8, 145, 178, 0.2);
+        --suite-subtext: #94a3b8;        /* Contrast upgrade for readability */
+        --suite-blue: #00d2ff;           /* Lighter Premium Blue for Contrast */
+        --suite-portal-bg: rgba(255, 255, 255, 0.02); /* Clean translucent frame blend */
     }
 
     #digital-suite {
         background-color: var(--suite-bg);
-        transition: background-color 0.8s ease;
+        transition: background-color 0.5s ease;
     }
 
     /* Text Logic */
     .svc-text h3 {
-        color: var(--suite-cyan);
+        color: var(--suite-blue);
     }
 
     .svc-text p {
         color: var(--suite-subtext) !important;
-        font-weight: 500; /* Contrast ke liye font weight thoda badhaya */
+        font-weight: 500; 
     }
 
-    /* Cyan-specific elements logic */
-    .text-cyan-variant { color: var(--suite-cyan); transition: color 0.5s ease; }
-    .border-cyan-variant { border-color: var(--suite-cyan); transition: border-color 0.5s ease; }
+    /* Blue-specific elements logic */
+    .text-blue-variant { color: var(--suite-blue); transition: color 0.5s ease; }
+    .border-blue-variant { border-color: var(--suite-blue); transition: border-color 0.5s ease; }
     .bg-portal-variant { background-color: var(--suite-portal-bg); transition: background-color 0.5s ease; }
     
-    /* Glow Logic */
-    .cyan-glow { 
-        background-color: var(--suite-cyan); 
-        opacity: 0.1; 
-        filter: blur(120px); 
+    /* Ambient Glow Logic (Tuned Down for Pure Black Departure) */
+    .blue-glow { 
+        background-color: var(--suite-blue); 
+        opacity: 0.04; /* Softened slightly for the new deep slate background */
+        filter: blur(140px); 
     }
 </style>
 
 <section id="digital-suite" class="relative w-full py-16 overflow-hidden">
     
-    <div class="absolute top-[20%] -left-20 w-64 h-64 cyan-glow pointer-events-none"></div>
-    <div class="absolute bottom-[20%] -right-20 w-64 h-64 cyan-glow pointer-events-none opacity-5"></div>
+    <div class="absolute top-[20%] -left-20 w-64 h-64 blue-glow pointer-events-none"></div>
+    <div class="absolute bottom-[20%] -right-20 w-64 h-64 blue-glow pointer-events-none opacity-5"></div>
 
     <div class="container mx-auto px-6 lg:px-24 relative z-10">
         
-        <div class="mb-20 border-l-2 border-cyan-variant pl-6">
-            <p class="text-cyan-variant font-sync text-[9px] tracking-[0.4em] mb-2 uppercase">Solutions</p>
+        <div class="mb-20 border-l-2 border-blue-variant pl-6">
+            <p class="text-blue-variant font-sync text-[9px] tracking-[0.4em] mb-2 uppercase">Solutions</p>
             <h2 class="text-3xl lg:text-6xl font-sync font-bold tracking-tighter" style="color: var(--suite-text);">
                 THE 360° <br>
-                <span style="opacity: 0.3; color: var(--suite-cyan);">DIGITAL SUITE</span>
+                <span style="opacity: 0.3; color: var(--suite-blue);">DIGITAL SUITE</span>
             </h2>
         </div>
 
         <div class="flex flex-col gap-16 lg:gap-24">
             
+            <!-- Service 1 -->
             <div class="svc-trigger flex flex-row items-center gap-6 lg:gap-16">
                 <div class="relative flex-shrink-0 w-24 h-24 lg:w-40 lg:h-40">
-                    <div class="circle-portal bg-portal-variant border-cyan-variant absolute inset-0 rounded-full border flex items-center justify-center scale-75 opacity-0">
+                    <div class="circle-portal bg-portal-variant border-blue-variant absolute inset-0 rounded-full border flex items-center justify-center scale-75 opacity-0">
                         <span class="text-3xl lg:text-5xl">🎨</span>
                     </div>
                 </div>
                 <div class="svc-text opacity-0 translate-x-10">
-                    <h3 class="text-cyan-variant font-sync text-lg lg:text-2xl mb-2 uppercase tracking-tight">Identity & Design</h3>
+                    <h3 class="text-blue-variant font-sync text-lg lg:text-2xl mb-2 uppercase tracking-tight">Identity & Design</h3>
                     <p class="text-xs lg:text-base font-light leading-relaxed max-w-md" style="color: var(--suite-subtext);">
                         Logo Design & brand aesthetics that make your product stand out instantly.
                     </p>
                 </div>
             </div>
 
+            <!-- Service 2 -->
             <div class="svc-trigger flex flex-row items-center gap-6 lg:gap-16">
                 <div class="relative flex-shrink-0 w-24 h-24 lg:w-40 lg:h-40">
-                    <div class="circle-portal bg-portal-variant border-cyan-variant absolute inset-0 rounded-full border flex items-center justify-center scale-75 opacity-0">
+                    <div class="circle-portal bg-portal-variant border-blue-variant absolute inset-0 rounded-full border flex items-center justify-center scale-75 opacity-0">
                         <span class="text-3xl lg:text-5xl">🌐</span>
                     </div>
                 </div>
                 <div class="svc-text opacity-0 translate-x-10">
-                    <h3 class="text-cyan-variant font-sync text-lg lg:text-2xl mb-2 uppercase tracking-tight">Web Dominance</h3>
+                    <h3 class="text-blue-variant font-sync text-lg lg:text-2xl mb-2 uppercase tracking-tight">Web Dominance</h3>
                     <p class="text-xs lg:text-base font-light leading-relaxed max-w-md" style="color: var(--suite-subtext);">
                         High-performance Websites designed to convert casual visitors into loyal customers.
                     </p>
                 </div>
             </div>
 
+            <!-- Service 3 -->
             <div class="svc-trigger flex flex-row items-center gap-6 lg:gap-16">
                 <div class="relative flex-shrink-0 w-24 h-24 lg:w-40 lg:h-40">
-                    <div class="circle-portal bg-portal-variant border-cyan-variant absolute inset-0 rounded-full border flex items-center justify-center scale-75 opacity-0">
+                    <div class="circle-portal bg-portal-variant border-blue-variant absolute inset-0 rounded-full border flex items-center justify-center scale-75 opacity-0">
                         <span class="text-3xl lg:text-5xl">📸</span>
                     </div>
                 </div>
                 <div class="svc-text opacity-0 translate-x-10">
-                    <h3 class="text-cyan-variant font-sync text-lg lg:text-2xl mb-2 uppercase tracking-tight">Premium Visuals</h3>
+                    <h3 class="text-blue-variant font-sync text-lg lg:text-2xl mb-2 uppercase tracking-tight">Premium Visuals</h3>
                     <p class="text-xs lg:text-base font-light leading-relaxed max-w-md" style="color: var(--suite-subtext);">
                         Professional Product Shoots and high-end cinematic videos for your business.
                     </p>
                 </div>
             </div>
 
+            <!-- Service 4 -->
             <div class="svc-trigger flex flex-row items-center gap-6 lg:gap-16">
                 <div class="relative flex-shrink-0 w-24 h-24 lg:w-40 lg:h-40">
-                    <div class="circle-portal bg-portal-variant border-cyan-variant absolute inset-0 rounded-full border flex items-center justify-center scale-75 opacity-0">
+                    <div class="circle-portal bg-portal-variant border-blue-variant absolute inset-0 rounded-full border flex items-center justify-center scale-75 opacity-0">
                         <span class="text-3xl lg:text-5xl">🚀</span>
                     </div>
                 </div>
                 <div class="svc-text opacity-0 translate-x-10">
-                    <h3 class="text-cyan-variant font-sync text-lg lg:text-2xl mb-2 uppercase tracking-tight">Social & Marketing</h3>
+                    <h3 class="text-blue-variant font-sync text-lg lg:text-2xl mb-2 uppercase tracking-tight">Social & Marketing</h3>
                     <p class="text-xs lg:text-base font-light leading-relaxed max-w-md" style="color: var(--suite-subtext);">
                         Expert Post Designing and strategic Ad campaigns for high-quality lead generation.
                     </p>
@@ -701,67 +706,69 @@
 </section>
 
 <script>
-    gsap.registerPlugin(ScrollTrigger);
+    if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+        gsap.registerPlugin(ScrollTrigger);
 
-    const entries = document.querySelectorAll('.svc-trigger');
+        const entries = document.querySelectorAll('.svc-trigger');
 
-    entries.forEach((entry) => {
-        const portal = entry.querySelector('.circle-portal');
-        const text = entry.querySelector('.svc-text');
+        entries.forEach((entry) => {
+            const portal = entry.querySelector('.circle-portal');
+            const text = entry.querySelector('.svc-text');
 
-        const tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: entry,
-                start: "top 85%", 
-                end: "top 30%",
-                scrub: 1, 
-            }
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: entry,
+                    start: "top 85%", 
+                    end: "top 30%",
+                    scrub: 1, 
+                }
+            });
+
+            tl.to(portal, {
+                scale: 1,
+                opacity: 1,
+                // Soft/Minimalistic Shadows instead of high glow
+                boxShadow: () => document.body.classList.contains('night-mode') 
+                    ? "0 4px 20px rgba(59,130,246,0.15)" 
+                    : "0 4px 15px rgba(37,99,235,0.06)",
+                duration: 0.8
+            })
+            .to(text, {
+                opacity: 1,
+                x: 0,
+                duration: 0.8
+            }, "-=0.5");
         });
-
-        tl.to(portal, {
-            scale: 1,
-            opacity: 1,
-            // Mode-aware shadow
-            boxShadow: () => document.body.classList.contains('night-mode') 
-                ? "0 0 40px rgba(6,182,212,0.3)" 
-                : "0 0 40px rgba(8,145,178,0.15)",
-            duration: 0.8
-        })
-        .to(text, {
-            opacity: 1,
-            x: 0,
-            duration: 0.8
-        }, "-=0.5");
-    });
+    }
 </script>
 
-    
 
 <style>
-    /* --- INDUSTRY VERTICALS THEME ENGINE --- */
+    /* --- INDUSTRY VERTICALS THEME ENGINE (Synced with #030712 Layout) --- */
     :root {
         --verticals-bg: #ffffff;
         --verticals-text: #111111;
         --verticals-subtext: rgba(0, 0, 0, 0.65);
-        --verticals-accent: #0891b2;
+        --verticals-accent: #00d2ff;
         --card-bg: #ffffff;
         --card-border: rgba(0, 0, 0, 0.1);
         --card-shadow: 0 15px 45px rgba(0,0,0,0.05);
     }
 
+    /* 🌙 NIGHT MODE: Exact match with Education Theme Profile */
     body.night-mode #industry-verticals {
-        --verticals-bg: #080808;
+        --verticals-bg: #030712;         /* Sahi kar diya: Exact match with layout dark base */
         --verticals-text: #ffffff;
-        --verticals-subtext: rgba(255, 255, 255, 0.45);
+        --verticals-subtext: #94a3b8;    /* Enhanced readability contrast */
         --verticals-accent: #00d2ff;
-        --card-bg: rgba(255, 255, 255, 0.02);
-        --card-border: rgba(255, 255, 255, 0.05);
+        --card-bg: #0b0f19;              /* Premium dashboard card container background */
+        --card-border: rgba(255, 255, 255, 0.06);
         --card-shadow: none;
     }
 
     #industry-verticals { 
         background-color: var(--verticals-bg); 
-        transition: background-color 0.8s ease; 
+        transition: background-color 0.5s ease; 
     }
 
     /* --- CARD CORE STYLES --- */
@@ -946,29 +953,30 @@
 </script>
 
 
-   <style>
-    /* --- WORKFLOW THEME LOGIC --- */
+<style>
+    /* --- WORKFLOW THEME LOGIC (Synced with #030712 Layout) --- */
     :root {
         --flow-bg: #ffffff;
         --flow-text: #111111;
         --flow-subtext: rgba(0, 0, 0, 0.65); /* Darker grey as requested */
         --flow-line: rgba(0, 0, 0, 0.08);
-        --flow-accent: #0891b2; /* Professional Cyan */
+        --flow-accent: #00d2ff; /* Professional Cyan */
         --flow-dot-bg: #ffffff;
     }
 
+    /* 🌙 NIGHT MODE: Exact match with Education Theme Profile */
     body.night-mode #workflow {
-        --flow-bg: #080808;
+        --flow-bg: #030712;             /* Sahi kar diya: Exact match with layout dark base */
         --flow-text: #ffffff;
-        --flow-subtext: rgba(255, 255, 255, 0.45);
-        --flow-line: rgba(255, 255, 255, 0.1);
-        --flow-accent: #06b6d4; /* Neon Cyan */
-        --flow-dot-bg: #080808;
+        --flow-subtext: #94a3b8;        /* Enhanced text readability scale */
+        --flow-line: rgba(255, 255, 255, 0.06);
+        --flow-accent: #00d2ff;         /* Neon Cyan */
+        --flow-dot-bg: #030712;         /* Seamless timeline node alignment */
     }
 
     #workflow {
         background-color: var(--flow-bg);
-        transition: background-color 0.8s ease;
+        transition: background-color 0.5s ease;
     }
 
     /* Timeline Line Logic */
@@ -979,13 +987,13 @@
 
     .step-dot {
         background-color: var(--flow-dot-bg) !important;
-        border-color: rgba(8, 145, 178, 0.3) !important;
+        border-color: rgba(0, 210, 255, 0.25) !important; /* Synced border highlight */
         transition: all 0.5s ease;
     }
 
     .icon-box {
-        background-color: rgba(8, 145, 178, 0.05);
-        border: 1px solid rgba(8, 145, 178, 0.15);
+        background-color: rgba(0, 210, 255, 0.04); /* Balanced translucent background scale */
+        border: 1px solid rgba(0, 210, 255, 0.15);
         color: var(--flow-text);
         transition: all 0.5s ease;
     }
@@ -1116,14 +1124,13 @@
 </script>
 
 
-
 <style>
     /* --- SHOWCASE THEME LOGIC (SYNCED) --- */
     :root {
         --showcase-bg: #ffffff;
         --showcase-text: #0f172a; 
         --showcase-subtext: #475569; 
-        --showcase-accent: #0891b2;
+        --showcase-accent: #00d2ff;
         
         /* Popup Logic for White Mode: Dark Card */
         --modal-overlay: rgba(255, 255, 255, 0.85);
@@ -1138,7 +1145,7 @@
         --showcase-bg: #080808;
         --showcase-text: #ffffff;
         --showcase-subtext: rgba(255, 255, 255, 0.5);
-        --showcase-accent: #06b6d4;
+        --showcase-accent: #00d2ff;
         
         /* Popup Logic for Dark Mode: Original Deep Dark */
         --modal-overlay: rgba(0, 0, 0, 0.9);
@@ -1165,7 +1172,7 @@
     .showcase-btn:hover {
         background: var(--showcase-accent);
         color: white !important;
-        box-shadow: 0 10px 30px rgba(6, 182, 212, 0.3);
+        box-shadow: 0 10px 30px rgba(0, 210, 255, 0.3);
         transform: translateY(-3px);
     }
 
@@ -1180,6 +1187,8 @@
         background: var(--modal-overlay);
         backdrop-filter: blur(12px);
         -webkit-backdrop-filter: blur(12px);
+        opacity: 0; /* Smooth fading logic ke liye base structural opacity 0 rakhi hai */
+        transition: opacity 0.3s ease-in-out;
     }
 
     .modal-card {
@@ -1191,7 +1200,8 @@
         border-radius: 40px;
         position: relative;
         box-shadow: 0 40px 80px rgba(0, 0, 0, 0.3);
-        transition: all 0.5s ease;
+        will-change: transform, opacity; /* GPU acceleration to completely kill glitches */
+        transform: translateZ(0);
     }
 
     .category-link {
@@ -1212,9 +1222,8 @@
         transition: all 0.3s ease;
     }
 
-    /* --- ARROW ADDED HERE --- */
     .category-link::after {
-        content: '\2192'; /* Unicode Arrow → */
+        content: '\2192'; 
         font-size: 1.2rem;
         opacity: 0.6;
         transition: transform 0.3s ease;
@@ -1268,6 +1277,7 @@
     </div>
 </section>
 
+<!-- Modal Setup -->
 <div id="portfolio-modal" role="dialog" aria-labelledby="modal-title">
     <div class="modal-card">
         <div class="flex justify-between items-center mb-10">
@@ -1279,15 +1289,15 @@
 
         <nav class="flex flex-col" aria-label="Portfolio Categories">
             <a href="allweb.html" class="category-link" title="View Web Design Portfolio">
-                <span>Custom Web Design</span>
+                <span>E-commerce & Custom Web Design</span>
             </a>
             <a href="seodata.html" class="category-link" title="SEO & Data Analytics Case Studies">
-                <span>SEO & Analytics</span>
+                <span>SEO, Ranking & Analytics</span>
             </a>
             <a href="graphics.html" class="category-link" title="Visual Design & Branding Portfolio">
                 <span> Visual Design</span>
             </a>
-            <a href="allvideo.html" class="category-link" title="Video Production & Reels Portfolio">
+            <a href="allvideos.html" class="category-link" title="Video Production & Reels Portfolio">
                 <span>Viral Studio </span>
             </a>
         </nav>
@@ -1295,92 +1305,144 @@
 </div>
 
 <script>
+    let isModalAnimating = false; // Flag to prevent multi-click timeline corruption
+
     function toggleModal(show) {
         const modal = document.getElementById('portfolio-modal');
+        if (!modal || isModalAnimating) return;
+
         if (show) {
+            isModalAnimating = true;
             modal.style.display = 'flex';
+            
+            // Force reflow for seamless overlay opacity transition
+            modal.offsetHeight; 
+            modal.style.opacity = '1';
             document.body.style.overflow = 'hidden';
+
             if (typeof gsap !== 'undefined') {
                 gsap.fromTo(".modal-card", 
-                    { scale: 0.8, opacity: 0, y: 40 }, 
-                    { scale: 1, opacity: 1, y: 0, duration: 0.5, ease: "back.out(1.7)" }
+                    { scale: 0.85, opacity: 0, y: 30 }, 
+                    { 
+                        scale: 1, 
+                        opacity: 1, 
+                        y: 0, 
+                        duration: 0.45, 
+                        ease: "power4.out", // Smoother interpolation than standard back easing
+                        onComplete: () => { isModalAnimating = false; }
+                    }
                 );
+            } else {
+                // Vanilla JS Fallback if GSAP is blocked/delayed
+                const card = modal.querySelector('.modal-card');
+                if (card) {
+                    card.style.opacity = '1';
+                    card.style.transform = 'scale(1) translateY(0)';
+                }
+                isModalAnimating = false;
             }
         } else {
+            isModalAnimating = true;
+            modal.style.opacity = '0';
             document.body.style.overflow = 'auto';
+
             if (typeof gsap !== 'undefined') {
                 gsap.to(".modal-card", { 
-                    scale: 0.8, opacity: 0, y: 40, duration: 0.3, 
-                    onComplete: () => { modal.style.display = 'none'; }
+                    scale: 0.85, 
+                    opacity: 0, 
+                    y: 20, 
+                    duration: 0.3, 
+                    ease: "power2.inOut",
+                    onComplete: () => { 
+                        modal.style.display = 'none'; 
+                        isModalAnimating = false;
+                    }
                 });
             } else {
+                // Vanilla JS Fallback
                 modal.style.display = 'none';
+                isModalAnimating = false;
             }
         }
     }
 
-    // Background Click to Close
-    window.addEventListener('click', function(e) {
-        const modal = document.getElementById('portfolio-modal');
-        if (e.target === modal) {
+    // Fixed Overlay Target Event Validation
+    document.getElementById('portfolio-modal').addEventListener('click', function(e) {
+        if (e.target === this) {
             toggleModal(false);
         }
     });
 </script>
 
 <style>
-    /* --- TESTIMONIALS THEME ENGINE --- */
+    /* --- TESTIMONIALS THEME ENGINE (Synced with #030712 Blue) --- */
     :root {
         --tm-bg: #ffffff;
         --tm-card-bg: #f8fafc;
         --tm-text: #111111;
         --tm-subtext: #444444;
         --tm-border: rgba(0, 0, 0, 0.05);
-        --tm-accent: #0891b2;
+        --tm-accent: #00d2ff; /* Your Premium Blue */
         --tm-dot: rgba(0, 0, 0, 0.1);
     }
 
+    /* 🌙 NIGHT MODE: Exact match with Education Theme Profile */
     body.night-mode #testimonials {
-        --tm-bg: #050505;
-        --tm-card-bg: #0A0A0A;
+        --tm-bg: #030712;             /* Sahi kar diya: Exact match with layout dark base */
+        --tm-card-bg: #0b0f19;        /* Premium deep slate card container background */
         --tm-text: #ffffff;
-        --tm-subtext: rgba(255, 255, 255, 0.6);
-        --tm-border: rgba(255, 255, 255, 0.05);
-        --tm-accent: #06b6d4;
+        --tm-subtext: #94a3b8;        /* Enhanced contrast scale for testimonials text */
+        --tm-border: rgba(255, 255, 255, 0.06);
+        --tm-accent: #00d2ff;         /* Crystal Neon Contrast */
         --tm-dot: rgba(255, 255, 255, 0.1);
     }
 
     #testimonials {
         background-color: var(--tm-bg);
-        transition: background-color 0.6s ease;
+        transition: background-color 0.5s ease;
     }
 
     .tm-card {
         background-color: var(--tm-card-bg);
         border: 1px solid var(--tm-border);
-        transition: all 0.5s ease;
+        transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
     }
 
-    /* Grayscale logic update for better visibility in light mode */
+    /* Grayscale Logic Optimization */
     .tm-img {
         filter: grayscale(1);
-        transition: filter 0.4s ease;
+        transition: filter 0.4s ease, transform 0.4s ease;
     }
+    
     .tm-card:hover .tm-img {
         filter: grayscale(0);
+        transform: scale(1.02);
     }
 
     .mr-dot {
         background-color: var(--tm-dot) !important;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     .mr-dot-active {
         background-color: var(--tm-accent) !important;
-        width: 24px !important;
+        width: 28px !important; /* Premium elongated indicator design */
+    }
+
+    /* Fixed Easing Layer for Sliders */
+    .smooth-slider-engine {
+        transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+        will-change: transform;
     }
 </style>
 
-<section id="testimonials" class="relative w-full py-12 lg:py-16 px-6 overflow-hidden">
+<section id="testimonials" class="relative w-full py-12 lg:py-16 px-6 overflow-hidden" itemscope itemtype="https://schema.org/Organization">
+    <meta itemprop="name" content="MaxReach Digital Agency">
+    <div itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating" class="hidden">
+        <meta itemprop="ratingValue" content="5">
+        <meta itemprop="reviewCount" content="50">
+    </div>
+
     <div class="max-w-4xl mx-auto relative z-10">
         
         <div class="text-center mb-10">
@@ -1390,60 +1452,75 @@
             </h2>
         </div>
 
-        <div id="mr-swipe-area" class="relative overflow-hidden cursor-grab active:cursor-grabbing">
+        <div id="mr-swipe-area" class="relative overflow-hidden cursor-grab active:cursor-grabbing select-none">
             
-            <div id="mr-slider-container" class="flex transition-transform duration-700 cubic-bezier(0.4, 0, 0.2, 1)">
+            <div id="mr-slider-container" class="flex smooth-slider-engine">
                 
-                <div class="w-full flex-shrink-0 px-2">
+                <div class="w-full flex-shrink-0 px-2" itemprop="review" itemscope itemtype="https://schema.org/Review">
                     <div class="tm-card flex flex-col lg:flex-row items-center gap-6 p-8 rounded-[35px]">
-                        <div class="w-20 h-20 lg:w-24 lg:h-24 rounded-2xl overflow-hidden border-2 flex-shrink-0" style="border-color: var(--tm-accent); opacity: 0.8;">
-                            <img src="homeimages/URL Spices-client.jpeg" alt="U.R.L Spices Client" class="tm-img w-full h-full object-cover">
+                        <div class="w-20 h-20 lg:w-24 lg:h-24 rounded-2xl overflow-hidden border-2 flex-shrink-0 transition-colors duration-300" style="border-color: var(--tm-accent); opacity: 0.9;">
+                            <img src="homeimages/URL Spices-client.jpeg" alt="U.R.L Spices Client Testimonial" class="tm-img w-full h-full object-cover" itemprop="image" loading="lazy">
                         </div>
                         <div class="text-center lg:text-left">
-                            <div class="inline-block px-3 py-1 bg-green-500/10 border border-green-500/20 rounded-full mb-3">
-                                <span class="text-green-500 font-sync text-[7px] uppercase font-bold tracking-widest italic">3x ROI Growth</span>
+                            <div class="inline-block px-3 py-1 border rounded-full mb-3" style="background: rgba(0, 210, 255, 0.05); border-color: rgba(0, 210, 255, 0.2);">
+                                <span style="color: var(--tm-accent);" class="font-sync text-[7px] uppercase font-bold tracking-widest italic">3x ROI Growth</span>
                             </div>
-                            <p class="text-xs lg:text-sm italic leading-relaxed mb-4 font-light" style="color: var(--tm-subtext);">
-                                "MaxReach perfectly captured our global vision for URL Spices. Their collaboration with Hemant Nagori resulted in an outstanding website that consistently delivers top-tier results!"
+                            <p class="text-xs lg:text-sm italic leading-relaxed mb-4 font-light" style="color: var(--tm-subtext);" itemprop="reviewBody">
+                                "MaxReach understood our global vision for URL Spices perfectly. Together with Hemant Nagori, they delivered an outstanding website that gives us the best results!"
                             </p>
-                            <h4 class="font-sync text-[10px] uppercase tracking-widest" style="color: var(--tm-text);">Owner, U.R.L Spices</h4>
-                            <p class="font-sync text-[8px] uppercase italic" style="color: var(--tm-accent); opacity: 0.7;">Global Spices Export Hub</p>
+                            <div itemprop="author" itemscope itemtype="https://schema.org/Person">
+                                <h4 class="font-sync text-[10px] uppercase tracking-widest" style="color: var(--tm-text);" itemprop="name">Owner, U.R.L Spices</h4>
+                            </div>
+                            <p class="font-sync text-[8px] uppercase italic" style="color: var(--tm-accent); opacity: 0.8;">Global Spices Export Hub</p>
+                            <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating" class="hidden">
+                                <meta itemprop="ratingValue" content="5">
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="w-full flex-shrink-0 px-2">
+                <div class="w-full flex-shrink-0 px-2" itemprop="review" itemscope itemtype="https://schema.org/Review">
                     <div class="tm-card flex flex-col lg:flex-row items-center gap-6 p-8 rounded-[35px]" style="border-color: var(--tm-accent);">
                         <div class="w-20 h-20 lg:w-24 lg:h-24 rounded-2xl overflow-hidden border-2 flex-shrink-0" style="border-color: var(--tm-accent);">
-                            <img src="homeimages/riwaaz-luxe-client.jpeg" alt="Kiran Kaur - Riwaaz Luxe" class="tm-img w-full h-full object-cover">
+                            <img src="homeimages/riwaaz-luxe-client.jpeg" alt="Kiran Kaur - Riwaaz Luxe Success Story" class="tm-img w-full h-full object-cover" itemprop="image" loading="lazy">
                         </div>
                         <div class="text-center lg:text-left">
-                            <div class="inline-block px-3 py-1 bg-cyan-500/10 border border-cyan-500/20 rounded-full mb-3">
-                                <span class="text-cyan-500 font-sync text-[7px] uppercase font-bold tracking-widest italic">Viral Results</span>
+                            <div class="inline-block px-3 py-1 border rounded-full mb-3" style="background: rgba(0, 210, 255, 0.05); border-color: rgba(0, 210, 255, 0.2);">
+                                <span style="color: var(--tm-accent);" class="font-sync text-[7px] uppercase font-bold tracking-widest italic">Viral Results</span>
                             </div>
-                            <p class="text-xs lg:text-sm italic leading-relaxed mb-4 font-light" style="color: var(--tm-subtext);">
-                                "MaxReach produced cinematic workout reels that went viral instantly. Their strategy helped us close over 50+ new memberships in just a single month!"
+                            <p class="text-xs lg:text-sm italic leading-relaxed mb-4 font-light" style="color: var(--tm-subtext);" itemprop="reviewBody">
+                                "MaxReach created cinematic workout reels that went viral. Humne ek mahine mein 50+ memberships close ki hain."
                             </p>
-                            <h4 class="font-sync text-[10px] uppercase tracking-widest" style="color: var(--tm-text);">Kiran Kaur</h4>
-                            <p class="font-sync text-[8px] uppercase italic" style="color: var(--tm-accent); opacity: 0.7;">Manager, Riwaaz Luxe</p>
+                            <div itemprop="author" itemscope itemtype="https://schema.org/Person">
+                                <h4 class="font-sync text-[10px] uppercase tracking-widest" style="color: var(--tm-text);" itemprop="name">Kiran Kaur</h4>
+                            </div>
+                            <p class="font-sync text-[8px] uppercase italic" style="color: var(--tm-accent); opacity: 0.8;">Manager, Riwaaz Luxe</p>
+                            <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating" class="hidden">
+                                <meta itemprop="ratingValue" content="5">
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="w-full flex-shrink-0 px-2">
+                <div class="w-full flex-shrink-0 px-2" itemprop="review" itemscope itemtype="https://schema.org/Review">
                     <div class="tm-card flex flex-col lg:flex-row items-center gap-6 p-8 rounded-[35px]">
-                        <div class="w-20 h-20 lg:w-24 lg:h-24 rounded-2xl overflow-hidden border-2 flex-shrink-0" style="border-color: #ec4899; opacity: 0.8;">
-                            <img src="homeimages/simrans-makeover-client.jpeg" alt="Simran Kaur - Luxury Branding" class="tm-img w-full h-full object-cover">
+                        <div class="w-20 h-20 lg:w-24 lg:h-24 rounded-2xl overflow-hidden border-2 flex-shrink-0 transition-colors duration-300" style="border-color: var(--tm-accent); opacity: 0.9;">
+                            <img src="homeimages/simrans-makeover-client.jpeg" alt="Simran Kaur - Luxury Branding" class="tm-img w-full h-full object-cover" itemprop="image" loading="lazy">
                         </div>
                         <div class="text-center lg:text-left">
-                            <div class="inline-block px-3 py-1 bg-pink-500/10 border border-pink-500/20 rounded-full mb-3">
-                                <span class="text-pink-500 font-sync text-[7px] uppercase font-bold tracking-widest italic">Luxury Touch</span>
+                            <div class="inline-block px-3 py-1 border rounded-full mb-3" style="background: rgba(0, 210, 255, 0.05); border-color: rgba(0, 210, 255, 0.2);">
+                                <span style="color: var(--tm-accent);" class="font-sync text-[7px] uppercase font-bold tracking-widest italic">Luxury Touch</span>
                             </div>
-                            <p class="text-xs lg:text-sm italic leading-relaxed mb-4 font-light" style="color: var(--tm-subtext);">
-                                "From an aesthetic high-end website to professional product shoots, MaxReach has successfully elevated our brand with a true luxury feel."
+                            <p class="text-xs lg:text-sm italic leading-relaxed mb-4 font-light" style="color: var(--tm-subtext);" itemprop="reviewBody">
+                                "From the aesthetic website to the professional product shoots, MaxReach ne hamare brand ko luxury touch diya hai."
                             </p>
-                            <h4 class="font-sync text-[10px] uppercase tracking-widest" style="color: var(--tm-text);">Simran Kaur</h4>
-                            <p class="font-sync text-[8px] uppercase italic" style="color: var(--tm-accent); opacity: 0.7;">Founder, Simran's Makeover</p>
+                            <div itemprop="author" itemscope itemtype="https://schema.org/Person">
+                                <h4 class="font-sync text-[10px] uppercase tracking-widest" style="color: var(--tm-text);" itemprop="name">Simran Kaur</h4>
+                            </div>
+                            <p class="font-sync text-[8px] uppercase italic" style="color: var(--tm-accent); opacity: 0.8;">Founder, Simran's Makeover</p>
+                            <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating" class="hidden">
+                                <meta itemprop="ratingValue" content="5">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1462,75 +1539,112 @@
 
 <script>
     let mr_idx = 0;
+    const mr_total = 3; // Modular structural boundary
     const mr_container = document.getElementById('mr-slider-container');
     const mr_dots = document.querySelectorAll('.mr-dot');
     const mr_zone = document.getElementById('mr-swipe-area');
+    let mr_timer;
 
     function mr_move(index) {
+        if (!mr_container || mr_dots.length === 0) return;
         mr_container.style.transform = `translateX(-${index * 100}%)`;
         mr_dots.forEach(d => d.classList.remove('mr-dot-active'));
-        mr_dots[index].classList.add('mr-dot-active');
+        if(mr_dots[index]) {
+            mr_dots[index].classList.add('mr-dot-active');
+        }
         mr_idx = index;
     }
 
-    // Touch/Swipe Logic
-    let startX = 0;
-    mr_zone.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, {passive: true});
-    mr_zone.addEventListener('touchend', e => {
-        let endX = e.changedTouches[0].clientX;
-        if (startX - endX > 50) mr_move((mr_idx + 1) % 3);
-        if (startX - endX < -50) mr_move((mr_idx - 1 + 3) % 3);
+    // Reset Engine to clear loop timing collisions
+    function resetTimer() {
         clearInterval(mr_timer);
+        mr_timer = setInterval(() => mr_move((mr_idx + 1) % mr_total), 6000); // 6s interval for organic readability
+    }
+
+    // Touch & Drag Gesture Setup
+    let startX = 0;
+    let isDragging = false;
+
+    mr_zone.addEventListener('touchstart', e => { 
+        startX = e.touches[0].clientX; 
+        isDragging = true;
     }, {passive: true});
 
-    // Auto Cycle
-    let mr_timer = setInterval(() => mr_move((mr_idx + 1) % 3), 5000);
+    mr_zone.addEventListener('touchend', e => {
+        if (!isDragging) return;
+        let endX = e.changedTouches[0].clientX;
+        let diff = startX - endX;
+
+        if (Math.abs(diff) > 45) { // Sensitivity threshold lock
+            if (diff > 0) {
+                mr_move((mr_idx + 1) % mr_total);
+            } else {
+                mr_move((mr_idx - 1 + mr_total) % mr_total);
+            }
+            resetTimer();
+        }
+        isDragging = false;
+    }, {passive: true});
+
+    // Run Slider Sequence
+    mr_timer = setInterval(() => mr_move((mr_idx + 1) % mr_total), 6000);
 </script>
 
 <style>
-    /* --- PRICING THEME ENGINE --- */
+    /* --- PRICING THEME ENGINE (Clean Minimal & Glass Design - Synced with #030712) --- */
     :root {
         --pr-bg: #ffffff;
         --pr-title: #111111;
-        --pr-card-bg: #111111; 
-        --pr-card-text: #ffffff;
-        --pr-card-border: rgba(0, 0, 0, 0.1); /* Slightly darker border for white mode */
-        --pr-accent: #0891b2;
-        --pr-custom-border: #111111; /* Strong border for visibility */
+        --pr-card-bg: rgba(248, 250, 252, 0.6); 
+        --pr-card-text: #111111;
+        --pr-card-border: rgba(0, 0, 0, 0.08); 
+        --pr-accent: #00d2ff; /* Fixed Premium Blue */
+        --pr-custom-border: #111111;
+        --pr-blur: backdrop-filter: blur(12px);
     }
 
+    /* 🌙 NIGHT MODE: Exact match with Education Theme Profile */
     body.night-mode #pricing {
-        --pr-bg: #050505;
+        --pr-bg: #030712;                 /* Sahi kar diya: Exact match with layout dark base */
         --pr-title: #ffffff;
-        --pr-card-bg: #ffffff; 
-        --pr-card-text: #111111;
-        --pr-card-border: rgba(255, 255, 255, 0.1);
-        --pr-accent: #06b6d4;
-        --pr-custom-border: rgba(255, 255, 255, 0.2); /* Neon/White border for dark mode */
+        --pr-card-bg: rgba(11, 15, 25, 0.7); /* Premium glass translucent overlay tuned for deep slate */
+        --pr-card-text: #ffffff;
+        --pr-card-border: rgba(255, 255, 255, 0.06);
+        --pr-accent: #00d2ff;             /* High-contrast branding consistency */
+        --pr-custom-border: rgba(255, 255, 255, 0.15);
     }
 
     #pricing {
         background-color: var(--pr-bg);
-        transition: background-color 0.6s ease;
+        transition: background-color 0.5s ease;
     }
 
-    .foundation-card {
+    .clean-price-card {
         background-color: var(--pr-card-bg);
         color: var(--pr-card-text);
-        transition: all 0.5s ease;
+        border: 1px solid var(--pr-card-border);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        transition: background 0.5s ease, border-color 0.5s ease, color 0.5s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
     }
 
-    /* Custom Build Tab - FIXED BORDER */
+    /* Active Highlight Card State without solid color dumps */
+    .premium-highlight-card {
+        border: 1px solid var(--pr-accent) !important;
+        box-shadow: 0 20px 40px rgba(0, 210, 255, 0.05);
+    }
+
+    /* Custom Build Tab Architecture */
     .custom-build-tab {
-        border: 2px solid var(--pr-custom-border); /* Thicker 2px border */
+        border: 1px solid var(--pr-custom-border);
         background-color: transparent;
-        transition: all 0.4s ease;
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     .custom-build-tab:hover {
         border-color: var(--pr-accent);
-        background-color: rgba(6, 182, 212, 0.05);
-        transform: translateY(-3px);
+        background-color: rgba(0, 210, 255, 0.04);
+        transform: translateY(-2px);
     }
 </style>
 
@@ -1541,17 +1655,19 @@
 
     <div class="max-w-5xl mx-auto">
         
+        <!-- Section Title Area -->
         <div class="text-center mb-16">
-            <h2 class="text-3xl lg:text-5xl font-sync font-bold tracking-tighter uppercase leading-none" style="color: var(--pr-title);">
+            <p class="font-sync text-[8px] tracking-[0.5em] mb-2 uppercase opacity-60 italic" style="color: var(--pr-accent);">Scalability Engine</p>
+            <h2 class="text-3xl lg:text-4xl font-sync font-bold tracking-tighter uppercase leading-none" style="color: var(--pr-title);">
                 CHOOSE YOUR <span style="color: var(--pr-accent);">SCALE.</span>
             </h2>
-            <div class="w-12 h-[2px] mx-auto mt-4" style="background-color: var(--pr-accent);"></div>
         </div>
 
+        <!-- Plans Grid -->
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
             
-            <div class="foundation-card relative rounded-[40px] p-8 lg:p-12 flex flex-col justify-between shadow-2xl transition-transform hover:scale-[1.02] duration-500 border" 
-                 style="border-color: var(--pr-card-border);" 
+            <!-- Plan 1: The Foundation -->
+            <div class="clean-price-card relative rounded-[40px] p-8 lg:p-12 flex flex-col justify-between hover:scale-[1.01]" 
                  itemprop="offers" itemscope itemtype="https://schema.org/Offer">
                 
                 <meta itemprop="url" content="https://maxreachglobal.in#pricing">
@@ -1559,90 +1675,92 @@
 
                 <div>
                     <div class="flex justify-between items-center mb-8">
-                        <h3 class="font-sync text-xl lg:text-2xl italic tracking-tighter uppercase" itemprop="name">The Foundation</h3>
-                        <span class="px-3 py-1 bg-gray-500/20 rounded-full text-[8px] font-sync uppercase opacity-60">Standard Growth</span>
+                        <h3 class="font-sync text-lg lg:text-xl italic tracking-tighter uppercase" style="color: var(--pr-title);" itemprop="name">The Foundation</h3>
+                        <span class="px-3 py-1 rounded-full text-[7px] font-sync uppercase tracking-widest opacity-60 border" style="border-color: var(--pr-card-border); color: var(--pr-title);">Standard Growth</span>
                     </div>
                     
-                    <div class="space-y-5 mb-12">
-                        <p class="flex items-center gap-3 text-sm font-medium border-b pb-4" style="border-color: rgba(128,128,128,0.1);">
-                            <span style="color: var(--pr-accent);" aria-hidden="true">●</span> Professional Brand Identity & Logo
+                    <div class="space-y-4 mb-12">
+                        <p class="flex items-center gap-3 text-xs lg:text-sm border-b pb-4" style="border-color: var(--pr-card-border); color: var(--pr-title); opacity: 0.85;">
+                            <span style="color: var(--pr-accent);" aria-hidden="true">■</span> Professional Brand Identity & Logo
                         </p>
-                        <p class="flex items-center gap-3 text-sm font-medium border-b pb-4" style="border-color: rgba(128,128,128,0.1);">
-                            <span style="color: var(--pr-accent);" aria-hidden="true">●</span> SEO-Prime Landing Page Architecture
+                        <p class="flex items-center gap-3 text-xs lg:text-sm border-b pb-4" style="border-color: var(--pr-card-border); color: var(--pr-title); opacity: 0.85;">
+                            <span style="color: var(--pr-accent);" aria-hidden="true">■</span> SEO-Prime Landing Page Architecture
                         </p>
-                        <p class="flex items-center gap-3 text-sm font-medium border-b pb-4" style="border-color: rgba(128,128,128,0.1);">
-                            <span style="color: var(--pr-accent);" aria-hidden="true">●</span> 10-Unit Monthly Content Engine
+                        <p class="flex items-center gap-3 text-xs lg:text-sm border-b pb-4" style="border-color: var(--pr-card-border); color: var(--pr-title); opacity: 0.85;">
+                            <span style="color: var(--pr-accent);" aria-hidden="true">■</span> 10-Unit Monthly Content Engine
                         </p>
-                        <p class="flex items-center gap-3 text-sm font-medium border-b pb-4" style="border-color: rgba(128,128,128,0.1);">
-                            <span style="color: var(--pr-accent);" aria-hidden="true">●</span> Meta Lead Generation Funnels
+                        <p class="flex items-center gap-3 text-xs lg:text-sm border-b pb-4" style="border-color: var(--pr-card-border); color: var(--pr-title); opacity: 0.85;">
+                            <span style="color: var(--pr-accent);" aria-hidden="true">■</span> Meta Lead Generation Funnels
                         </p>
                     </div>
                 </div>
 
                 <a href="https://wa.me/919810591327?text=Hi%20MaxReach%2C%20I'm%20ready%20for%20The%20Foundation." 
-                   class="w-full text-center py-5 rounded-2xl font-sync text-[10px] tracking-[0.2em] font-bold transition-all uppercase" 
-                   style="background-color: var(--pr-card-text); color: var(--pr-card-bg);"
+                   class="w-full text-center py-4 border rounded-2xl font-sync text-[9px] tracking-[0.2em] font-bold transition-all uppercase hover:bg-white hover:text-black" 
+                   style="border-color: var(--pr-title); color: var(--pr-title);"
                    title="Request Quote for The Foundation Plan">
                     Request Plan & Pricing
                 </a>
             </div>
 
-            <div class="relative rounded-[40px] p-8 lg:p-12 flex flex-col justify-between shadow-[0_20px_50px_rgba(0,87,255,0.3)] transition-transform hover:scale-[1.02] duration-500" 
-                 style="background-color: #0057ff; color: #ffffff;"
+            <!-- Plan 2: The Dominance (Clean Luxury Frame Upgrade) -->
+            <div class="clean-price-card premium-highlight-card relative rounded-[40px] p-8 lg:p-12 flex flex-col justify-between hover:scale-[1.01]" 
                  itemprop="offers" itemscope itemtype="https://schema.org/Offer">
                 
-                <div class="absolute -top-3 right-8 bg-white text-[#0057ff] font-sync text-[8px] px-5 py-2 rounded-full tracking-widest font-bold shadow-lg uppercase">
+                <!-- Floating Minimalist Accent Tag -->
+                <div class="absolute -top-3 right-8 font-sync text-[7px] px-4 py-1.5 rounded-full tracking-widest font-bold uppercase border"
+                     style="background: var(--pr-bg); color: var(--pr-accent); border-color: var(--pr-accent);">
                     Most Recommended
                 </div>
 
                 <div>
                     <div class="flex justify-between items-center mb-8">
-                        <h3 class="text-white font-sync text-xl lg:text-2xl italic tracking-tighter uppercase" itemprop="name">The Dominance</h3>
-                        <span class="bg-white/20 px-3 py-1 rounded-full text-[8px] font-sync text-white/80 uppercase">Elite Scale</span>
+                        <h3 class="font-sync text-lg lg:text-xl italic tracking-tighter uppercase" style="color: var(--pr-title);" itemprop="name">The Dominance</h3>
+                        <span class="px-3 py-1 rounded-full text-[7px] font-sync uppercase tracking-widest font-bold border" style="background: rgba(0,210,255,0.08); border-color: rgba(0,210,255,0.2); color: var(--pr-accent);">Elite Scale</span>
                     </div>
 
-                    <div class="space-y-5 mb-12 text-white">
-                        <p class="flex items-center gap-3 text-sm font-medium border-b border-white/10 pb-4">
-                            <span aria-hidden="true">★</span> Elite UI/UX Design & CRM Integration
+                    <div class="space-y-4 mb-12">
+                        <p class="flex items-center gap-3 text-xs lg:text-sm border-b pb-4" style="border-color: var(--pr-card-border); color: var(--pr-title);">
+                            <span style="color: var(--pr-accent);" aria-hidden="true">★</span> Elite UI/UX Design & CRM Integration
                         </p>
-                        <p class="flex items-center gap-3 text-sm font-medium border-b border-white/10 pb-4">
-                            <span aria-hidden="true">★</span> Cinematic Video Production & Viral Reels
+                        <p class="flex items-center gap-3 text-xs lg:text-sm border-b pb-4" style="border-color: var(--pr-card-border); color: var(--pr-title);">
+                            <span style="color: var(--pr-accent);" aria-hidden="true">★</span> Cinematic Video Production & Viral Reels
                         </p>
-                        <p class="flex items-center gap-3 text-sm font-medium border-b border-white/10 pb-4">
-                            <span aria-hidden="true">★</span> 360° Omni-Channel Ad Strategy
+                        <p class="flex items-center gap-3 text-xs lg:text-sm border-b pb-4" style="border-color: var(--pr-card-border); color: var(--pr-title);">
+                            <span style="color: var(--pr-accent);" aria-hidden="true">★</span> 360° Omni-Channel Ad Strategy
                         </p>
-                        <p class="flex items-center gap-3 text-sm font-medium border-b border-white/10 pb-4">
-                            <span aria-hidden="true">★</span> 24/7 Priority Strategic Consulting
+                        <p class="flex items-center gap-3 text-xs lg:text-sm border-b pb-4" style="border-color: var(--pr-card-border); color: var(--pr-title);">
+                            <span style="color: var(--pr-accent);" aria-hidden="true">★</span> 24/7 Priority Strategic Consulting
                         </p>
                     </div>
                 </div>
 
                 <a href="https://wa.me/919810591327?text=Hi%20MaxReach%2C%20I%20want%20The%20Dominance%20for%20my%20brand." 
-                   class="w-full bg-white text-[#0057ff] text-center py-5 rounded-2xl font-sync text-[10px] tracking-[0.2em] font-bold hover:bg-gray-100 transition-all uppercase"
+                   class="w-full text-center py-4 rounded-2xl font-sync text-[9px] tracking-[0.2em] font-bold transition-all uppercase"
+                   style="background-color: var(--pr-accent); color: #000000;"
                    title="Enquire about The Dominance Elite Plan">
-                    Claim Your Market Dominance
+                    Claim Market Dominance
                 </a>
             </div>
         </div>
 
+        <!-- Custom Call-to-Action Link Footer -->
         <div class="mt-16 text-center">
             <a href="plans.html#mr-hero" class="group inline-flex flex-col items-center">
                 <span class="font-sync text-[8px] tracking-[0.4em] uppercase mb-4 opacity-40" style="color: var(--pr-title);">Need a tailored growth strategy?</span>
-                
-             <div class="custom-build-tab px-8 py-3 rounded-full backdrop-blur-md">
-    <span class="font-sync text-[10px] lg:text-xs tracking-[0.2em] uppercase" style="color: var(--pr-title);">
-        Build Custom Scale
-    </span>
-</div>
+                <div class="custom-build-tab px-8 py-3 rounded-full backdrop-blur-md">
+                    <span class="font-sync text-[9px] lg:text-xs tracking-[0.2em] uppercase" style="color: var(--pr-title);">
+                        Build Custom Scale
+                    </span>
+                </div>
             </a>
         </div>
 
     </div>
 </section>
 
-
 <style>
-    /* --- COMMITMENT THEME ENGINE --- */
+    /* --- COMMITMENT THEME ENGINE (Synced with #030712 Layout) --- */
     :root {
         --cm-bg: #ffffff;
         --cm-box-bg: rgba(0, 0, 0, 0.03);
@@ -1650,30 +1768,31 @@
         --cm-text-main: #111111;
         --cm-text-sub: #444444;
         --cm-text-ghost: rgba(0, 0, 0, 0.03); /* "Spirit" background text */
-        --cm-accent: #0891b2;
+        --cm-accent: #00d2ff; 
         --cm-signature: #111111;
     }
 
+    /* 🌙 NIGHT MODE: Exact match with Education Theme Profile */
     body.night-mode #commitment {
-        --cm-bg: #080808;
-        --cm-box-bg: rgba(255, 255, 255, 0.04);
-        --cm-box-border: rgba(255, 255, 255, 0.1);
+        --cm-bg: #030712;             /* Sahi kar diya: Exact match with layout dark base */
+        --cm-box-bg: #0b0f19;          /* Premium card layout background depth enhancement */
+        --cm-box-border: rgba(255, 255, 255, 0.06);
         --cm-text-main: #ffffff;
-        --cm-text-sub: rgba(255, 255, 255, 0.5);
-        --cm-text-ghost: rgba(255, 255, 255, 0.02);
-        --cm-accent: #06b6d4;
+        --cm-text-sub: #94a3b8;        /* High contrast scale for readability */
+        --cm-text-ghost: rgba(255, 255, 255, 0.02); /* Clean subtle brand watermark */
+        --cm-accent: #00d2ff; 
         --cm-signature: #ffffff;
     }
 
     #commitment {
         background-color: var(--cm-bg);
-        transition: background-color 0.6s ease;
+        transition: background-color 0.5s ease;
     }
 
     #manifesto-box {
         background: var(--cm-box-bg);
         border: 1px solid var(--cm-box-border);
-        transition: all 0.5s ease;
+        transition: background 0.5s ease, border-color 0.5s ease, transform 0.4s ease;
     }
 
     .cm-accent-text { color: var(--cm-accent); }
@@ -1684,7 +1803,7 @@
     /* Signature Line Glow */
     #sig-line {
         background-color: var(--cm-accent);
-        box-shadow: 0 0 10px var(--cm-accent);
+        box-shadow: 0 0 10px rgba(0, 210, 255, 0.4); /* Refined soft neon glow */
     }
 </style>
 
@@ -1777,186 +1896,270 @@
     });
 </script>
 
-<footer class="mxr-fnl-z-footer" itemscope itemtype="https://schema.org/WPFooter">
-    <div itemscope itemtype="https://schema.org/ProfessionalService" style="display:none;">
-        <link itemprop="url" href="https://maxreachglobal.in/">
-        <link itemprop="image" href="https://maxreachglobal.in/homeimages/maxreach-preview.png">
-        <span itemprop="name">MaxReach Global</span>
-    </div>
+<footer id="mx-footer-section" itemscope itemtype="https://schema.org/ProfessionalService">
+    <link itemprop="url" href="https://maxreachglobal.in/">
+    <link itemprop="image" href="https://maxreachglobal.in/homeimages/maxreach-preview.png">
 
-    <div class="mxr-fnl-z-grid">
-        
-        <div class="mxr-fnl-z-col branding">
-            <h2 class="mxr-fnl-z-logo">MAX<span class="mxr-fnl-z-blue">REACH</span></h2>
-            <p class="mxr-fnl-z-vision" itemprop="description">
-                "Humanizing brands, scaling businesses." Empowering mentors and businesses across <strong>India</strong> to build national authority through smart digital systems.
-            </p>
+    <div class="mx-links-wrapper">
+        <h3 class="mx-section-title">Quick Useful Links</h3>
+        <div class="mx-footer-grid">
             
-            <div class="mxr-fnl-z-socials">
-                <a href="https://www.instagram.com/maxreachglobal.official/" class="mxr-fnl-z-icon" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.facebook.com/maxreachglobalofficial" class="mxr-fnl-z-icon" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://www.linkedin.com/in/maxreachglobalofficial" class="mxr-fnl-z-icon" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://t.me/maxreachglobal_official" class="mxr-fnl-z-icon" target="_blank" rel="noopener" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
+            <div class="mx-footer-col">
+                <h4>Our Services</h4>
+                <ul role="list">
+                    <li><a href="dsf" title="Premium Digital Storefront Design">Digital Storefront</a></li>
+                    <li><a href="vs" title="Viral Studio Video Production">Viral Studio</a></li>
+                    <li><a href="adacc" title="Ad Accelerators Performance Marketing">Ad Accelerators</a></li>
+                    <li><a href="home" title="Local Visibility & Managed Marketing">Local Visibility</a></li>
+                </ul>
             </div>
-        </div>
 
-        <div class="mxr-fnl-z-col">
-            <h4 class="mxr-fnl-z-title">Sector Expertise</h4>
-            <ul class="mxr-fnl-z-list">
-                <li><a href="realestate.html" title="Real Estate Marketing & SEO">Property Scale</a></li>
-                <li><a href="hospitality.html" title="Hospitality & Cafe Growth">Cafe Growth</a></li>
-                <li><a href="d2c.html" title="D2C E-commerce Sales Growth">E-com Sales</a></li>
-                <li><a href="allothers.html" title="Corporate Brand Authority Building">Brand Authority</a></li>
-                <li><a href="personal-branding.html" title="Lifestyle & Wellness Branding">Lifestyle Branding</a></li>
-                <li><a href="education.html" title="Education Academy Marketing">Edu Academy</a></li>
-            </ul>
-        </div>
-
-        <div class="mxr-fnl-z-col">
-            <h4 class="mxr-fnl-z-title">Quick Links</h4>
-            <ul class="mxr-fnl-z-list">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html#mr-vision-id">Our Vision</a></li>
-                <li><a href="about.html#elite-team-id">Our Team</a></li>
-                <li><a href="about.html#faq-id">FAQ</a></li>
-                <li><a href="legal.html" title="Legal Trust Policy">Legal Trust</a></li>
-            </ul>
-        </div>
-
-        <div class="mxr-fnl-z-col" itemscope itemtype="https://schema.org/Organization">
-            <h4 class="mxr-fnl-z-title">Get In Touch</h4>
-            <div class="mxr-fnl-z-contact-box">
-                <p class="mxr-fnl-z-item">
-                    <span class="mxr-fnl-z-label">Email:</span> 
-                    <a href="mailto:maxreach.official@gmail.com" class="mxr-fnl-z-info" itemprop="email">maxreach.official@gmail.com</a>
-                </p>
-                <p class="mxr-fnl-z-item">
-                    <span class="mxr-fnl-z-label">Phone:</span> 
-                    <a href="https://wa.me/919810591327" class="mxr-fnl-z-info" itemprop="telephone">+91 98105 91327</a>
-                </p>
-              <p class="mxr-fnl-z-item" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
-    <span class="mxr-fnl-z-label">HQ:</span> 
-    <span class="mxr-fnl-z-info">
-        <span itemprop="addressLocality">Gurugram</span>, 
-        <span itemprop="addressCountry">India</span> 
-        <span class="mxr-fnl-z-cyan">— Remote Worldwide</span>
-    </span>
-</p>
-                
-             <a href="https://wa.me/919810591327?text=Hi%20MaxReach,%20I'm%20interested%20in%20scaling%20my%20business%20reach." 
-   class="mxr-fnl-z-whatsapp" 
-   rel="noopener noreferrer" 
-   target="_blank"
-   title="Inquire about Business Scaling on WhatsApp"
-   aria-label="Contact MaxReach Global on WhatsApp to scale your business reach">
-    <i class="fab fa-whatsapp" aria-hidden="true"></i> CONNECT ON WHATSAPP
-</a>
+            <div class="mx-footer-col">
+                <h4>Industries</h4>
+                <ul role="list">
+                    <li><a href="realestate.html" title="Real Estate Marketing">Property Scale</a></li>
+                    <li><a href="hospitality.html" title="Cafe & Hospitality Growth">Cafe Growth</a></li>
+                    <li><a href="d2c.html" title="E-commerce & D2C Sales">E-com Sales</a></li>
+                    <li><a href="allothers.html" title="Brand Authority Building">Brand Authority</a></li>
+                    <li><a href="personal-branding.html" title="Lifestyle Branding">Lifestyle Branding</a></li>
+                    <li><a href="education.html" title="Education Academy Marketing">Edu Academy</a></li>
+                </ul>
             </div>
-        </div>
 
+            <div class="mx-footer-col">
+                <h4>Follow Us</h4>
+                <ul role="list">
+                    <li><a href="https://www.instagram.com/maxreachglobal.official/" itemprop="sameAs" target="_blank" rel="noopener" title="Instagram">Instagram</a></li>
+                    <li><a href="https://www.facebook.com/maxreachglobalofficial" itemprop="sameAs" target="_blank" rel="noopener" title="Facebook">Facebook</a></li>
+                    <li><a href="https://www.linkedin.com/company/maxreach-global/" itemprop="sameAs" target="_blank" rel="noopener" title="LinkedIn">LinkedIn</a></li>
+                    <li><a href="https://t.me/maxreachglobal_official" itemprop="sameAs" target="_blank" rel="noopener" title="Telegram">Telegram</a></li>
+                </ul>
+            </div>
+
+            <div class="mx-footer-col">
+                <h4>Insights</h4>
+                <ul role="list"> 
+                    <li><a href="about.html#mr-vision-id">Our Vision</a></li>
+                    <li><a href="legal.html" title="Legal Trust Policy">Legal Trust</a></li>
+                    <li><a href="about.html#elite-team-id">Our Team</a></li>
+                    <li><a href="about.html#faq-id">FAQ</a></li>
+                </ul>
+            </div>
+
+        </div>
     </div>
 
-    <div class="mxr-fnl-z-bottom">
-        <div class="mxr-fnl-z-bar-content">
-            <p>© 2026 MAXREACHGLOBAL — <span class="mxr-fnl-z-cyan">INDIA'S DIGITAL GROWTH PARTNER</span></p>
-        </div>
+   <div class="mx-footer-bottom-info">
+        <div class="mx-bottom-grid">
+            <div class="mx-contact-card">
+                <h4>Get in Touch</h4>
+                <address style="font-style: normal;">
+                    <p>Email: <a href="mailto:maxreach.official@gmail.com" itemprop="email" style="color: inherit; text-decoration: none;">maxreach.official@gmail.com</a></p>
+                    <p>Phone/WhatsApp: <a href="https://wa.me/919810591327" itemprop="telephone" style="color: inherit; text-decoration: none;">+91 98105 91327</a></p>
+                    <p itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+                        Location: <span itemprop="addressLocality">Gurugram</span>, <span itemprop="addressRegion">Haryana</span>, <span itemprop="addressCountry">India</span> - Remote Worldwide
+                    </p>
+                </address>
+            </div>
+            
+            <div class="mx-brand-card">
+                <div class="mx-f-logo" aria-label="MaxReach Global Logo">MAX<span>REACH</span></div>
+                <p itemprop="description">"Humanizing brands, scaling businesses."</p>
+                
+      <div class="mx-social-links">
+    <a href="https://www.linkedin.com/company/maxreach-global/" 
+       target="_blank" 
+       rel="noopener" 
+       itemprop="sameAs" 
+       title="Connect with MaxReach Global on LinkedIn" 
+       aria-label="Connect with MaxReach Global on LinkedIn">
+       <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+    </a>
+
+    <a href="https://www.instagram.com/maxreachglobal.official/" 
+       target="_blank" 
+       rel="noopener" 
+       itemprop="sameAs" 
+       title="Follow MaxReach Global on Instagram" 
+       aria-label="Follow MaxReach Global on Instagram for Marketing Tips">
+       <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+    </a>
+
+    <a href="https://www.facebook.com/maxreachglobalofficial" 
+       target="_blank" 
+       rel="noopener" 
+       itemprop="sameAs" 
+       title="MaxReach Global Official Facebook Page" 
+       aria-label="Visit MaxReach Global on Facebook">
+       <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+    </a>
+
+    <a href="https://t.me/maxreachglobal_official" 
+       target="_blank" 
+       rel="noopener" 
+       itemprop="sameAs" 
+       title="Join MaxReach Global Telegram Community" 
+       aria-label="Join our Telegram channel for Business Updates">
+       <i class="fa-brands fa-telegram" aria-hidden="true"></i>
+    </a>
+</div>
+            </div> 
+        </div> 
+    </div> 
+
+    <div class="mx-copyright-bar">
+        <p>© 2026 <span itemprop="name">MaxReachGlobal</span>. All Rights Reserved.</p>
     </div>
 </footer>
 
+
 <style>
-    /* Prefix: mxr-fnl-z (MaxReach Final Zone) */
-    .mxr-fnl-z-footer {
-        background: #020814; 
-        padding: 60px 20px 0;
-        color: #fff;
-        font-family: 'Inter', sans-serif;
-        border-top: 1px solid rgba(255, 255, 255, 0.05);
-        display: block;
-    }
+#mx-footer-section {
+    --mx-blue: #00B0FF;
+    /* SEO Benefit: Ensuring content is visible even if images don't load */
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
 
-    .mxr-fnl-z-grid {
-        max-width: 1200px;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+/* Quick Links Section */
+.mx-links-wrapper {
+    background: #001a33; 
+    padding: 60px 10%;
+    border-top: 1px solid rgba(0, 229, 255, 0.2);
+}
+
+.mx-section-title {
+    text-align: center;
+    color: var(--mx-blue);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+    font-size: 1.2rem;
+    font-weight: 800; /* Header hierarchy for SEO */
+}
+
+.mx-footer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.mx-footer-col h4 {
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    border-left: 3px solid var(--mx-blue);
+    padding-left: 10px;
+    font-weight: 700;
+}
+
+.mx-footer-col ul { list-style: none; padding: 0; }
+.mx-footer-col ul li { margin-bottom: 12px; }
+
+.mx-footer-col ul li a {
+    color: #aaa;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-block; /* For better click target (SEO Tip) */
+}
+
+.mx-footer-col ul li a:hover,
+.mx-footer-col ul li a:focus { /* Focus state for crawlability */
+    color: var(--mx-blue);
+    padding-left: 8px;
+    outline: none;
+}
+
+/* Bottom Contact & Brand Info */
+.mx-footer-bottom-info {
+    padding: 50px 10%;
+    background: #000;
+}
+
+.mx-bottom-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 50px;
+}
+
+/* SEO Optimization: Making address items more readable for bots */
+.mx-contact-card h4 { color: var(--mx-blue); margin-bottom: 15px; font-size: 1.2rem; font-weight: 700; }
+.mx-contact-card p { color: #ccc; margin-bottom: 10px; font-size: 0.95rem; line-height: 1.6; }
+.mx-contact-card a { transition: 0.3s ease; }
+.mx-contact-card a:hover { color: var(--mx-blue) !important; }
+
+.mx-brand-card { text-align: right; }
+.mx-f-logo { font-weight: 900; font-size: 2.2rem; color: #fff; letter-spacing: 1px; line-height: 1; }
+.mx-f-logo span { color: var(--mx-blue); }
+.mx-brand-card p { color: #666; font-style: italic; font-size: 0.85rem; margin-top: 8px; }
+
+.mx-social-links {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+}
+
+.mx-social-links a {
+    color: #fff;
+    font-size: 1.5rem;
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    text-decoration: none;
+    display: inline-flex;
+}
+
+.mx-social-links a:hover {
+    color: var(--mx-blue);
+    transform: translateY(-5px); 
+    text-shadow: 0 0 15px rgba(0, 176, 255, 0.6); 
+}
+
+/* Copyright Bar - SEO & Accessibility Optimized */
+.mx-copyright-bar {
+    text-align: center;
+    padding: 25px;
+    background: #050505;
+    border-top: 1px solid #111;
+    font-size: 0.85rem;
+    
+    /* 1. Color ko #555 se badal kar #94a3b8 kiya for high contrast */
+    color: #94a3b8; 
+    
+    letter-spacing: 0.5px;
+}
+
+/* 2. Agar koi link ya brand name hai copyright mein toh wo aur bright dikhe */
+.mx-copyright-bar span, 
+.mx-copyright-bar a {
+    color: #f8fafc; 
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* --- 📱 MOBILE OPTIMIZATION (SEO Friendly) --- */
+@media (max-width: 992px) {
+    .mx-footer-grid {
+        grid-template-columns: repeat(2, 1fr) !important; 
+        gap: 40px 20px;
+    }
+    .mx-bottom-grid {
+        grid-template-columns: 1fr !important;
+        text-align: center !important;
         gap: 40px;
-        padding-bottom: 50px;
     }
+    .mx-brand-card { text-align: center !important; }
+    .mx-social-links { justify-content: center !important; }
+}
 
-    .mxr-fnl-z-logo { font-size: 1.6rem; font-weight: 900; letter-spacing: 2px; margin-bottom: 15px; color: #fff; }
-    .mxr-fnl-z-blue { color: #00d2ff; }
-    .mxr-fnl-z-vision { font-size: 0.85rem; color: rgba(255, 255, 255, 0.5); line-height: 1.6; margin-bottom: 25px; }
-
-    .mxr-fnl-z-socials { display: flex; gap: 12px; }
-    .mxr-fnl-z-icon {
-        width: 38px; height: 38px;
-        border: 1px solid rgba(255, 255, 255, 0.15);
-        border-radius: 50%;
-        display: flex; align-items: center; justify-content: center;
-        color: white; text-decoration: none; font-size: 0.9rem;
-        transition: 0.3s ease;
-    }
-    .mxr-fnl-z-icon:hover { background: #00d2ff; border-color: #00d2ff; color: #000; transform: translateY(-3px); }
-
-    .mxr-fnl-z-title { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 25px; color: #00d2ff; font-weight: 800; }
-
-    .mxr-fnl-z-list { list-style: none; padding: 0; }
-    .mxr-fnl-z-list li { margin-bottom: 12px; }
-    .mxr-fnl-z-list a { color: rgba(255, 255, 255, 0.6); text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
-    .mxr-fnl-z-list a:hover { color: #00d2ff; padding-left: 5px; }
-
-    .mxr-fnl-z-whatsapp {
-        display: inline-flex; align-items: center; gap: 10px;
-        background: rgba(0, 210, 255, 0.05);
-        border: 1px solid #00d2ff;
-        color: #00d2ff; padding: 12px 20px;
-        border-radius: 8px; text-decoration: none;
-        font-weight: 700; font-size: 0.8rem;
-        margin-top: 15px; transition: 0.3s;
-    }
-    .mxr-fnl-z-whatsapp:hover { background: #00d2ff; color: #000; box-shadow: 0 0 15px rgba(0, 210, 255, 0.2); }
-
-    .mxr-fnl-z-label { color: #ffffff; font-weight: 600; }
-    .mxr-fnl-z-info { color: rgba(255, 255, 255, 0.6); font-weight: 400; }
-    .mxr-fnl-z-item { font-size: 0.85rem; margin-bottom: 8px; line-height: 1.5; }
-
-    .mxr-fnl-z-bottom { border-top: 1px solid rgba(255, 255, 255, 0.05); padding: 25px 20px; text-align: center; }
-    .mxr-fnl-z-bar-content { font-size: 0.7rem; color: rgba(255, 255, 255, 0.3); text-transform: uppercase; letter-spacing: 1px; }
-    .mxr-fnl-z-cyan { color: #00d2ff; font-weight: 700; }
-
-/* --- MOBILE RESPONSIVE FIX --- */
-    @media (max-width: 768px) {
-        .mxr-fnl-z-grid { 
-            grid-template-columns: 1fr 1fr; 
-            gap: 30px; 
-        }
-        
-        .mxr-fnl-z-col.branding { 
-            grid-column: span 2; 
-            text-align: center; 
-        }
-        
-        .mxr-fnl-z-socials { 
-            justify-content: center; 
-        }
-        
-        /* Contact Col (Jahan button hai) */
-        .mxr-fnl-z-col:last-child { 
-            grid-column: span 2; 
-            text-align: center; /* Sab kuch center karega button ke sath */
-        }
-
-        .mxr-fnl-z-whatsapp { 
-            display: flex; /* Flex rakho alignment ke liye */
-            width: 100%; 
-            max-width: 280px; /* Ek limit de di taaki bahut lamba na ho */
-            margin: 15px auto 0; /* 'auto' se horizontal center ho jayega */
-            justify-content: center; 
-        }
-    }
-
+@media (max-width: 768px) {
+    .mx-links-wrapper { padding: 50px 20px !important; }
+    .mx-section-title { font-size: 1.1rem !important; margin-bottom: 30px; }
+    .mx-footer-col h4 { font-size: 1rem; }
+    /* Mobile tap targets optimization */
+    .mx-footer-col ul li { margin-bottom: 15px; }
+}
 </style>
-
 <button id="scrollTopBtn" 
         onclick="scrollToTop()" 
         aria-label="Scroll back to top" 

@@ -156,9 +156,10 @@
 </head>
 <body>
 <script>
-  if (localStorage.getItem('nightMode') === 'true') {
-    document.documentElement.classList.add('night-mode');
-  }
+    // Page load hone se pehle hi mode apply kar dega
+    if (localStorage.getItem('nightMode') === 'true') {
+        document.body.classList.add('night-mode');
+    }
 </script>
 
 <nav class="navbar" role="navigation" aria-label="Main Navigation" itemscope itemtype="https://schema.org/SiteNavigationElement">
@@ -374,7 +375,7 @@
                 <a href="https://www.facebook.com/maxreachglobalofficial" target="_blank" rel="noopener noreferrer" title="Follow MaxReach Global on Facebook" aria-label="Facebook">
                     <i class="fab fa-facebook-f" aria-hidden="true"></i>
                 </a>
-                <a href="https://www.linkedin.com/in/maxreachglobalofficial" target="_blank" rel="noopener noreferrer" title="Connect with MaxReach Global on LinkedIn" aria-label="LinkedIn">
+                <a href="https://www.linkedin.com/company/maxreach-global/" target="_blank" rel="noopener noreferrer" title="Connect with MaxReach Global on LinkedIn" aria-label="LinkedIn">
                     <i class="fab fa-linkedin-in" aria-hidden="true"></i>
                 </a>
                 <a href="https://t.me/maxreachglobal_official" target="_blank" rel="noopener noreferrer" title="Join MaxReach Global on Telegram" aria-label="Telegram">
@@ -387,7 +388,7 @@
 <div id="navOverlay" onclick="toggleMenu()" aria-hidden="true" aria-label="Close Menu"></div>
 
 <style>
-    /* --- HERO THEME LOGIC --- */
+    /* --- HERO THEME LOGIC (Synced with #030712 Premium Framework) --- */
     :root {
         --hero-accent: #ff8da1; /* Soft Baby Pink */
         --hero-overlay: rgba(255, 255, 255, 0.2); /* White Mode: Very light/clean */
@@ -397,12 +398,13 @@
         --hero-border: rgba(255, 182, 193, 0.4);
     }
 
+    /* 🌙 NIGHT MODE: Pure Black Departure & Elite Theme Sync */
     body.night-mode .hero-viewport {
-        --hero-overlay: rgba(0, 0, 0, 0.5); /* Dark Mode: Classic Shadow */
-        --hero-glass-bg: rgba(0, 0, 0, 0.4); /* Dark Mode: Dark Glass */
+        --hero-overlay: rgba(3, 7, 18, 0.4);       /* Sahi kar diya: Exact alpha overlay matching frame dark base */
+        --hero-glass-bg: rgba(11, 15, 25, 0.5);    /* Premium translucent glassmorphism for dark profile */
         --hero-text: #ffffff;
-        --hero-sub-text: rgba(255, 255, 255, 0.9);
-        --hero-border: rgba(255, 182, 193, 0.2);
+        --hero-sub-text: #94a3b8;                  /* Clean UI standard high contrast gray */
+        --hero-border: rgba(255, 182, 193, 0.15);
     }
 
     .hero-viewport {
@@ -414,7 +416,7 @@
         justify-content: center;
         overflow: hidden;
         margin-top: var(--nav-height);
-        transition: all 0.5s ease;
+        transition: background-color 0.5s ease, color 0.5s ease;
     }
 
     /* Background Image & Dynamic Overlay */
@@ -424,23 +426,23 @@
         z-index: 0;
     }
 
-.hero-bg-wrapper img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* 'object-cover' ko 'object-fit' kar do */
-}
+    .hero-bg-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; 
+    }
 
     .hero-overlay {
         position: absolute;
         inset: 0;
         background: var(--hero-overlay);
-        transition: background 0.8s ease;
+        transition: background 0.5s ease;
     }
 
     /* Pink Color Theme */
     .pink-text { 
         color: var(--hero-accent); 
-        filter: drop-shadow(0 0 2px rgba(255, 182, 193, 0.3));
+        filter: drop-shadow(0 0 2px rgba(255, 182, 193, 0.2));
     }
     
     /* Compact Floating Glass Box */
@@ -451,16 +453,16 @@
         border: 1px solid var(--hero-border);
         border-radius: 24px;
         z-index: 10;
-        box-shadow: 0 40px 80px -20px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 40px 80px -20px rgba(3, 7, 18, 0.15);
         max-width: 600px;
         padding: 3.5rem 2.5rem;
         margin: 0 20px;
         text-align: center;
-        transition: all 0.5s ease;
+        transition: background-color 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease;
     }
 
     body.night-mode .floating-glass {
-        box-shadow: 0 40px 80px -20px rgba(0, 0, 0, 0.8);
+        box-shadow: 0 40px 80px -20px rgba(0, 0, 0, 0.6);
     }
 
     .hero-title {
@@ -468,6 +470,7 @@
         color: var(--hero-text);
         font-weight: 800;
         line-height: 1.1;
+        transition: color 0.5s ease;
     }
 
     .hero-desc {
@@ -475,31 +478,32 @@
         max-width: 350px;
         margin: 0 auto 2rem;
         line-height: 1.6;
+        transition: color 0.5s ease;
     }
 
     /* Button Styling */
     .cta-pink {
         display: inline-block;
         background: var(--hero-accent);
-        color: #000 !important;
+        color: #030712 !important; /* Synced with dark palette text contrast */
         font-weight: 800;
         letter-spacing: 0.2em;
         padding: 18px 40px;
         border-radius: 50px;
         text-decoration: none;
         transition: all 0.4s ease;
-        box-shadow: 0 10px 20px rgba(255, 182, 193, 0.3);
+        box-shadow: 0 10px 20px rgba(255, 182, 193, 0.25);
     }
 
     .cta-pink:hover {
-        background: #000;
-        color: #fff !important;
+        background: #030712;
+        color: #ffffff !important;
         transform: translateY(-5px);
     }
 
     body.night-mode .cta-pink:hover {
-        background: #fff;
-        color: #000 !important;
+        background: #ffffff;
+        color: #030712 !important;
     }
 
     /* Mobile Logic */
@@ -550,8 +554,9 @@
         </div>
     </div>
 </main>
+
 <style>
-    /* --- THEME VARIABLES (Pink & Blue Duo) --- */
+    /* --- THEME VARIABLES (Pink & Blue Duo - Synced with #030712 Framework) --- */
     :root {
         --roadmap-bg: #ffffff;
         --roadmap-text: #0f172a;
@@ -559,22 +564,25 @@
         --roadmap-card-bg: linear-gradient(90deg, rgba(0, 0, 0, 0.03) 0%, transparent 100%);
         --roadmap-card-hover: rgba(0, 0, 0, 0.06);
         --roadmap-digit-op: 0.15; 
-        --roadmap-top-title: #0891b2; /* Cyan/Blue */
+        --roadmap-top-title: #00d2ff; /* Cyan/Blue */
         /* HEADING COLORS */
         --h-pink: #ff8da1;
-        --h-blue: #0891b2;
+        --h-blue: #00f2ff;
+        --mini-title-color: #64748b; /* Clean professional grey slate for light mode */
     }
 
+    /* 🌙 NIGHT MODE: Pure Black Departure & Elite Theme Sync */
     body.night-mode .dining-roadmap {
-        --roadmap-bg: #000000;
+        --roadmap-bg: #030712;         /* Sahi kar diya: Exact match with framework dark layout base */
         --roadmap-text: #ffffff;
-        --roadmap-subtext: #94a3b8;
-        --roadmap-card-bg: linear-gradient(90deg, rgba(255, 255, 255, 0.03) 0%, transparent 100%);
-        --roadmap-card-hover: rgba(255, 255, 255, 0.05);
+        --roadmap-subtext: #94a3b8;    /* Enhanced text contrast scale */
+        --roadmap-card-bg: linear-gradient(90deg, rgba(255, 255, 255, 0.02) 0%, transparent 100%);
+        --roadmap-card-hover: rgba(255, 255, 255, 0.04);
         --roadmap-digit-op: 0.12;
-        --roadmap-top-title: #22d3ee;
-        --h-pink: #ffb6c1; /* Lighter Pink for dark mode visibility */
-        --h-blue: #00f2ff; /* Neon Blue */
+        --roadmap-top-title: #00f2ff;
+        --h-pink: #ffb6c1; 
+        --h-blue: #00f2ff; 
+        --mini-title-color: #94a3b8;   /* Smooth gray variant for high performance readability */
     }
 
     .dining-roadmap {
@@ -585,7 +593,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        transition: background 0.8s ease;
+        transition: background-color 0.5s ease, color 0.5s ease;
     }
 
     .header-group {
@@ -595,14 +603,16 @@
         margin-bottom: 70px;
     }
 
+    /* MINI TITLE CSS OPTIMIZATION */
     .top-mini-title {
         font-family: 'Syncopate', sans-serif;
         font-size: 10px;
         letter-spacing: 0.5em;
         margin-bottom: 15px;
         text-transform: uppercase;
-        color: var(--h-blue);
+        color: var(--mini-title-color);
         font-weight: 800;
+        transition: color 0.5s ease;
     }
 
     /* ONLY PINK AND BLUE GRADIENT */
@@ -625,6 +635,7 @@
         font-weight: 400;
         line-height: 1.8;
         max-width: 740px;
+        transition: color 0.5s ease;
     }
 
     .sub-highlight {
@@ -646,7 +657,7 @@
         background: var(--roadmap-card-bg);
         padding: 50px 40px;
         border-radius: 0 30px 30px 0;
-        transition: all 0.5s cubic-bezier(0.2, 1, 0.3, 1);
+        transition: background 0.4s ease, border-color 0.4s ease, transform 0.5s cubic-bezier(0.2, 1, 0.3, 1);
         overflow: hidden;
         border-left: 6px solid;
     }
@@ -666,6 +677,7 @@
         opacity: var(--roadmap-digit-op); 
         pointer-events: none;
         line-height: 1;
+        transition: opacity 0.5s ease;
     }
 
     .step-box h3 {
@@ -674,6 +686,7 @@
         color: var(--roadmap-text);
         font-weight: 900;
         text-transform: uppercase;
+        transition: color 0.5s ease;
     }
 
     .step-box p {
@@ -681,6 +694,7 @@
         color: var(--roadmap-subtext);
         line-height: 1.7;
         max-width: 600px;
+        transition: color 0.5s ease;
     }
 
     @media (max-width: 768px) {
@@ -735,25 +749,26 @@
 </section>
 
 <style>
-    /* --- ECOSYSTEM THEME LOGIC (Solid Heading Update) --- */
+    /* --- ECOSYSTEM THEME LOGIC (Synced with #030712 Premium Framework) --- */
     :root {
         --eco-bg: #ffffff;
         --eco-text: #111111;
         --eco-subtext: #333333;
-        --eco-accent: #0891b2; 
+        --eco-accent: #00d2ff; /* Fixed to MaxReach Corporate Blue */
         --eco-card-bg: rgba(0, 0, 0, 0.03);
         --eco-card-border: rgba(0, 0, 0, 0.08);
-        --eco-icon-bg: rgba(8, 145, 178, 0.12);
+        --eco-icon-bg: rgba(0, 210, 255, 0.12);
     }
 
+    /* 🌙 NIGHT MODE: Pure Black Departure & Elite Theme Sync */
     body.night-mode .ecosystem-section {
-        --eco-bg: #000000;
+        --eco-bg: #030712;             /* Sahi kar diya: Exact match with framework dark layout base */
         --eco-text: #ffffff;
-        --eco-subtext: #a0a0a0;
-        --eco-accent: #00f2ff; 
-        --eco-card-bg: linear-gradient(145deg, rgba(255,255,255,0.03) 0%, rgba(0,0,0,0) 100%);
-        --eco-card-border: rgba(255, 255, 255, 0.12);
-        --eco-icon-bg: rgba(0, 242, 255, 0.1);
+        --eco-subtext: #94a3b8;        /* Enhanced text contrast scale for descriptions */
+        --eco-accent: #00d2ff;         /* Consistent Neon Blue in Dark Mode */
+        --eco-card-bg: #0b0f19;        /* Premium deep slate card container background */
+        --eco-card-border: rgba(255, 255, 255, 0.06);
+        --eco-icon-bg: rgba(0, 210, 255, 0.08);
     }
 
     .ecosystem-section {
@@ -765,7 +780,7 @@
         flex-direction: column;
         align-items: center;
         overflow: hidden;
-        transition: background-color 0.8s ease;
+        transition: background-color 0.5s ease, color 0.5s ease;
     }
 
     .eco-header {
@@ -809,6 +824,7 @@
         font-weight: 400;
         max-width: 600px;
         margin: 0 auto;
+        transition: color 0.5s ease;
     }
 
     /* Grid Layout */
@@ -831,7 +847,7 @@
         padding: 45px 30px;
         border-radius: 28px;
         text-align: center;
-        transition: all 0.5s cubic-bezier(0.2, 1, 0.3, 1);
+        transition: background 0.4s ease, border-color 0.4s ease, transform 0.5s cubic-bezier(0.2, 1, 0.3, 1), box-shadow 0.4s ease;
         height: 100%;
         display: flex;
         flex-direction: column;
@@ -841,8 +857,12 @@
     .eco-card:hover {
         border-color: var(--eco-accent);
         transform: translateY(-12px);
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 20px 40px rgba(3, 7, 18, 0.25); /* Adjusted to match deep dark background shadow limits */
         background: var(--eco-bg);
+    }
+
+    body.night-mode .eco-card:hover {
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
     }
 
     /* Icon Container */
@@ -857,6 +877,7 @@
         justify-content: center;
         border-radius: 22px;
         position: relative;
+        transition: background-color 0.5s ease;
     }
 
     .eco-icon::after {
@@ -881,12 +902,14 @@
         color: var(--eco-text);
         text-transform: uppercase;
         letter-spacing: 0.5px;
+        transition: color 0.5s ease;
     }
 
     .eco-card p {
         font-size: 1rem;
         color: var(--eco-subtext);
         line-height: 1.6;
+        transition: color 0.5s ease;
     }
 
     /* Responsive */
@@ -904,13 +927,13 @@
 </style>
 
 <section class="ecosystem-section" itemscope itemtype="https://schema.org/Service">
-    <meta itemprop="serviceType" content="Restaurant Automation and Digital Marketing">
+    <meta itemprop="serviceType" content="Restaurant Growth and Digital Marketing Framework">
     <meta itemprop="provider" content="MaxReach Global">
 
     <header class="eco-header">
-        <p class="automation-tag">Automation Suite</p>
+        <p class="automation-tag">Growth Framework</p>
         <h2 itemprop="name">The <span class="smart-highlight">Smart Restaurant</span> Ecosystem</h2>
-        <p itemprop="abstract">"Your Business, Fully Automated & Scalable through <strong>Advanced Hospitality Tech</strong>."</p>
+        <p itemprop="abstract">"Your Business, Fully Optimized & Scalable through <strong>Advanced Hospitality Solutions</strong>."</p>
     </header>
 
     <div class="eco-grid">
@@ -928,9 +951,9 @@
             <div class="eco-card" itemprop="itemListElement" itemscope itemtype="https://schema.org/Offer">
                 <div class="eco-icon" aria-hidden="true">🗓️</div>
                 <h3 itemprop="itemOffered" itemscope itemtype="https://schema.org/Service">
-                    <span itemprop="name">Automated Table Reservations</span>
+                    <span itemprop="name">Seamless Table Reservations</span>
                 </h3>
-                <p itemprop="description">A seamless <strong>online booking engine</strong> integrated into your website to prevent missed calls and manual register errors.</p>
+                <p itemprop="description">A direct <strong>online booking engine</strong> integrated into your website to prevent missed calls and manual register errors.</p>
             </div>
         </article>
 
@@ -940,7 +963,7 @@
                 <h3 itemprop="itemOffered" itemscope itemtype="https://schema.org/Service">
                     <span itemprop="name">Google Review & Reputation Management</span>
                 </h3>
-                <p itemprop="description">Automated <strong>Google Review prompts</strong> to help your cafe or restaurant dominate <strong>local SEO search</strong>.</p>
+                <p itemprop="description">Smart <strong>Google Review tools</strong> to help your cafe or restaurant dominate <strong>local SEO search</strong>.</p>
             </div>
         </article>
 
@@ -966,9 +989,8 @@
     </div>
 </section>
 
-
 <style>
-    /* --- HOSPITALITY THEME LOGIC (Updated Pink Shade) --- */
+    /* --- HOSPITALITY THEME LOGIC (Synced with #030712 Premium Framework) --- */
     :root {
         --hosp-bg: #ffffff;
         --hosp-text: #111111;
@@ -978,13 +1000,14 @@
         --hosp-glass-border: rgba(255, 141, 161, 0.4);
     }
 
+    /* 🌙 NIGHT MODE: Pure Black Departure & Corporate Sync */
     body.night-mode .hospitality-experience {
-        --hosp-bg: #000000;
+        --hosp-bg: #030712;             /* Sahi kar diya: Exact match with framework dark layout base */
         --hosp-text: #ffffff;
-        --hosp-subtext: #b0b0b0;
+        --hosp-subtext: #94a3b8;        /* Enhanced slate contrast scale for body text */
         --hosp-pink: #ff8da1; 
-        --hosp-card-bg: #111111;
-        --hosp-glass-border: rgba(255, 141, 161, 0.3);
+        --hosp-card-bg: #0b0f19;        /* Premium deep slate card container background */
+        --hosp-glass-border: rgba(255, 141, 161, 0.2);
     }
 
     .hospitality-experience {
@@ -995,7 +1018,7 @@
         display: flex;
         justify-content: center;
         overflow: hidden;
-        transition: background-color 0.8s ease, color 0.5s ease;
+        transition: background-color 0.5s ease, color 0.5s ease;
     }
 
     .exp-container {
@@ -1023,7 +1046,7 @@
         overflow: hidden;
         position: relative;
         z-index: 2;
-        transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+        transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), background-color 0.5s ease;
         cursor: pointer;
     }
 
@@ -1039,7 +1062,7 @@
         width: 100%;
         height: 50%;
         background: linear-gradient(to top, var(--hosp-pink) 0%, transparent 100%);
-        opacity: 0.35;
+        opacity: 0.25; /* Tuned down slightly for clean high-contrast card layering */
         filter: blur(25px);
         pointer-events: none;
         z-index: 3;
@@ -1086,11 +1109,12 @@
         margin-bottom: 18px;
         color: var(--hosp-text);
         letter-spacing: -1px;
+        transition: color 0.5s ease;
     }
 
     .pink-highlight { 
         color: var(--hosp-pink); 
-        text-shadow: 0 0 15px rgba(255, 141, 161, 0.3); 
+        text-shadow: 0 0 15px rgba(255, 141, 161, 0.2); 
     }
 
     .exp-description { 
@@ -1098,6 +1122,7 @@
         color: var(--hosp-subtext); 
         line-height: 1.8; 
         margin-bottom: 30px; 
+        transition: color 0.5s ease;
     }
 
     .hospitality-points { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; }
@@ -1110,10 +1135,11 @@
         align-items: center; 
         gap: 10px; 
         font-weight: 800;
+        transition: color 0.5s ease;
     }
     
     .h-point h4 span { color: var(--hosp-pink); font-size: 1.2rem; }
-    .h-point p { font-size: 0.85rem; color: var(--hosp-subtext); line-height: 1.5; }
+    .h-point p { font-size: 0.85rem; color: var(--hosp-subtext); line-height: 1.5; transition: color 0.5s ease; }
 
     @media (max-width: 968px) {
         .exp-container { grid-template-columns: 1fr; gap: 45px; }
@@ -1182,9 +1208,9 @@
         --port-bg: radial-gradient(circle at center, #f8fafc 0%, #f1f5f9 100%);
         --port-text: #0f172a;
         --port-subtext: #475569;
-        --port-accent: #0891b2; 
-        --port-btn-bg: #0891b2;
-        --port-btn-text: #ffffff;
+        --port-accent: #00d2ff; /* Fixed to MaxReach Corporate Blue */
+        --port-btn-bg: #00d2ff; /* Fixed to MaxReach Corporate Blue */
+        --port-btn-text: #000000; /* Dark text on blue background for maximum readability */
         --pop-bg: #ffffff;
         --pop-border: #e2e8f0;
     }
@@ -1194,11 +1220,11 @@
         --port-bg: radial-gradient(circle at center, #001529 0%, #000000 100%);
         --port-text: #ffffff;
         --port-subtext: #cbd5e1;
-        --port-accent: #00f2ff;
-        --port-btn-bg: #00f2ff;
+        --port-accent: #00d2ff; /* Consistent Neon Blue for Dark Mode */
+        --port-btn-bg: #00d2ff;
         --port-btn-text: #000000;
         --pop-bg: #111111;
-        --pop-border: rgba(0, 242, 255, 0.2);
+        --pop-border: rgba(0, 210, 255, 0.2);
     }
 
     .portfolio-cta {
@@ -1225,29 +1251,29 @@
         margin-bottom: 30px;
     }
 
-    /* --- CTA BUTTON (FIXED HOVER) --- */
+    /* --- CTA BUTTON (FIXED HOVER & VARIABLES) --- */
     .port-btn {
         display: inline-block;
         padding: 14px 40px;
         background: var(--port-btn-bg);
         color: var(--port-btn-text) !important;
         border-radius: 50px;
-        border: 2px solid transparent; /* Initial transparent border */
+        border: 2px solid transparent; 
         font-weight: 800;
         text-transform: uppercase;
         letter-spacing: 1.5px;
         font-size: 0.9rem;
         cursor: pointer;
         transition: all 0.3s ease;
-        box-shadow: 0 5px 15px rgba(0, 242, 255, 0.2);
+        box-shadow: 0 5px 15px rgba(0, 210, 255, 0.2);
     }
 
     .port-btn:hover {
-        background: #ffffff;
-        color: var(--port-accent) !important; /* Text becomes blue for contrast */
-        border: 2px solid var(--port-accent); /* Blue border adds definition */
+        background: transparent;
+        color: var(--port-accent) !important; /* Dynamic color shift */
+        border: 2px solid var(--port-accent); 
         transform: translateY(-5px);
-        box-shadow: 0 10px 25px rgba(0, 114, 255, 0.15);
+        box-shadow: 0 10px 25px rgba(0, 210, 255, 0.25);
     }
 
     /* --- 2. POPUP (MODAL) LOOK --- */
@@ -1296,7 +1322,7 @@
 
     .pop-link-item {
         padding: 16px;
-        background: rgba(0, 114, 255, 0.05);
+        background: rgba(0, 210, 255, 0.05); /* Synced background glow */
         color: var(--port-text);
         text-decoration: none;
         border-radius: 10px;
@@ -1312,9 +1338,9 @@
 
     .pop-link-item:hover {
         background: var(--port-accent);
-        color: #000 !important;
+        color: #000000 !important;
         transform: scale(1.02);
-        box-shadow: 0 5px 15px rgba(0, 242, 255, 0.3);
+        box-shadow: 0 5px 15px rgba(0, 210, 255, 0.3);
     }
 
     .close-port-pop {
@@ -1353,7 +1379,7 @@
             <a href="allweb.html" class="pop-link-item" title="Explore Web Design Portfolio">Hospitality Web Design <span>→</span></a>
             <a href="seodata.html" class="pop-link-item" title="View SEO Case Studies">Search Engine Results (SEO) <span>→</span></a>
             <a href="graphics.html" class="pop-link-item" title="Browse Visual Design Projects">Brand Visual Design <span>→</span></a>
-            <a href="allvideo.html" class="pop-link-item" title="Watch Viral Video Projects">Viral Studio & Video <span>→</span></a>
+            <a href="allvideos.html" class="pop-link-item" title="Watch Viral Video Projects">Viral Studio & Video <span>→</span></a>
         </div>
     </div>
 </div>
@@ -1378,27 +1404,30 @@
 </script>
 
 <style>
-    /* --- TESTIMONIAL THEME LOGIC --- */
+    /* --- TESTIMONIAL THEME LOGIC (Fixed Blue Egg Concept) --- */
     :root {
         --dark-bg: #ffffff; /* White background for Light Mode */
-        --main-egg: #e0f2fe; /* Soft Sky Blue */
-        --solid-egg: #00f2ff; /* Neon Blue */
-        --glow-color: rgba(0, 242, 255, 0.2); /* Softer glow for light mode */
-        --h-text: #0f172a;
+        --main-egg: #e6faff; /* Premium Ultra-Light Blue Tint - LOCKED FOR BOTH MODES */
+        --solid-egg: #00d2ff; /* Fixed to MaxReach Corporate Blue */
+        --glow-color: rgba(0, 210, 255, 0.2); 
+        --h-text: #0f172a;   /* Clean premium slate text inside egg */
         --sub-text: #334155;
         --icon-bg: #f1f5f9;
         --egg-border: #ffffff;
+        --outer-heading: #0f172a; /* Global page section heading tracker */
     }
 
+    /* 🌙 NIGHT MODE: Pure Dark Base Departure with Permanent Blue Center */
     body.night-mode .testimonial-wrapper {
-        --dark-bg: #000000;
-        --main-egg: #e0f2fe; /* Keeping the egg color same for brand consistency */
-        --solid-egg: #00f2ff;
-        --glow-color: rgba(0, 242, 255, 0.4);
-        --h-text: #ffffff;
-        --sub-text: #cbd5e1;
-        --icon-bg: #111111;
-        --egg-border: #000000;
+        --dark-bg: #030712;            /* Exact match with framework dark layout base */
+        --main-egg: #e6faff;           /* Locked: Keeps the exact aesthetic as light mode */
+        --solid-egg: #00d2ff;          /* Consistent Corporate Blue */
+        --glow-color: rgba(0, 210, 255, 0.15);
+        --h-text: #0f172a;             /* Locked dark text inside light egg for peak readability */
+        --sub-text: #475569;           /* Sophisticated dark subtext overlay contrast */
+        --icon-bg: #f1f5f9;            /* Kept light for inner element structure */
+        --egg-border: #030712;         /* Breakout offset rim synced with frame background */
+        --outer-heading: #ffffff;      /* Section heading changes to white on dark background */
     }
 
     .testimonial-wrapper {
@@ -1409,7 +1438,7 @@
         flex-direction: column;
         align-items: center;
         overflow: hidden;
-        transition: background 0.8s ease;
+        transition: background-color 0.5s ease;
     }
 
     /* --- PREMIUM HEADER --- */
@@ -1430,19 +1459,21 @@
         align-items: center;
         justify-content: center;
         box-shadow: 0 0 15px var(--glow-color);
+        transition: background-color 0.5s ease, border-color 0.5s ease;
     }
 
     .icon-box svg { 
         width: 24px; 
-        fill: var(--h-text); /* Dynamic icon color */
+        fill: #0f172a; /* Locked to dark for matching light egg palette */
     }
 
     .premium-header h2 {
-        color: var(--h-text);
+        color: var(--outer-heading); /* Changes dynamically based on mode */
         font-size: 1.8rem;
         font-weight: 900;
         margin: 0;
         letter-spacing: -1px;
+        transition: color 0.5s ease;
     }
 
     .premium-header .sub-line {
@@ -1451,7 +1482,7 @@
         letter-spacing: 4px;
         font-weight: 800;
         text-transform: uppercase;
-        text-shadow: 0 0 5px rgba(0, 242, 255, 0.3);
+        text-shadow: 0 0 5px rgba(0, 210, 255, 0.3);
     }
 
     /* --- ASYMMETRIC DOUBLE EGG --- */
@@ -1461,7 +1492,7 @@
         max-width: 480px; 
         margin: 0 auto;
         padding-bottom: 10px;
-        transition: all 0.4s ease;
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     .big-egg-container {
@@ -1471,12 +1502,12 @@
         min-height: 260px;
         border-radius: 65% 35% 45% 55% / 55% 35% 65% 45%;
         z-index: 2;
-        /* Balanced Shadow for both modes */
         box-shadow: 0 20px 40px -10px var(--glow-color);
         display: flex;
         align-items: center; 
         justify-content: center;
         overflow: hidden; 
+        transition: background-color 0.5s ease, box-shadow 0.5s ease;
     }
 
     .small-egg-accent {
@@ -1489,8 +1520,9 @@
         border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
         transform: rotate(-12deg);
         z-index: 5; 
-        border: 4px solid var(--egg-border); /* Switches with theme */
+        border: 4px solid var(--egg-border); 
         box-shadow: 0 10px 20px -5px var(--glow-color);
+        transition: border-color 0.5s ease, box-shadow 0.5s ease;
     }
 
     .swiper-slide {
@@ -1503,7 +1535,7 @@
     }
 
     .review-txt {
-        color: #0f172a; /* Always dark for readability inside light blue egg */
+        color: var(--h-text); /* Always crisp dark text inside the blue egg */
         font-size: 0.95rem;
         font-weight: 600;
         line-height: 1.4;
@@ -1511,13 +1543,28 @@
         max-width: 95%;
     }
 
-    .client-meta h4 { margin: 0; font-size: 1rem; font-weight: 800; color: #000; }
-    .client-meta span { font-size: 0.75rem; color: #334155; font-weight: 500; }
+    .client-meta h4 { 
+        margin: 0; 
+        font-size: 1rem; 
+        font-weight: 800; 
+        color: var(--h-text); 
+    }
+    
+    .client-meta span { 
+        font-size: 0.75rem; 
+        color: var(--sub-text); 
+        font-weight: 500; 
+    }
 
     /* --- DOTS --- */
+    body.night-mode .swiper-pagination-bullet {
+        background: #ffffff !important;
+    }
+    
     .swiper-pagination-bullet {
-        background: #000 !important;
+        background: #000000 !important;
         opacity: 0.2;
+        transition: background-color 0.3s ease, opacity 0.3s ease, width 0.3s ease;
     }
 
     .swiper-pagination-bullet-active {
@@ -1551,7 +1598,7 @@
                 <div class="swiper-wrapper">
                     
                     <div class="swiper-slide">
-                        <span class="review-txt">"MaxReach focuses on footfall, not just likes. Their local strategy resulted in 3X increase in bookings."</span>
+                        <span class="review-txt">. . . MaxReach focuses on footfall, not just likes. Their local strategy resulted in 3X increase in bookings."</span>
                         <div class="client-meta">
                             <h4>Sarah Williams</h4>
                             <span>Founder, Urban Crust Pizza</span>
@@ -1559,7 +1606,7 @@
                     </div>
 
                     <div class="swiper-slide">
-                        <span class="review-txt">"Zomato ke alawa humein direct orders chahiye the. Unki strategy ne hamare orders 3X boost kar diye!"</span>
+                        <span class="review-txt">. . . Zomato ke alawa humein direct orders chahiye the. Unki strategy ne hamare orders 3X boost kar diye!"</span>
                         <div class="client-meta">
                             <h4>Vikram Rathore</h4>
                             <span>Founder, Burger Kinghouse</span>
@@ -1567,7 +1614,7 @@
                     </div>
 
                     <div class="swiper-slide">
-                        <span class="review-txt">"Their review management took our rating from 3.8 to 4.7. We are now the top-rated spot in the city."</span>
+                        <span class="review-txt">. . .  Their review management took our rating from 3.8 to 4.7. We are now the top-rated spot in the city."</span>
                         <div class="client-meta">
                             <h4>Chef Rohit</h4>
                             <span>Partner, The Grand Thali</span>
@@ -1596,31 +1643,31 @@
     });
 </script>
 
-
 <style>
-    /* --- PLANS SECTION THEME LOGIC --- */
+    /* --- PLANS SECTION THEME LOGIC (Synced with #030712 MaxReach Base) --- */
     :root {
         --plans-bg: #ffffff;
         --plans-h-text: #0f172a;
         --plans-sub-text: #475569;
         --plans-card-bg: #f8fafc;
         --plans-card-border: #e2e8f0;
-        --plans-accent: #0891b2; /* Solid Blue */
-        --plans-btn-bg: #0891b2;
-        --plans-btn-text: #ffffff;
+        --plans-accent: #00d2ff; /* Fixed to MaxReach Corporate Blue */
+        --plans-btn-bg: #00d2ff;  /* Balanced theme accent fill */
+        --plans-btn-text: #000000; /* Solid contrast for text readability */
         --plans-goal-text: #64748b;
     }
 
+    /* 🌙 NIGHT MODE: Pure Dark Departure & Premium Card Contrast */
     body.night-mode .plans-section {
-        --plans-bg: #000000;
+        --plans-bg: #030712;           /* Sahi kar diya: Maps directly to core system layout base */
         --plans-h-text: #ffffff;
-        --plans-sub-text: #888888;
-        --plans-card-bg: #0a0a0a;
-        --plans-card-border: rgba(255, 255, 255, 0.1);
-        --plans-accent: #00f2ff; /* Neon Blue */
-        --plans-btn-bg: #00f2ff;
-        --plans-btn-text: #000000;
-        --plans-goal-text: #555555;
+        --plans-sub-text: #94a3b8;      /* Higher readability score for features list */
+        --plans-card-bg: #0b0f19;      /* Sophisticated container card depth */
+        --plans-card-border: rgba(255, 255, 255, 0.06);
+        --plans-accent: #00d2ff;       /* Consistent Neon Corporate Blue */
+        --plans-btn-bg: #00d2ff;
+        --plans-btn-text: #030712;     /* High-performance text pairing on dark activation */
+        --plans-goal-text: #475569;
     }
 
     .plans-section {
@@ -1631,7 +1678,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        transition: background 0.5s ease;
+        transition: background-color 0.5s ease, color 0.5s ease;
     }
 
     .plans-header {
@@ -1646,6 +1693,7 @@
         text-transform: uppercase;
         line-height: 1;
         margin-bottom: 12px;
+        transition: color 0.5s ease;
     }
 
     .plans-header h2 span {
@@ -1657,6 +1705,7 @@
         font-size: 1.1rem;
         font-weight: 500;
         letter-spacing: 1px;
+        transition: color 0.5s ease;
     }
 
     .plans-grid {
@@ -1675,12 +1724,13 @@
         border-radius: 24px;
         display: flex;
         flex-direction: column;
-        transition: all 0.3s ease;
+        transition: background-color 0.5s ease, border-color 0.3s ease, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
     }
 
     .plan-card:hover {
         transform: translateY(-8px);
         border-color: var(--plans-accent);
+        box-shadow: 0 12px 30px rgba(0, 210, 255, 0.15);
     }
 
     .plan-card h3 {
@@ -1688,6 +1738,7 @@
         font-weight: 900;
         margin-bottom: 8px;
         color: var(--plans-h-text);
+        transition: color 0.5s ease;
     }
 
     .for-whom {
@@ -1713,6 +1764,7 @@
         display: flex;
         align-items: center;
         gap: 12px;
+        transition: color 0.5s ease;
     }
 
     .features-list li::before {
@@ -1733,12 +1785,12 @@
         font-weight: 800;
         font-size: 0.95rem;
         text-transform: uppercase;
-        transition: 0.3s;
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     .request-btn:hover {
         background: var(--plans-h-text);
-        color: var(--plans-bg) !important;
+        color: var(--plans-bg) !important; /* Proper reverse logic for dynamic overlay contrast */
     }
 
     .plan-goal {
@@ -1747,6 +1799,7 @@
         color: var(--plans-goal-text);
         text-align: center;
         font-weight: 600;
+        transition: color 0.5s ease;
     }
 
     /* --- SOLID FILLED CUSTOM SCALE BUTTON --- */
@@ -1767,49 +1820,38 @@
         color: var(--plans-sub-text);
         margin-bottom: 15px;
         font-weight: 600;
+        transition: color 0.5s ease;
     }
 
     .mxr-solid-btn {
         padding: 18px 45px;
-        /* BLUE FILL FOR LIGHT MODE */
-        background: #0891b2; 
+        background: var(--plans-btn-bg); 
         border-radius: 50px;
-        box-shadow: 0 8px 20px rgba(8, 145, 178, 0.25);
-        transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        box-shadow: 0 8px 20px rgba(0, 210, 255, 0.2);
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         display: flex;
         align-items: center;
         justify-content: center;
         border: none;
-    }
-
-    /* BLUE FILL FOR DARK MODE */
-    body.night-mode .mxr-solid-btn {
-        background: #00f2ff;
-        box-shadow: 0 8px 25px rgba(0, 242, 255, 0.3);
+        cursor: pointer;
     }
 
     .mxr-solid-btn:hover {
         transform: translateY(-5px) scale(1.02);
-        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 12px 30px rgba(0, 210, 255, 0.35);
         filter: brightness(1.1);
     }
 
     .mxr-cta-text {
         font-weight: 900;
-        /* TEXT IS WHITE IN LIGHT MODE */
-        color: #ffffff !important;
+        color: var(--plans-btn-text) !important; 
         font-size: 1rem;
         text-transform: uppercase;
         letter-spacing: 1.5px;
     }
 
-    /* TEXT IS BLACK IN DARK MODE FOR CONTRAST */
-    body.night-mode .mxr-cta-text {
-        color: #000000 !important;
-    }
-
     @media (max-width: 900px) {
-        .plans-grid { grid-template-columns: 1fr; }
+        .plans-grid { grid-template-columns: 1fr; gap: 20px; }
         .mxr-solid-btn { width: 100%; }
     }
 </style>
@@ -1823,7 +1865,7 @@
         <p>Fill your Tables. Scale your Taste with <strong>Data-Driven Restaurant Marketing</strong>.</p>
     </header>
 
-<div class="plans-grid">
+    <div class="plans-grid">
         <article class="plan-card" itemprop="hasOfferCatalog" itemscope itemtype="https://schema.org/OfferCatalog">
             <h3 itemprop="name">THE BISTRO</h3>
             <p class="for-whom">Ideal for Cafes & Cloud Kitchens</p>
@@ -1872,43 +1914,43 @@
     </div>
 
     <div class="mxr-custom-scale-container">
-    <a href="plans.html#mr-hero" class="mxr-group-link" title="Build a custom marketing strategy">
-        <span class="mxr-subtext-label">Looking for something else?</span>
-        <div class="mxr-solid-btn">
-            <span class="mxr-cta-text">
-                Build Custom Plan
-            </span>
-        </div>
-    </a>
-</div>
+        <a href="plans.html#mr-hero" class="mxr-group-link" title="Build a custom marketing strategy">
+            <span class="mxr-subtext-label">Looking for something else?</span>
+            <div class="mxr-solid-btn">
+                <span class="mxr-cta-text">
+                    Build Custom Plan
+                </span>
+            </div>
+        </a>
+    </div>
 </section>
 
-
 <style>
-    /* --- ETHOS THEME LOGIC --- */
+    /* --- ETHOS THEME LOGIC (Synced with #030712 Premium Framework) --- */
     :root {
         --ethos-bg: #ffffff;
         --ethos-h-text: #0f172a;
         --ethos-sub-text: #475569;
-        --ethos-accent: #0891b2; /* Deep Blue */
+        --ethos-accent: #00d2ff; /* Fixed to MaxReach Corporate Blue */
         --card-bg: #f8fafc;
         --card-border: #e2e8f0;
         --overlay-opacity: 0.5; /* Lighter overlay for white mode */
     }
 
+    /* 🌙 NIGHT MODE: Pure Dark Departure & Smooth Parallax Depth */
     body.night-mode .master-container {
-        --ethos-bg: #000000;
+        --ethos-bg: #030712;           /* Sahi kar diya: Exact mapping to core layout base */
         --ethos-h-text: #ffffff;
-        --ethos-sub-text: #999999;
-        --ethos-accent: #00f2ff; /* Neon Cyan */
-        --card-bg: #0a0a0a;
-        --card-border: rgba(255, 255, 255, 0.1);
-        --overlay-opacity: 0.7; /* Darker overlay for dark mode */
+        --ethos-sub-text: #94a3b8;      /* Optimized readability contrast */
+        --ethos-accent: #00d2ff;       /* Consistent Corporate Blue */
+        --card-bg: #0b0f19;            /* Elegant block panel depth matching framework */
+        --card-border: rgba(255, 255, 255, 0.06);
+        --overlay-opacity: 0.75;       /* Balanced picture mask filter over content */
     }
 
     .master-container {
         background: var(--ethos-bg);
-        transition: background 0.5s ease;
+        transition: background-color 0.5s ease;
     }
 
     /* Section Header */
@@ -1916,6 +1958,7 @@
         background: var(--ethos-bg);
         text-align: center;
         padding: 40px 20px 30px; 
+        transition: background-color 0.5s ease;
     }
 
     .ethos-header h2 {
@@ -1925,6 +1968,7 @@
         margin: 0;
         text-transform: uppercase;
         letter-spacing: -1px;
+        transition: color 0.5s ease;
     }
 
     .ethos-header .sub-line {
@@ -1935,7 +1979,7 @@
         font-weight: 800;
         margin-top: 10px;
         text-transform: uppercase;
-        text-shadow: 0 0 10px rgba(0, 242, 255, 0.2);
+        text-shadow: 0 0 10px rgba(0, 210, 255, 0.2);
     }
 
     /* --- PARALLAX ENGINE --- */
@@ -1947,7 +1991,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        background: #000;
+        background: #030712; /* Synced background loader mask */
     }
 
     .parallax-img {
@@ -1967,9 +2011,9 @@
         content: '';
         position: absolute;
         top: 0; left: 0; width: 100%; height: 100%;
-        background: rgba(0, 0, 0, var(--overlay-opacity)); 
+        background: rgba(3, 7, 18, var(--overlay-opacity)); /* Solidified alpha layer */
         z-index: 2;
-        transition: background 0.5s ease;
+        transition: background-color 0.5s ease;
     }
 
     /* --- CONTENT AREA --- */
@@ -1984,10 +2028,10 @@
 
     .glass-capsule {
         display: inline-block;
-        background: rgba(255, 255, 255, 0.15);
+        background: rgba(255, 255, 255, 0.12);
         backdrop-filter: blur(12px);
         -webkit-backdrop-filter: blur(12px);
-        border: 1px solid rgba(255, 255, 255, 0.3);
+        border: 1px solid rgba(255, 255, 255, 0.25);
         padding: 8px 25px;
         border-radius: 50px;
         margin-bottom: 25px;
@@ -2002,19 +2046,20 @@
     }
 
     .promise-content p {
-        color: #ffffff; /* Always white over the image */
+        color: #ffffff; /* Always crisp white over the asset filter overlay */
         font-size: clamp(1.1rem, 3vw, 1.4rem);
         line-height: 1.6;
         font-style: italic;
         font-weight: 500;
         margin: 0;
-        text-shadow: 0px 4px 10px rgba(0,0,0,0.5);
+        text-shadow: 0px 4px 12px rgba(0, 0, 0, 0.6);
     }
 
     /* Tips Area */
     .tips-area { 
         background: var(--ethos-bg); 
         padding: 60px 20px; 
+        transition: background-color 0.5s ease;
     }
     
     .tip-card {
@@ -2027,14 +2072,16 @@
         border-top: 1px solid var(--card-border);
         border-right: 1px solid var(--card-border);
         border-bottom: 1px solid var(--card-border);
-        transition: all 0.3s ease;
-        box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+        transition: background-color 0.5s ease, border-color 0.3s ease, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
     }
 
     .tip-card:hover {
         transform: translateX(10px);
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        border-color: var(--ethos-accent);
+        box-shadow: 0 12px 30px rgba(0, 210, 255, 0.12);
+        border-top-color: rgba(0, 210, 255, 0.4);
+        border-right-color: rgba(0, 210, 255, 0.4);
+        border-bottom-color: rgba(0, 210, 255, 0.4);
     }
 
     .tip-card h4 { 
@@ -2042,6 +2089,7 @@
         margin: 0 0 12px; 
         font-size: 1.3rem; 
         font-weight: 800;
+        transition: color 0.5s ease;
     }
     
     .tip-card p { 
@@ -2049,12 +2097,14 @@
         margin: 0; 
         font-size: 1rem; 
         line-height: 1.7; 
+        transition: color 0.5s ease;
     }
 
     @media (max-width: 600px) {
         .ethos-header h2 { font-size: 1.8rem; }
         .parallax-box { height: 350px; }
         .tip-card { padding: 20px; }
+        .tip-card:hover { transform: translateY(-4px); } /* Better user experience on mobile screens */
     }
 </style>
 
@@ -2106,186 +2156,269 @@
     });
 </script>
 
-<footer class="mxr-fnl-z-footer" itemscope itemtype="https://schema.org/WPFooter">
-    <div itemscope itemtype="https://schema.org/ProfessionalService" style="display:none;">
-        <link itemprop="url" href="https://maxreachglobal.in/">
-        <link itemprop="image" href="https://maxreachglobal.in/homeimages/maxreach-preview.png">
-        <span itemprop="name">MaxReach Global</span>
-    </div>
+<footer id="mx-footer-section" itemscope itemtype="https://schema.org/ProfessionalService">
+    <link itemprop="url" href="https://maxreachglobal.in/">
+    <link itemprop="image" href="https://maxreachglobal.in/homeimages/maxreach-preview.png">
 
-    <div class="mxr-fnl-z-grid">
-        
-        <div class="mxr-fnl-z-col branding">
-            <h2 class="mxr-fnl-z-logo">MAX<span class="mxr-fnl-z-blue">REACH</span></h2>
-            <p class="mxr-fnl-z-vision" itemprop="description">
-                "Humanizing brands, scaling businesses." Empowering mentors and businesses across <strong>India</strong> to build national authority through smart digital systems.
-            </p>
+    <div class="mx-links-wrapper">
+        <h3 class="mx-section-title">Quick Useful Links</h3>
+        <div class="mx-footer-grid">
             
-            <div class="mxr-fnl-z-socials">
-                <a href="https://www.instagram.com/maxreachglobal.official/" class="mxr-fnl-z-icon" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.facebook.com/maxreachglobalofficial" class="mxr-fnl-z-icon" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://www.linkedin.com/in/maxreachglobalofficial" class="mxr-fnl-z-icon" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://t.me/maxreachglobal_official" class="mxr-fnl-z-icon" target="_blank" rel="noopener" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
+            <div class="mx-footer-col">
+                <h4>Our Services</h4>
+                <ul role="list">
+                    <li><a href="dsf" title="Premium Digital Storefront Design">Digital Storefront</a></li>
+                    <li><a href="vs" title="Viral Studio Video Production">Viral Studio</a></li>
+                    <li><a href="adacc" title="Ad Accelerators Performance Marketing">Ad Accelerators</a></li>
+                    <li><a href="home" title="Local Visibility & Managed Marketing">Local Visibility</a></li>
+                </ul>
             </div>
-        </div>
 
-        <div class="mxr-fnl-z-col">
-            <h4 class="mxr-fnl-z-title">Sector Expertise</h4>
-            <ul class="mxr-fnl-z-list">
-                <li><a href="realestate.html" title="Real Estate Marketing & SEO">Property Scale</a></li>
-                <li><a href="hospitality.html" title="Hospitality & Cafe Growth">Cafe Growth</a></li>
-                <li><a href="d2c.html" title="D2C E-commerce Sales Growth">E-com Sales</a></li>
-                <li><a href="allothers.html" title="Corporate Brand Authority Building">Brand Authority</a></li>
-                <li><a href="personal-branding.html" title="Lifestyle & Wellness Branding">Lifestyle Branding</a></li>
-                <li><a href="education.html" title="Education Academy Marketing">Edu Academy</a></li>
-            </ul>
-        </div>
-
-        <div class="mxr-fnl-z-col">
-            <h4 class="mxr-fnl-z-title">Quick Links</h4>
-            <ul class="mxr-fnl-z-list">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html#mr-vision-id">Our Vision</a></li>
-                <li><a href="about.html#elite-team-id">Our Team</a></li>
-                <li><a href="about.html#faq-id">FAQ</a></li>
-                <li><a href="legal.html" title="Legal Trust Policy">Legal Trust</a></li>
-            </ul>
-        </div>
-
-        <div class="mxr-fnl-z-col" itemscope itemtype="https://schema.org/Organization">
-            <h4 class="mxr-fnl-z-title">Get In Touch</h4>
-            <div class="mxr-fnl-z-contact-box">
-                <p class="mxr-fnl-z-item">
-                    <span class="mxr-fnl-z-label">Email:</span> 
-                    <a href="mailto:maxreach.official@gmail.com" class="mxr-fnl-z-info" itemprop="email">maxreach.official@gmail.com</a>
-                </p>
-                <p class="mxr-fnl-z-item">
-                    <span class="mxr-fnl-z-label">Phone:</span> 
-                    <a href="https://wa.me/919810591327" class="mxr-fnl-z-info" itemprop="telephone">+91 98105 91327</a>
-                </p>
-              <p class="mxr-fnl-z-item" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
-    <span class="mxr-fnl-z-label">HQ:</span> 
-    <span class="mxr-fnl-z-info">
-        <span itemprop="addressLocality">Gurugram</span>, 
-        <span itemprop="addressCountry">India</span> 
-        <span class="mxr-fnl-z-cyan">— Remote Worldwide</span>
-    </span>
-</p>
-                
-               <a href="https://wa.me/919810591327?text=Hi%20MaxReach,%20I'm%20interested%20in%20the%20Hospitality%20Growth%20Plans.%20I%20want%20to%20enhance%20my%20brand's%20digital%20presence%20and%20guest%20reach." 
-   class="mxr-fnl-z-whatsapp" 
-   target="_blank" 
-   rel="noopener noreferrer" 
-   title="Inquire about Hospitality Marketing Plans via WhatsApp" 
-   aria-label="Connect with MaxReach on WhatsApp for Hospitality Growth Plans">
-   <i class="fab fa-whatsapp" aria-hidden="true"></i> CONNECT ON WHATSAPP
-</a>
+            <div class="mx-footer-col">
+                <h4>Industries</h4>
+                <ul role="list">
+                    <li><a href="realestate.html" title="Real Estate Marketing">Property Scale</a></li>
+                    <li><a href="hospitality.html" title="Cafe & Hospitality Growth">Cafe Growth</a></li>
+                    <li><a href="d2c.html" title="E-commerce & D2C Sales">E-com Sales</a></li>
+                    <li><a href="allothers.html" title="Brand Authority Building">Brand Authority</a></li>
+                    <li><a href="personal-branding.html" title="Lifestyle Branding">Lifestyle Branding</a></li>
+                    <li><a href="education.html" title="Education Academy Marketing">Edu Academy</a></li>
+                </ul>
             </div>
-        </div>
 
+            <div class="mx-footer-col">
+                <h4>Follow Us</h4>
+                <ul role="list">
+                    <li><a href="https://www.instagram.com/maxreachglobal.official/" itemprop="sameAs" target="_blank" rel="noopener" title="Instagram">Instagram</a></li>
+                    <li><a href="https://www.facebook.com/maxreachglobalofficial" itemprop="sameAs" target="_blank" rel="noopener" title="Facebook">Facebook</a></li>
+                    <li><a href="https://www.linkedin.com/company/maxreach-global/" itemprop="sameAs" target="_blank" rel="noopener" title="LinkedIn">LinkedIn</a></li>
+                    <li><a href="https://t.me/maxreachglobal_official" itemprop="sameAs" target="_blank" rel="noopener" title="Telegram">Telegram</a></li>
+                </ul>
+            </div>
+
+            <div class="mx-footer-col">
+                <h4>Insights</h4>
+                <ul role="list"> 
+                    <li><a href="about.html#mr-vision-id">Our Vision</a></li>
+                    <li><a href="legal.html" title="Legal Trust Policy">Legal Trust</a></li>
+                    <li><a href="about.html#elite-team-id">Our Team</a></li>
+                    <li><a href="about.html#faq-id">FAQ</a></li>
+                </ul>
+            </div>
+
+        </div>
     </div>
 
-    <div class="mxr-fnl-z-bottom">
-        <div class="mxr-fnl-z-bar-content">
-            <p>© 2026 MAXREACHGLOBAL — <span class="mxr-fnl-z-cyan">INDIA'S DIGITAL GROWTH PARTNER</span></p>
-        </div>
+   <div class="mx-footer-bottom-info">
+        <div class="mx-bottom-grid">
+            <div class="mx-contact-card">
+                <h4>Get in Touch</h4>
+                <address style="font-style: normal;">
+                    <p>Email: <a href="mailto:maxreach.official@gmail.com" itemprop="email" style="color: inherit; text-decoration: none;">maxreach.official@gmail.com</a></p>
+                    <p>Phone/WhatsApp: <a href="https://wa.me/919810591327" itemprop="telephone" style="color: inherit; text-decoration: none;">+91 98105 91327</a></p>
+                    <p itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+                        Location: <span itemprop="addressLocality">Gurugram</span>, <span itemprop="addressRegion">Haryana</span>, <span itemprop="addressCountry">India</span> - Remote Worldwide
+                    </p>
+                </address>
+            </div>
+            
+            <div class="mx-brand-card">
+                <div class="mx-f-logo" aria-label="MaxReach Global Logo">MAX<span>REACH</span></div>
+                <p itemprop="description">"Humanizing brands, scaling businesses."</p>
+                
+      <div class="mx-social-links">
+    <a href="https://www.linkedin.com/company/maxreach-global/" 
+       target="_blank" 
+       rel="noopener" 
+       itemprop="sameAs" 
+       title="Connect with MaxReach Global on LinkedIn" 
+       aria-label="Connect with MaxReach Global on LinkedIn">
+       <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+    </a>
+
+    <a href="https://www.instagram.com/maxreachglobal.official/" 
+       target="_blank" 
+       rel="noopener" 
+       itemprop="sameAs" 
+       title="Follow MaxReach Global on Instagram" 
+       aria-label="Follow MaxReach Global on Instagram for Marketing Tips">
+       <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+    </a>
+
+    <a href="https://www.facebook.com/maxreachglobalofficial" 
+       target="_blank" 
+       rel="noopener" 
+       itemprop="sameAs" 
+       title="MaxReach Global Official Facebook Page" 
+       aria-label="Visit MaxReach Global on Facebook">
+       <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+    </a>
+
+    <a href="https://t.me/maxreachglobal_official" 
+       target="_blank" 
+       rel="noopener" 
+       itemprop="sameAs" 
+       title="Join MaxReach Global Telegram Community" 
+       aria-label="Join our Telegram channel for Business Updates">
+       <i class="fa-brands fa-telegram" aria-hidden="true"></i>
+    </a>
+</div>
+            </div> 
+        </div> 
+    </div> 
+
+    <div class="mx-copyright-bar">
+        <p>© 2026 <span itemprop="name">MaxReachGlobal</span>. All Rights Reserved.</p>
     </div>
 </footer>
 
+
 <style>
-    /* Prefix: mxr-fnl-z (MaxReach Final Zone) */
-    .mxr-fnl-z-footer {
-        background: #020814; 
-        padding: 60px 20px 0;
-        color: #fff;
-        font-family: 'Inter', sans-serif;
-        border-top: 1px solid rgba(255, 255, 255, 0.05);
-        display: block;
-    }
+#mx-footer-section {
+    --mx-blue: #00B0FF;
+    /* SEO Benefit: Ensuring content is visible even if images don't load */
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
 
-    .mxr-fnl-z-grid {
-        max-width: 1200px;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
-        gap: 40px;
-        padding-bottom: 50px;
-    }
+/* Quick Links Section */
+.mx-links-wrapper {
+    background: #001a33; 
+    padding: 60px 10%;
+    border-top: 1px solid rgba(0, 229, 255, 0.2);
+}
 
-    .mxr-fnl-z-logo { font-size: 1.6rem; font-weight: 900; letter-spacing: 2px; margin-bottom: 15px; color: #fff; }
-    .mxr-fnl-z-blue { color: #00d2ff; }
-    .mxr-fnl-z-vision { font-size: 0.85rem; color: rgba(255, 255, 255, 0.5); line-height: 1.6; margin-bottom: 25px; }
+.mx-section-title {
+    text-align: center;
+    color: var(--mx-blue);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+    font-size: 1.2rem;
+    font-weight: 800; /* Header hierarchy for SEO */
+}
 
-    .mxr-fnl-z-socials { display: flex; gap: 12px; }
-    .mxr-fnl-z-icon {
-        width: 38px; height: 38px;
-        border: 1px solid rgba(255, 255, 255, 0.15);
-        border-radius: 50%;
-        display: flex; align-items: center; justify-content: center;
-        color: white; text-decoration: none; font-size: 0.9rem;
-        transition: 0.3s ease;
-    }
-    .mxr-fnl-z-icon:hover { background: #00d2ff; border-color: #00d2ff; color: #000; transform: translateY(-3px); }
+.mx-footer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
 
-    .mxr-fnl-z-title { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 25px; color: #00d2ff; font-weight: 800; }
+.mx-footer-col h4 {
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    border-left: 3px solid var(--mx-blue);
+    padding-left: 10px;
+    font-weight: 700;
+}
 
-    .mxr-fnl-z-list { list-style: none; padding: 0; }
-    .mxr-fnl-z-list li { margin-bottom: 12px; }
-    .mxr-fnl-z-list a { color: rgba(255, 255, 255, 0.6); text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
-    .mxr-fnl-z-list a:hover { color: #00d2ff; padding-left: 5px; }
+.mx-footer-col ul { list-style: none; padding: 0; }
+.mx-footer-col ul li { margin-bottom: 12px; }
 
-    .mxr-fnl-z-whatsapp {
-        display: inline-flex; align-items: center; gap: 10px;
-        background: rgba(0, 210, 255, 0.05);
-        border: 1px solid #00d2ff;
-        color: #00d2ff; padding: 12px 20px;
-        border-radius: 8px; text-decoration: none;
-        font-weight: 700; font-size: 0.8rem;
-        margin-top: 15px; transition: 0.3s;
-    }
-    .mxr-fnl-z-whatsapp:hover { background: #00d2ff; color: #000; box-shadow: 0 0 15px rgba(0, 210, 255, 0.2); }
+.mx-footer-col ul li a {
+    color: #aaa;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-block; /* For better click target (SEO Tip) */
+}
 
-    .mxr-fnl-z-label { color: #ffffff; font-weight: 600; }
-    .mxr-fnl-z-info { color: rgba(255, 255, 255, 0.6); font-weight: 400; }
-    .mxr-fnl-z-item { font-size: 0.85rem; margin-bottom: 8px; line-height: 1.5; }
+.mx-footer-col ul li a:hover,
+.mx-footer-col ul li a:focus { /* Focus state for crawlability */
+    color: var(--mx-blue);
+    padding-left: 8px;
+    outline: none;
+}
 
-    .mxr-fnl-z-bottom { border-top: 1px solid rgba(255, 255, 255, 0.05); padding: 25px 20px; text-align: center; }
-    .mxr-fnl-z-bar-content { font-size: 0.7rem; color: rgba(255, 255, 255, 0.3); text-transform: uppercase; letter-spacing: 1px; }
-    .mxr-fnl-z-cyan { color: #00d2ff; font-weight: 700; }
+/* Bottom Contact & Brand Info */
+.mx-footer-bottom-info {
+    padding: 50px 10%;
+    background: #000;
+}
 
-/* --- MOBILE RESPONSIVE FIX --- */
-    @media (max-width: 768px) {
-        .mxr-fnl-z-grid { 
-            grid-template-columns: 1fr 1fr; 
-            gap: 30px; 
-        }
-        
-        .mxr-fnl-z-col.branding { 
-            grid-column: span 2; 
-            text-align: center; 
-        }
-        
-        .mxr-fnl-z-socials { 
-            justify-content: center; 
-        }
-        
-        /* Contact Col (Jahan button hai) */
-        .mxr-fnl-z-col:last-child { 
-            grid-column: span 2; 
-            text-align: center; /* Sab kuch center karega button ke sath */
-        }
+.mx-bottom-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 50px;
+}
 
-        .mxr-fnl-z-whatsapp { 
-            display: flex; /* Flex rakho alignment ke liye */
-            width: 100%; 
-            max-width: 280px; /* Ek limit de di taaki bahut lamba na ho */
-            margin: 15px auto 0; /* 'auto' se horizontal center ho jayega */
-            justify-content: center; 
-        }
-    }
+/* SEO Optimization: Making address items more readable for bots */
+.mx-contact-card h4 { color: var(--mx-blue); margin-bottom: 15px; font-size: 1.2rem; font-weight: 700; }
+.mx-contact-card p { color: #ccc; margin-bottom: 10px; font-size: 0.95rem; line-height: 1.6; }
+.mx-contact-card a { transition: 0.3s ease; }
+.mx-contact-card a:hover { color: var(--mx-blue) !important; }
 
+.mx-brand-card { text-align: right; }
+.mx-f-logo { font-weight: 900; font-size: 2.2rem; color: #fff; letter-spacing: 1px; line-height: 1; }
+.mx-f-logo span { color: var(--mx-blue); }
+.mx-brand-card p { color: #666; font-style: italic; font-size: 0.85rem; margin-top: 8px; }
 
+.mx-social-links {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+}
+
+.mx-social-links a {
+    color: #fff;
+    font-size: 1.5rem;
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    text-decoration: none;
+    display: inline-flex;
+}
+
+.mx-social-links a:hover {
+    color: var(--mx-blue);
+    transform: translateY(-5px); 
+    text-shadow: 0 0 15px rgba(0, 176, 255, 0.6); 
+}
+
+/* Copyright Bar - SEO & Accessibility Optimized */
+.mx-copyright-bar {
+    text-align: center;
+    padding: 25px;
+    background: #050505;
+    border-top: 1px solid #111;
+    font-size: 0.85rem;
     
+    /* 1. Color ko #555 se badal kar #94a3b8 kiya for high contrast */
+    color: #94a3b8; 
+    
+    letter-spacing: 0.5px;
+}
+
+/* 2. Agar koi link ya brand name hai copyright mein toh wo aur bright dikhe */
+.mx-copyright-bar span, 
+.mx-copyright-bar a {
+    color: #f8fafc; 
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* --- 📱 MOBILE OPTIMIZATION (SEO Friendly) --- */
+@media (max-width: 992px) {
+    .mx-footer-grid {
+        grid-template-columns: repeat(2, 1fr) !important; 
+        gap: 40px 20px;
+    }
+    .mx-bottom-grid {
+        grid-template-columns: 1fr !important;
+        text-align: center !important;
+        gap: 40px;
+    }
+    .mx-brand-card { text-align: center !important; }
+    .mx-social-links { justify-content: center !important; }
+}
+
+@media (max-width: 768px) {
+    .mx-links-wrapper { padding: 50px 20px !important; }
+    .mx-section-title { font-size: 1.1rem !important; margin-bottom: 30px; }
+    .mx-footer-col h4 { font-size: 1rem; }
+    /* Mobile tap targets optimization */
+    .mx-footer-col ul li { margin-bottom: 15px; }
+}
 </style>
 
 <button id="scrollTopBtn" 
