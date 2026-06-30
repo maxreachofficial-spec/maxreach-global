@@ -2201,7 +2201,6 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 
 
-
 <section class="final-testimonial-section" aria-labelledby="testimonial-heading">
     <div class="container">
         <div class="testi-header">
@@ -2209,16 +2208,33 @@ document.addEventListener('DOMContentLoaded', function() {
             <p class="sub-desc">Verified feedback from our <strong>strategic growth partners</strong> across diverse industries.</p>
         </div>
 
+        <!-- ✅ 1. Added Item Name & AggregateRating for CreativeWorkSeries to fix main error -->
         <div class="testi-slider" itemscope itemtype="https://schema.org/CreativeWorkSeries">
+            <meta itemprop="name" content="MaxReach Marketing Client Testimonials">
             
+            <div itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+                <meta itemprop="ratingValue" content="5">
+                <meta itemprop="bestRating" content="5">
+                <meta itemprop="reviewCount" content="3">
+            </div>
+            
+            <!-- ⭐️ Slide 1 -->
             <div class="testi-slide active" itemprop="review" itemscope itemtype="https://schema.org/Review">
                 <div class="testi-flex">
                     <div class="testi-info">
                         <div class="stars" aria-label="5 star rating">⭐⭐⭐⭐⭐</div>
-                        <meta itemprop="reviewRating" content="5">
+                        
+                        <!-- ✅ Fixed reviewRating structure with proper ratingValue -->
+                        <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+                            <meta itemprop="ratingValue" content="5">
+                            <meta itemprop="bestRating" content="5">
+                        </div>
+
                         <p class="testi-quote" itemprop="reviewBody">
                             "The best agency for <strong>scaling digital brands</strong>. Our business leads tripled within 3 months! Their specialist team focuses purely on real growth and ROI."
                         </p>
+                        
+                        <!-- ✅ Correct Person Author Object -->
                         <h4 class="client-name" itemprop="author" itemscope itemtype="https://schema.org/Person">
                             <span itemprop="name">Trusty Advisor</span>
                         </h4>
@@ -2229,15 +2245,26 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
             </div>
 
+            <!-- ⭐️ Slide 2 -->
             <div class="testi-slide" itemprop="review" itemscope itemtype="https://schema.org/Review">
                 <div class="testi-flex">
                     <div class="testi-info">
                         <div class="stars" aria-label="5 star rating">⭐⭐⭐⭐⭐</div>
-                        <meta itemprop="reviewRating" content="5">
+                        
+                        <!-- ✅ Fixed reviewRating structure -->
+                        <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+                            <meta itemprop="ratingValue" content="5">
+                            <meta itemprop="bestRating" content="5">
+                        </div>
+
                         <p class="testi-quote" itemprop="reviewBody">
                             "Exceptional execution on our brand's <strong>conversion-optimized website</strong> and lead generation system. Highly recommended for sustainable digital growth!"
                         </p>
-                        <h4 class="client-name" itemprop="author">Dariza Fabrics</h4>
+                        
+                        <!-- ✅ Fixed Author Structure (Person/Organization Object added) -->
+                        <h4 class="client-name" itemprop="author" itemscope itemtype="https://schema.org/Organization">
+                            <span itemprop="name">Dariza Fabrics</span>
+                        </h4>
                     </div>
                     <div class="testi-image">
                         <img src="homeimages/fashion-branding.jpg" alt="Fashion Brand Web Design and Marketing Portfolio" loading="lazy">
@@ -2245,15 +2272,26 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
             </div>
 
+            <!-- ⭐️ Slide 3 -->
             <div class="testi-slide" itemprop="review" itemscope itemtype="https://schema.org/Review">
                 <div class="testi-flex">
                     <div class="testi-info">
                         <div class="stars" aria-label="5 star rating">⭐⭐⭐⭐⭐</div>
-                        <meta itemprop="reviewRating" content="5">
+                        
+                        <!-- ✅ Fixed reviewRating structure -->
+                        <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+                            <meta itemprop="ratingValue" content="5">
+                            <meta itemprop="bestRating" content="5">
+                        </div>
+
                         <p class="testi-quote" itemprop="reviewBody">
                             "Professional, fast, and <strong>transparent marketing services</strong>. Their direct specialist model is exactly what high-end brands need for efficiency."
                         </p>
-                        <h4 class="client-name" itemprop="author">Riwaaz Luxe</h4>
+                        
+                        <!-- ✅ Fixed Author Structure (Person/Organization Object added) -->
+                        <h4 class="client-name" itemprop="author" itemscope itemtype="https://schema.org/Organization">
+                            <span itemprop="name">Riwaaz Luxe</span>
+                        </h4>
                     </div>
                     <div class="testi-image">
                         <img src="homeimages/banquet-hall.jpg" alt="Premium Brand Identity and Marketing Success" loading="lazy">
