@@ -762,17 +762,36 @@ document.addEventListener('DOMContentLoaded', () => {
             const doc = parser.parseFromString(html, 'text/html');
             const cards = Array.from(doc.querySelectorAll('.kb-card'));
 
-            // Smart Search Logic
-            const searchTerms = query.split(' ').filter(word => word.length > 2);
+            // 1. Filter out common English/Hinglish stop words that ruin matches
+            const stopWords = ['how', 'what', 'why', 'is', 'in', 'of', 'for', 'with', 'the', 'and', 'are', 'kese', 'kya', 'hai', 'hota', 'ko'];
+            const searchTerms = query.split(' ')
+                                     .filter(word => word.length > 2 && !stopWords.includes(word));
             
-            let match = cards.find(card => {
-                const keywords = card.getAttribute('data-keywords').toLowerCase();
-                const title = card.querySelector('.kb-ques').innerText.toLowerCase();
-                return searchTerms.some(term => keywords.includes(term) || title.includes(term));
+            let bestMatch = null;
+            let highestScore = 0;
+
+            // 2. Score mapping system to find the absolute closest match
+            cards.forEach(card => {
+                const keywords = card.getAttribute('data-keywords') ? card.getAttribute('data-keywords').toLowerCase() : '';
+                const title = card.querySelector('.kb-ques') ? card.querySelector('.kb-ques').innerText.toLowerCase() : '';
+                
+                let currentScore = 0;
+
+                // Incremental scoring framework
+                searchTerms.forEach(term => {
+                    if (title.includes(term)) currentScore += 3;    // Title matches get high priority
+                    if (keywords.includes(term)) currentScore += 2; // Keyword array matches get medium priority
+                });
+
+                if (currentScore > highestScore) {
+                    highestScore = currentScore;
+                    bestMatch = card;
+                }
             });
 
-            if (match) {
-                showAdvancedPopup(match);
+            // Minimum score threshold to prevent completely random matches
+            if (bestMatch && highestScore > 2) {
+                showAdvancedPopup(bestMatch);
             } else {
                 showOopsPopup(query);
             }
@@ -784,12 +803,9 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function showAdvancedPopup(card) {
-    // 1. Precise Data Extraction
-    // Hum hidden divs se content utha rahe hain jo knowledge-base.html mein pehle se hain
     const topic = card.querySelector('.kb-topic')?.innerText || "Strategy";
     const ques = card.querySelector('.kb-ques')?.innerText || "Blueprint";
     
-    // Select the language containers precisely
     const ansHinglish = card.querySelector('.ans-hinglish')?.innerHTML;
     const ansEnglish = card.querySelector('.ans-english')?.innerHTML;
 
@@ -817,21 +833,18 @@ function showAdvancedPopup(card) {
     const toggleBtn = modal.querySelector('#pop-lang-btn');
     const contentBox = modal.querySelector('#pop-content');
     
-    // 2. Optimized Toggle Logic using 'data-mode'
     toggleBtn.addEventListener('click', (e) => {
-        e.stopPropagation(); // Prevent modal from closing
+        e.stopPropagation(); 
         
         const currentMode = toggleBtn.getAttribute('data-mode');
 
         if (currentMode === 'hinglish') {
-            // Switch to English
             contentBox.innerHTML = ansEnglish;
             toggleBtn.innerText = 'Switch to Hinglish';
             toggleBtn.setAttribute('data-mode', 'english');
             toggleBtn.style.background = "var(--mx-blue)";
             toggleBtn.style.color = "white";
         } else {
-            // Switch to Hinglish
             contentBox.innerHTML = ansHinglish;
             toggleBtn.innerText = 'Switch to English';
             toggleBtn.setAttribute('data-mode', 'hinglish');
@@ -840,7 +853,6 @@ function showAdvancedPopup(card) {
         }
     });
 
-    // 3. Close Logic
     modal.querySelector('#closeModalBtn').onclick = () => modal.remove();
     modal.onclick = (e) => { if(e.target === modal) modal.remove(); };
 }
@@ -856,9 +868,9 @@ function showOopsPopup(query) {
             <p style="color:var(--text-color); opacity:0.8; margin-bottom:25px; line-height:1.6;">
                 Oops, the blueprint for "<strong>${query}</strong>" is not in our database yet. Consult our experts directly for a custom strategy:
             </p>
-            <a href="https://wa.me/91XXXXXXXXXX?text=Hi, I need a marketing blueprint for: ${query}" class="wa-expert-btn">
-                <i class="fab fa-whatsapp"></i> Consult via WhatsApp
-            </a>
+<a href="https://wa.me/919810591327?text=Hi, I need a marketing blueprint for: ${query}" class="wa-expert-btn">
+    <i class="fab fa-whatsapp"></i> Consult via WhatsApp
+</a>
         </div>
     `;
     document.body.appendChild(modal);

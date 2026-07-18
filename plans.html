@@ -436,8 +436,8 @@ src="https://www.facebook.com/tr?id=1825418788436550&ev=PageView&noscript=1"
     --badge-bg: rgba(255, 255, 255, 0.03);
     --badge-border: rgba(255, 255, 255, 0.08);
     
-    /* Clean Fluid Gradient (Ref: image_725a20.jpg blueprint tone) */
-    --hero-gradient-shade: linear-gradient(135deg, #030712 0%, #091730 60%, #022343 100%);
+    /* FIX: Solid color shade moved to Top (0%) and Dark shade moved to Bottom (100%) */
+    --hero-gradient-shade: linear-gradient(135deg, #022343 0%, #091730 40%, #030712 100%);
 }
 
 body.night-mode {
@@ -449,8 +449,8 @@ body.night-mode {
     --badge-bg: rgba(0, 176, 255, 0.03);
     --badge-border: rgba(0, 176, 255, 0.12);
     
-    /* Soft Adaptive Gradient */
-    --hero-gradient-shade: linear-gradient(135deg, #f8fafc 0%, #e0f2fe 70%, #bae6fd 100%);
+    /* FIX: Solid soft blue moved to Top (0%) and Clean White/Light shade moved to Bottom (100%) */
+    --hero-gradient-shade: linear-gradient(135deg, #bae6fd 0%, #e0f2fe 30%, #f8fafc 100%);
 }
 
 * { 

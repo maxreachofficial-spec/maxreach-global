@@ -916,16 +916,32 @@ body.night-mode .mx-main-btn:hover {
     </div>
 </section>
 
-<section id="mx-seo-diff" itemscope itemtype="https://schema.org/ComparisonChart">
+<section id="mx-seo-diff" itemscope itemtype="https://schema.org/Product">
+    <!-- Main Product Schema Details -->
+    <meta itemprop="name" content="MaxReach Local SEO & Visibility Strategy">
+    <meta itemprop="description" content="A strategic comparison between temporary Paid Advertising (PPC) and long-term organic Local SEO ownership.">
+    <meta itemprop="brand" content="MaxReach">
+    
     <div class="mx-container">
         <div class="mx-header-wrap">
-            <span class="mx-eyebrow" itemprop="abstract">The Digital Ownership Strategy</span>
+            <span class="mx-eyebrow">The Digital Ownership Strategy</span>
             <h2 class="mx-sec-head">Google Ads are <span>Rent.</span> <br>Local SEO is <span>Ownership.</span></h2>
         </div>
 
         <div class="mx-diff-grid">
-            <div class="mx-diff-card" itemprop="itemOffered" itemscope itemtype="https://schema.org/Product">
+            
+            <!-- Card 1: Paid Advertising -->
+            <div class="mx-diff-card" itemprop="hasPart" itemscope itemtype="https://schema.org/Product">
                 <meta itemprop="name" content="Paid Advertising (PPC)">
+                
+                <!-- SCHEMA FIX: Silent offers to clear Google's critical error -->
+                <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                    <meta itemprop="priceCurrency" content="INR">
+                    <meta itemprop="price" content="0">
+                    <meta itemprop="availability" content="https://schema.org/InStock">
+                    <meta itemprop="url" content="https://maxreachglobal.in/marketing-agency-gurugram">
+                </div>
+
                 <div class="card-icon-blue" aria-hidden="true">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
                 </div>
@@ -933,14 +949,25 @@ body.night-mode .mx-main-btn:hover {
                 <p itemprop="description">You appear only as long as you pay. Once the <strong>Ad Budget</strong> ends, your <strong>Google Visibility</strong> drops to zero instantly. It's a temporary rental strategy.</p>
             </div>
 
-            <div class="mx-diff-card active-blue" itemprop="itemOffered" itemscope itemtype="https://schema.org/Product">
+            <!-- Card 2: Organic Local SEO -->
+            <div class="mx-diff-card active-blue" itemprop="hasPart" itemscope itemtype="https://schema.org/Product">
                 <meta itemprop="name" content="Organic Local SEO">
+                
+                <!-- SCHEMA FIX: Silent offers to clear Google's critical error -->
+                <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                    <meta itemprop="priceCurrency" content="INR">
+                    <meta itemprop="price" content="0">
+                    <meta itemprop="availability" content="https://schema.org/InStock">
+                    <meta itemprop="url" content="https://maxreachglobal.in/marketing-agency-gurugram">
+                </div>
+
                 <div class="card-icon-blue" aria-hidden="true">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
                 </div>
                 <h3>SEO: Long-Term Wealth</h3>
                 <p itemprop="description">We build your <strong>Search Engine Ranking</strong> organically. Even with zero ad spend, Google keeps sending customers to your <strong>Google Business Profile</strong> for free. A permanent digital asset.</p>
             </div>
+            
         </div>
 
         <div class="mx-trust-strip">
@@ -994,6 +1021,7 @@ body.night-mode .mx-main-btn:hover {
         </div>
 
         <div class="mx-content-wrapper">
+            <!-- Left Side Area: Rotating SVG Text Overlay & Globe Graphic -->
             <div class="mx-globe-zone" aria-hidden="true">
                 <div class="globe-container">
                     <img src="homeimages/Globe.png" class="main-globe-img" alt="India-Wide Search Engine Optimization Strategy">
@@ -1011,37 +1039,42 @@ body.night-mode .mx-main-btn:hover {
                 </div>
             </div>
 
+            <!-- Right Side Area: Clean, Readable Text Boxes with Correct Nested Schema -->
             <div class="mx-text-zone">
                 <div class="mx-process-list">
+                    
+                    <!-- Step 01 -->
                     <div class="process-item" itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
                         <span class="num">01</span>
                         <div class="txt">
                             <h4 itemprop="name">Strategic Brand Optimization</h4>
-                            <p itemprop="text">Integrating <strong>High-volume keywords</strong> and <strong>Optimized digital assets</strong> to ensure your brand ranks for competitive national queries.</p>
+                            <p itemprop="text">Integrating high-volume keywords and optimized digital assets to ensure your brand ranks for competitive national queries.</p>
                         </div>
                     </div>
 
+                    <!-- Step 02 -->
                     <div class="process-item" itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
                         <span class="num">02</span>
                         <div class="txt">
                             <h4 itemprop="name">Advanced Technical Architecture</h4>
-                            <p itemprop="text">Deployment of <strong>Proprietary Schema Markup</strong> that structures your data so search algorithms recognize your brand as a national authority.</p>
+                            <p itemprop="text">Deployment of proprietary schema markup that structures your data so search algorithms recognize your brand as a national authority.</p>
                         </div>
                     </div>
 
+                    <!-- Step 03 -->
                     <div class="process-item" itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
                         <span class="num">03</span>
                         <div class="txt">
                             <h4 itemprop="name">The Trust & Authority Engine</h4>
-                            <p itemprop="text">Building a <strong>Sustainable Reputation System</strong> to generate authentic user signals, outranking competitors across all service regions in India.</p>
+                            <p itemprop="text">Building a sustainable reputation system to generate authentic user signals, outranking competitors across all service regions in India.</p>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
     </div>
 </section>
-
 
 <section id="mx-ultimate-roi" itemscope itemtype="https://schema.org/ItemList">
     <div class="mx-roi-container">
@@ -1058,32 +1091,40 @@ body.night-mode .mx-main-btn:hover {
         </div>
 
         <div class="mx-roi-grid">
+            
+            <!-- Card 1: Lower Cost Per Lead -->
             <div class="roi-card" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
                 <meta itemprop="position" content="1" />
+                <meta itemprop="url" content="https://maxreachglobal.in/marketing-agency-gurugram#mx-ultimate-roi" />
                 <div class="roi-icon-wrap" aria-hidden="true">
                     <svg viewBox="0 0 24 24" fill="none" stroke="#00B0FF" stroke-width="2"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
                 </div>
                 <h3 itemprop="name">Lower Cost Per Lead (CPL)</h3>
-                <p itemprop="description">Over time, your <strong>Organic Customer Acquisition Cost</strong> drops to almost zero. Local SEO provides efficiency that scales without increasing ad spend.</p>
+                <p itemprop="description">Over time, your Organic Customer Acquisition Cost drops to almost zero. Local SEO provides efficiency that scales without increasing ad spend.</p>
             </div>
 
+            <!-- Card 2: Permanent Search Visibility -->
             <div class="roi-card" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
                 <meta itemprop="position" content="2" />
+                <meta itemprop="url" content="https://maxreachglobal.in/marketing-agency-gurugram#mx-ultimate-roi" />
                 <div class="roi-icon-wrap" aria-hidden="true">
                     <svg viewBox="0 0 24 24" fill="none" stroke="#00B0FF" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
                 </div>
                 <h3 itemprop="name">Permanent Search Visibility</h3>
-                <p itemprop="description">While competitors fight for <strong>Paid Search Space</strong>, you dominate the <strong>Organic Top Spot</strong>. Stay visible 24/7 on Google Search and Maps.</p>
+                <p itemprop="description">While competitors fight for Paid Search Space, you dominate the Organic Top Spot. Stay visible 24/7 on Google Search and Maps.</p>
             </div>
 
+            <!-- Card 3: Local Community Authority -->
             <div class="roi-card" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
                 <meta itemprop="position" content="3" />
+                <meta itemprop="url" content="https://maxreachglobal.in/marketing-agency-gurugram#mx-ultimate-roi" />
                 <div class="roi-icon-wrap" aria-hidden="true">
                     <svg viewBox="0 0 24 24" fill="none" stroke="#00B0FF" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
                 </div>
                 <h3 itemprop="name">Local Community Authority</h3>
-                <p itemprop="description">Become the <strong>"Go-To" trusted brand</strong> in the <strong>Gurugram & Delhi NCR</strong> market. Own your niche by being the most recommended local business.</p>
+                <p itemprop="description">Become the "Go-To" trusted brand in the Gurugram & Delhi NCR market. Own your niche by being the most recommended local business.</p>
             </div>
+            
         </div>
     </div>
 </section>
@@ -1100,10 +1141,10 @@ body.night-mode .mx-main-btn:hover {
         <div class="mx-closer-content">
             <h2 class="mx-main-h1" itemprop="name">Why Wait for Organic Growth When You Can <span>Own Your Local Market?</span></h2>
             
-            <p class="mx-fast-track">
-                Every second you spend 'thinking,' your local competitors are stealing your <strong>High-Intent Leads</strong>. 
-                <strong>Stop being a spectator.</strong> Boost your <strong>Google Map Pack Visibility</strong> and start dominating the local search results today.
-            </p>
+         <p class="mx-fast-track">
+    Every second you spend 'thinking,' your local competitors are stealing your High-Intent Leads. 
+    Stop being a spectator. Boost your Google Map Pack Visibility and start dominating the local search results today.
+</p>
 
             <div class="mx-cta-wrapper" itemprop="potentialAction" itemscope itemtype="https://schema.org/CommunicateAction">
                 <a href="https://wa.me/919810591327?text=Hi%20MaxReach,%20I%20want%20to%20dominate%20my%20local%20market%20with%20SEO!" 
