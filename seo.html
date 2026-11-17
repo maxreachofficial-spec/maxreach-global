@@ -887,16 +887,20 @@ body.night-mode .mx-main-btn:hover {
 <div id="navOverlay" onclick="toggleMenu()" aria-hidden="true" aria-label="Close Menu"></div>
 
 <section id="mx-premium-hero" itemscope itemtype="https://schema.org/Service">
+    <meta itemprop="name" content="Local SEO & Google Maps Optimization">
     <meta itemprop="serviceType" content="Local SEO & Google Maps Optimization">
-    <meta itemprop="provider" content="MaxReach Global">
+    <div itemprop="provider" itemscope itemtype="https://schema.org/Organization">
+        <meta itemprop="name" content="MaxReach Global">
+        <meta itemprop="url" content="https://maxreachglobal.in">
+    </div>
 
     <div class="hero-bg-layer red-slant"></div>
     <div class="hero-bg-layer green-slant"></div>
     
     <div class="hero-content-grid">
         <div class="hero-panel panel-red">
-            <h1 itemprop="name">Stop Being <br>a Secret.</h1>
-            <p>Are you invisible to neighbors searching right now? <strong>Local SEO</strong> builds your permanent authority and brand recall.</p>
+            <h1>Stop Being <br>a Secret.</h1>
+            <p itemprop="description">Are you invisible to neighbors searching right now? <strong>Local SEO</strong> builds your permanent authority and brand recall.</p>
             <img src="https://cdn-icons-png.flaticon.com/512/869/869636.png" class="hero-icon fade-icon" alt="Invisibility in Local Search">
         </div>
 
@@ -916,12 +920,7 @@ body.night-mode .mx-main-btn:hover {
     </div>
 </section>
 
-<section id="mx-seo-diff" itemscope itemtype="https://schema.org/Product">
-    <!-- Main Product Schema Details -->
-    <meta itemprop="name" content="MaxReach Local SEO & Visibility Strategy">
-    <meta itemprop="description" content="A strategic comparison between temporary Paid Advertising (PPC) and long-term organic Local SEO ownership.">
-    <meta itemprop="brand" content="MaxReach">
-    
+<section id="mx-seo-diff">
     <div class="mx-container">
         <div class="mx-header-wrap">
             <span class="mx-eyebrow">The Digital Ownership Strategy</span>
@@ -931,41 +930,21 @@ body.night-mode .mx-main-btn:hover {
         <div class="mx-diff-grid">
             
             <!-- Card 1: Paid Advertising -->
-            <div class="mx-diff-card" itemprop="hasPart" itemscope itemtype="https://schema.org/Product">
-                <meta itemprop="name" content="Paid Advertising (PPC)">
-                
-                <!-- SCHEMA FIX: Silent offers to clear Google's critical error -->
-                <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-                    <meta itemprop="priceCurrency" content="INR">
-                    <meta itemprop="price" content="0">
-                    <meta itemprop="availability" content="https://schema.org/InStock">
-                    <meta itemprop="url" content="https://maxreachglobal.in/marketing-agency-gurugram">
-                </div>
-
+            <div class="mx-diff-card">
                 <div class="card-icon-blue" aria-hidden="true">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
                 </div>
                 <h3>Ads: Short-Term Sprint</h3>
-                <p itemprop="description">You appear only as long as you pay. Once the <strong>Ad Budget</strong> ends, your <strong>Google Visibility</strong> drops to zero instantly. It's a temporary rental strategy.</p>
+                <p>You appear only as long as you pay. Once the <strong>Ad Budget</strong> ends, your <strong>Google Visibility</strong> drops to zero instantly. It's a temporary rental strategy.</p>
             </div>
 
             <!-- Card 2: Organic Local SEO -->
-            <div class="mx-diff-card active-blue" itemprop="hasPart" itemscope itemtype="https://schema.org/Product">
-                <meta itemprop="name" content="Organic Local SEO">
-                
-                <!-- SCHEMA FIX: Silent offers to clear Google's critical error -->
-                <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-                    <meta itemprop="priceCurrency" content="INR">
-                    <meta itemprop="price" content="0">
-                    <meta itemprop="availability" content="https://schema.org/InStock">
-                    <meta itemprop="url" content="https://maxreachglobal.in/marketing-agency-gurugram">
-                </div>
-
+            <div class="mx-diff-card active-blue">
                 <div class="card-icon-blue" aria-hidden="true">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
                 </div>
                 <h3>SEO: Long-Term Wealth</h3>
-                <p itemprop="description">We build your <strong>Search Engine Ranking</strong> organically. Even with zero ad spend, Google keeps sending customers to your <strong>Google Business Profile</strong> for free. A permanent digital asset.</p>
+                <p>We build your <strong>Search Engine Ranking</strong> organically. Even with zero ad spend, Google keeps sending customers to your <strong>Google Business Profile</strong> for free. A permanent digital asset.</p>
             </div>
             
         </div>
