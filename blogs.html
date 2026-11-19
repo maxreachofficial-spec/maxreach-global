@@ -408,6 +408,42 @@ src="https://www.facebook.com/tr?id=1825418788436550&ev=PageView&noscript=1"
 <div id="navOverlay" onclick="toggleMenu()" aria-hidden="true" aria-label="Close Menu"></div>
 
 <style>
+    /* Sirf Desktop screens (769px aur usse badi) ke liye custom scrollbar */
+@media (min-width: 769px) {
+    html, body {
+        overflow-y: auto !important;
+        scrollbar-width: thin !important; /* Firefox ke liye patla scrollbar */
+        scrollbar-color: #00d2ff #f1f1f1 !important; /* Firefox color */
+        -ms-overflow-style: auto !important;
+    }
+
+    html::-webkit-scrollbar,
+    body::-webkit-scrollbar {
+        display: block !important;
+        width: 6px !important; /* Scrollbar ko patla kiya gaya hai */
+    }
+
+    html::-webkit-scrollbar-track,
+    body::-webkit-scrollbar-track {
+        background: #f1f1f1 !important; /* Track ka halka background */
+    }
+
+    html::-webkit-scrollbar-thumb,
+    body::-webkit-scrollbar-thumb {
+        background: #00d2ff !important; /* Aapka #00d2ff brand color */
+        border-radius: 10px !important;
+    }
+
+    /* Jab mouse scrollbar ke upar le jayein (Hover effect) */
+    html::-webkit-scrollbar-thumb:hover,
+    body::-webkit-scrollbar-thumb:hover {
+        background: #00a8cc !important; /* Hover karne par thoda dark shade */
+    }
+}
+
+</style>
+
+<style>
     /* --- 🎨 DYNAMIC THEME SYSTEM (Sync with your Nav-Script) --- */
     :root {
         --mx-blue: #00d2ff;
